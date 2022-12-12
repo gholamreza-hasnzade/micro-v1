@@ -66,7 +66,7 @@ export const MATERIAL_UI_THEME_CONFIG = createTheme({
         }
     },
     typography: {
-        fontFamily: 'IRANSans'
+        fontFamily: 'IRANSans',
     },
     components: {
         MuiButtonBase: {
@@ -79,14 +79,14 @@ export const MATERIAL_UI_THEME_CONFIG = createTheme({
         MuiButton: {
             styleOverrides: {
                 root: {
-                    borderRadius: 8
+                    borderRadius: 8,
                 }
             }
         },
         MuiTextField: {
             styleOverrides: {
                 root: {
-                    fontFamily: 'IRANSans'
+                    fontFamily: 'IRANSans',
                 }
             }
         }
