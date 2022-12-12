@@ -1,0 +1,1 @@
+export { THEME_LIGHT } from '@constants/theme/theme-light.constant';

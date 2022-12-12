@@ -1,9 +1,24 @@
-import React from 'react'
+
+// * import tools
+import React from "react";
+import { ToastContainer } from 'react-toastify';
+import TextField from '@mui/material/TextField';
+
+// * import components
+//import AppRouter from "@components/config/app-configurations/routers/router";
+import { AppConfigurations } from "./config/app-configurations/app.configurations";
+
+
 
 const App = () => {
   return (
-    <div>App</div>
-  )
-}
+    <AppConfigurations>
+            <TextField id="outlined-basic" label="Outlined" variant="outlined" />
 
-export default App
+      {/* <AppRouter /> */}
+      <ToastContainer />
+    </AppConfigurations>
+  );
+};
+
+export default App;
