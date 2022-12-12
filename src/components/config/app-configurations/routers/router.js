@@ -4,7 +4,6 @@ import { Routes, BrowserRouter, Route } from "react-router-dom";
 import { RoutesPage } from "@components/config/app-configurations/routers/route/routes";
 
 const AppRouter = () => {
-    console.log(RoutesPage);
     return (
         <BrowserRouter>
             <Routes>
