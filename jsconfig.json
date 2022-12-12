@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@/*": ["src/*"],
+            "@components/*": ["src/components/*"],
+            "@constants/*": ["src/constants/*"],
+            "@fonts/*": ["src/assets/fonts/*"],
+            "@redux/*": ["src/stores/redux/*"],
+            "@images/*": ["src/assets/images/*"],
+            "@message/*": ["src/assets/message/*"],
+            "@helpers/*": ["src/helpers/*"],
+            "@hooks/*": ["src/hooks/*"],
+            "@global/*": ["src/assets/style/*"]
+        }
+    },
+    "exclude": ["node_modules", "build"]
+}
