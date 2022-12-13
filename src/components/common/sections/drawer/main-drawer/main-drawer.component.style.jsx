@@ -4,7 +4,7 @@ import { Box } from "@mui/system";
 import { Link, NavLink as NavLinkRRD } from "react-router-dom";
 
 const Drawer = styled(Box)`
-    width: ${({ isopen }) => (isopen ? "240px" : "75px")};
+    width: ${({ isopen }) => (isopen ? "280px" : "75px")};
     background-color: ${({ theme }) => theme.SURFACE};
     display: flex;
     flex-direction: column;
@@ -15,7 +15,7 @@ const Drawer = styled(Box)`
     background: ${({ theme }) => theme.SURFACE};
     padding-top: 35px;
     @media (max-width: 880px) {
-        width: ${({ isopen }) => (isopen ? "240px" : "0")};
+        width: ${({ isopen }) => (isopen ? "280px" : "0")};
         position: absolute;
         padding-top: 10px;
         z-index: 10;
