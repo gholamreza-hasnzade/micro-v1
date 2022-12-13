@@ -13,11 +13,13 @@ export const MainLayout = ({ children }) => {
     return (
         <S.Container>
             <MainDrawer />
-            <S.Content>
-                <MainHeaderComponent />
-                <S.Main>{children}</S.Main>
-                <MainFooterComponent />
-            </S.Content>
+            <S.MainLayout>
+                <S.Content>
+                    <MainHeaderComponent />
+                    <S.Main>{children}</S.Main>
+                    <MainFooterComponent />
+                </S.Content>
+            </S.MainLayout>
         </S.Container>
     );
 };

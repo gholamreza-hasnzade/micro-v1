@@ -83,7 +83,7 @@ const CUSTOM_COLORS = {
     BRAND: '#4324E9',
     ON_BRAND: '#FFFFFFF',
 
-    BACKGROUND: '#fcfcfc',
+    BACKGROUND: '#6B728E',
     ON_BACKGROUND: '#272D33',
 
     SURFACE: '#FFFFFF',
