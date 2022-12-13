@@ -1,11 +1,12 @@
-import { lazy } from "react";
+// * import Client View
+export { ClientView } from "@components/views/client-view/client-view";
+export { ClientAddView } from "@components/views/client-view/add/client-add-view";
+// * import Client View
 
-// * import views
-const ClientView = lazy(() =>
-    import("@components/views/client-view/client-view")
-);
-const HomeView = lazy(() => import("@components/views/home-view/home-view"));
-const ProductView = lazy(() =>
-    import("@components/views/product-view/product-view")
-);
-export { ClientView, HomeView, ProductView };
+// * import Home View
+export { HomeView } from "@components/views/home-view/home-view";
+// * import Home View
+
+// * import Product View
+export { ProductView } from "@components/views/product-view/product-view";
+// * import Product View

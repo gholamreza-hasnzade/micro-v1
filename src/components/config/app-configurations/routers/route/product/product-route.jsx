@@ -1,5 +1,6 @@
-import { ProductView } from "@components/views/product-view/product-view";
-//import {MainLayout} from "@components/common/sections/layouts/main-layout/main-layout.component"
+// * Import components
+import { ProductView } from "@components/views";
+
 const ProductRoute = [
     {
         path: "/product",

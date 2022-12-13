@@ -1,7 +1,8 @@
-import React from 'react'
+// * import tools
+import React from "react";
+
+import { ProductViewStyle as S } from "@components/views/product-view/product-view.style";
 
 export const ProductView = () => {
-  return (
-    <div>ProductView</div>
-  )
-}
+    return <S.Product>ProductView</S.Product>;
+};

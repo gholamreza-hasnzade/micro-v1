@@ -1,4 +1,6 @@
-import { ClientView } from "@components/views/client-view/client-view";
+import { ClientView } from "@components/views";
+
+
 
 const ClientRoute = [
     {

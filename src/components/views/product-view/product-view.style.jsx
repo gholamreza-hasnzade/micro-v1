@@ -2,7 +2,7 @@
 import styled from "@emotion/styled/macro";
 import { Box } from "@mui/system";
 
-const Home = styled(Box)`
+const Product = styled(Box)`
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -11,6 +11,6 @@ const Home = styled(Box)`
     background: ${({ theme }) => theme.SURFACE};
 `;
 
-export const HomeViewStyle = {
-    Home,
+export const ProductViewStyle = {
+    Product,
 };
