@@ -1,7 +1,18 @@
-import React from 'react'
+// * import tools
+import React from "react";
+
+// * import style
+import { MainHeaderComponentStyle as S } from "@components/common/sections/header/main-header/main-header.component.style";
+// * import global style
+import { GlobalStyle as GS } from "@global/css/global-style";
 
 export const MainHeaderComponent = () => {
-  return (
-    <div>MainHeaderComponent</div>
-  )
-}
+    return (
+        <S.Header component={"header"}>
+            <GS.FlexCenterSB>
+              <S.HeaderTitle>فروشگاه آنلاین هلو</S.HeaderTitle>
+              <S.ShoppingBag />
+            </GS.FlexCenterSB>
+        </S.Header>
+    );
+};
