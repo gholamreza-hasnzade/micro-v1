@@ -7,7 +7,6 @@ const Footer = styled(Box)`
     padding: 25px;
     border-radius: 6px;
     background: #404258;
-    display: flex;
   
 `;
 
