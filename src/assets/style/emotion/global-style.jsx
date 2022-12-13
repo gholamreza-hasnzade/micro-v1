@@ -9,6 +9,12 @@ const FlexCenterSB = styled(Box)`
     justify-content: space-between;
 `;
 
+const FlexBoxDirColumn = styled(Box)`
+    display: flex;
+    flex-direction: column;
+`;
+
 export const GlobalStyle = {
     FlexCenterSB,
+    FlexBoxDirColumn,
 };

@@ -4,7 +4,7 @@ import React from "react";
 // * import style
 import { MainHeaderComponentStyle as S } from "@components/common/sections/header/main-header/main-header.component.style";
 // * import global style
-import { GlobalStyle as GS } from "@global/css/global-style";
+import { GlobalStyle as GS } from "@global/emotion/global-style";
 
 export const MainHeaderComponent = () => {
     return (

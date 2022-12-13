@@ -7,10 +7,11 @@ const Header = styled(Box)`
     width: 100%;
     padding: 25px;
     border-radius: 6px;
-    background: #404258;
+    background: ${({ theme }) => theme.SURFACE};
     display: flex;
     aligin-item: center;
     color: ${({ theme }) => theme.WHITE};
+    box-shadow: 0 4px 24px #22292f3d;
 `;
 
 const HeaderTitle = styled(Typography)`

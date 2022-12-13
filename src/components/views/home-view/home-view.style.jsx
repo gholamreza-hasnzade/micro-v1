@@ -8,7 +8,7 @@ const Home = styled(Box)`
     width: 100%;
     padding: 25px;
     border-radius: 6px;
-    background: #404258;
+    background: ${({ theme }) => theme.SURFACE};
 `;
 
 export const HomeViewStyle = {

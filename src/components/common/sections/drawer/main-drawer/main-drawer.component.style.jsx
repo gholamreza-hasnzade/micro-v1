@@ -11,8 +11,8 @@ const Drawer = styled(Box)`
     position: relative;
     right: 0;
     overflow-x: hidden;
-    background: #404258;
-
+    background: ${({ theme }) => theme.SURFACE};
+    padding-top: 35px ;
     @media (max-width: 880px) {
         width: ${({ isopen }) => (isopen ? "240px" : "0")};
         position: absolute;
@@ -30,6 +30,14 @@ const Drawer = styled(Box)`
     }
 `;
 
+const Logo = styled(Box)`
+    display: flex;
+    justify-content: center;
+    width: 100%;
+`
+
+
 export const MainDrawerComponentStyle = {
     Drawer,
+    Logo
 };
