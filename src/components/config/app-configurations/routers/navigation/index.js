@@ -12,7 +12,7 @@ export default [
     },
     {
         id: "product",
-        title: "مصحول",
+        title: "محصول",
         url: "/product",
         icon: <CreditCard />,
         children: [],
