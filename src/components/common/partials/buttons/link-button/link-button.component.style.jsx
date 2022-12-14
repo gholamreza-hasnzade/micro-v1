@@ -1,9 +1,7 @@
 // * Import Tools
 import styled from "@emotion/styled/macro";
-import { Button as ButtonMUI } from "@mui/material";
 import { NavLink } from "react-router-dom";
 
-const MainButton = styled(ButtonMUI);
 
 const Button = styled(NavLink)`
     display: -webkit-inline-box;
