@@ -9,10 +9,10 @@ const FlexCenterSB = styled(Box)`
     justify-content: space-between;
 `;
 
-const FlexCenterGap = styled(Box)`
+const FlexGap10 = styled(Box)`
     width: 100%;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 10px;
 `;
 
@@ -38,10 +38,25 @@ const ActionForm = styled(Box)`
     background: ${({ theme }) => theme.SURFACE};
 `;
 
+const FlexBoxCenter = styled(Box)`
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    &:not(:last-child){
+        margin-bottom: 25px;
+    }
+`;
+const FormControlInput = styled(Box)`
+    width: 100%;
+`;
+
 export const GlobalStyle = {
     FlexCenterSB,
     FlexBoxDirColumn,
     SubmitForm,
-    FlexCenterGap,
+    FlexGap10,
     ActionForm,
+    FlexBoxCenter,
+    FormControlInput
 };

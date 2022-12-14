@@ -87,6 +87,7 @@ export const MATERIAL_UI_THEME_CONFIG = createTheme({
             styleOverrides: {
                 root: {
                     fontFamily: 'IRANSans',
+                    width: "100%",
                 }
             }
         }
