@@ -5,13 +5,18 @@ import React from "react";
 import { MainHeaderComponentStyle as S } from "@components/common/sections/header/main-header/main-header.component.style";
 // * import global style
 import { GlobalStyle as GS } from "@global/emotion/global-style";
+// * import components
+import { Basket } from "@components/common/segment";
 
 export const MainHeaderComponent = () => {
     return (
         <S.Header component={"header"}>
             <GS.FlexCenterSB>
-              <S.HeaderTitle>فروشگاه آنلاین هلو</S.HeaderTitle>
-              <S.ShoppingBag />
+                <S.HeaderTitle>فروشگاه آنلاین هلو</S.HeaderTitle>
+                <S.RowShoppingBag>
+                    <S.ShoppingBag />
+                    <Basket />
+                </S.RowShoppingBag>
             </GS.FlexCenterSB>
         </S.Header>
     );

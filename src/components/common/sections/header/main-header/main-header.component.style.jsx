@@ -16,16 +16,21 @@ const Header = styled(Box)`
 
 const HeaderTitle = styled(Typography)`
     color: ${({ theme }) => theme.PRIMARY};
-    marigin-bottom: 0;
+    margin-bottom: 0;
     font-weight: 700;
-`
+`;
 const ShoppingBag = styled(ShoppingBagRF)`
     cursor: pointer;
-    color:  ${({ theme }) => theme.PRIMARY};;
-`
+    color: ${({ theme }) => theme.PRIMARY}; ;
+`;
+
+const RowShoppingBag = styled(Box)`
+    position: relative;
+`;
 
 export const MainHeaderComponentStyle = {
     Header,
     HeaderTitle,
-    ShoppingBag
+    ShoppingBag,
+    RowShoppingBag,
 };
