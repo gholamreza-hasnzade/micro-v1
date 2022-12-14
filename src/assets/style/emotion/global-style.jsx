@@ -12,6 +12,7 @@ const FlexCenterSB = styled(Box)`
 const FlexBoxDirColumn = styled(Box)`
     display: flex;
     flex-direction: column;
+    width: 100%;
 `;
 
 export const GlobalStyle = {
