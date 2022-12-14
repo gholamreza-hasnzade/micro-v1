@@ -1,6 +1,14 @@
 // * Import Tools
 import styled from "@emotion/styled/macro";
-import { Box } from "@mui/system";
+import {
+    Box,
+    TableContainer as TableContainerMUI,
+    Table as TableMUI,
+    TableHead as TableHeadMUI,
+    TableRow as TableRowMUI,
+    TableCell as TableCellMUI,
+    TableBody as TableBodyMUI,
+} from "@mui/material";
 
 const FlexCenterSB = styled(Box)`
     width: 100%;
@@ -14,6 +22,7 @@ const FlexCenterEnd = styled(Box)`
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    padding: 25px;
 `;
 
 const FlexGap10 = styled(Box)`
@@ -50,13 +59,49 @@ const FlexBoxCenter = styled(Box)`
     display: flex;
     align-items: center;
     gap: 20px;
-    &:not(:last-child){
+    &:not(:last-child) {
         margin-bottom: 25px;
     }
 `;
 const FormControlInput = styled(Box)`
     width: 100%;
 `;
+
+/* table style */
+const RowMain = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 16px;
+    height: calc(100vh - 357px);
+`;
+
+const TableContainer = styled(TableContainerMUI)``;
+const Table = styled(TableMUI)``;
+const TableHead = styled(TableHeadMUI)``;
+const TableRow = styled(TableRowMUI)`
+    background-color: #6b728e;
+
+`;
+const TableCell = styled(TableCellMUI)`
+    color: #dfa612;
+    border-bottom: 1px solid #6b728e !important;
+
+`;
+const TableBody = styled(TableBodyMUI)``;
+const TableRowBody = styled(TableRowMUI)`
+    &:last-child td,
+    &:last-child th {
+        border: 0;
+    }
+`;
+const TableCellBody = styled(TableCellMUI)`
+    color: #b4b7bd !important;
+    border-bottom: 1px solid #6b728e !important;
+    
+`;
+
+/* table style */
 
 export const GlobalStyle = {
     FlexCenterSB,
@@ -66,5 +111,15 @@ export const GlobalStyle = {
     ActionForm,
     FlexBoxCenter,
     FormControlInput,
-    FlexCenterEnd
+    FlexCenterEnd,
+    RowMain,
+
+    TableContainer,
+    Table,
+    TableHead,
+    TableRow,
+    TableCell,
+    TableRowBody,
+    TableBody,
+    TableCellBody,
 };

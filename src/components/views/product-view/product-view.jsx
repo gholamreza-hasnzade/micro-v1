@@ -14,7 +14,130 @@ export const ProductView = () => {
                 <GS.FlexCenterEnd>
                     <LinkButton href={"/product/add"}>محصول جدید</LinkButton>
                 </GS.FlexCenterEnd>
-                <div>1</div>
+                <GS.RowMain>
+                    <GS.TableContainer>
+                        <GS.Table>
+                            <GS.TableHead>
+                                <GS.TableRow>
+                                    <GS.TableCell>نام کاربر</GS.TableCell>
+                                    <GS.TableCell align="left">
+                                        نام خانوادگی
+                                    </GS.TableCell>
+                                    <GS.TableCell align="left">
+                                        شماره موبایل{" "}
+                                    </GS.TableCell>
+                                    <GS.TableCell align="left">
+                                        {" "}
+                                        ایمیل{" "}
+                                    </GS.TableCell>
+                                    <GS.TableCell align="left">
+                                        {" "}
+                                        آدرس{" "}
+                                    </GS.TableCell>
+                                </GS.TableRow>
+                            </GS.TableHead>
+                            <GS.TableBody>
+                                <GS.TableRowBody>
+                                    <GS.TableCellBody>غلامرضا</GS.TableCellBody>
+                                    <GS.TableCellBody>
+                                        حسن زاده
+                                    </GS.TableCellBody>
+                                    <GS.TableCellBody>
+                                        {" "}
+                                        09369780985
+                                    </GS.TableCellBody>
+                                    <GS.TableCellBody>
+                                        {" "}
+                                        index@gmail.com
+                                    </GS.TableCellBody>
+                                    <GS.TableCellBody> تهرون</GS.TableCellBody>
+                                </GS.TableRowBody>
+
+                                <GS.TableRowBody>
+                                    <GS.TableCellBody>غلامرضا</GS.TableCellBody>
+                                    <GS.TableCellBody>
+                                        حسن زاده
+                                    </GS.TableCellBody>
+                                    <GS.TableCellBody>
+                                        {" "}
+                                        09369780985
+                                    </GS.TableCellBody>
+                                    <GS.TableCellBody>
+                                        {" "}
+                                        index@gmail.com
+                                    </GS.TableCellBody>
+                                    <GS.TableCellBody> تهرون</GS.TableCellBody>
+                                </GS.TableRowBody>
+
+                                <GS.TableRowBody>
+                                    <GS.TableCellBody>غلامرضا</GS.TableCellBody>
+                                    <GS.TableCellBody>
+                                        حسن زاده
+                                    </GS.TableCellBody>
+                                    <GS.TableCellBody>
+                                        {" "}
+                                        09369780985
+                                    </GS.TableCellBody>
+                                    <GS.TableCellBody>
+                                        {" "}
+                                        index@gmail.com
+                                    </GS.TableCellBody>
+                                    <GS.TableCellBody> تهرون</GS.TableCellBody>
+                                </GS.TableRowBody>
+
+                                <GS.TableRowBody>
+                                    <GS.TableCellBody>غلامرضا</GS.TableCellBody>
+                                    <GS.TableCellBody>
+                                        حسن زاده
+                                    </GS.TableCellBody>
+                                    <GS.TableCellBody>
+                                        {" "}
+                                        09369780985
+                                    </GS.TableCellBody>
+                                    <GS.TableCellBody>
+                                        {" "}
+                                        index@gmail.com
+                                    </GS.TableCellBody>
+                                    <GS.TableCellBody> تهرون</GS.TableCellBody>
+                                </GS.TableRowBody>
+
+                                <GS.TableRowBody>
+                                    <GS.TableCellBody>غلامرضا</GS.TableCellBody>
+                                    <GS.TableCellBody>
+                                        حسن زاده
+                                    </GS.TableCellBody>
+                                    <GS.TableCellBody>
+                                        {" "}
+                                        09369780985
+                                    </GS.TableCellBody>
+                                    <GS.TableCellBody>
+                                        {" "}
+                                        index@gmail.com
+                                    </GS.TableCellBody>
+                                    <GS.TableCellBody> تهرون</GS.TableCellBody>
+                                </GS.TableRowBody>
+
+                                <GS.TableRowBody>
+                                    <GS.TableCellBody>غلامرضا</GS.TableCellBody>
+                                    <GS.TableCellBody>
+                                        حسن زاده
+                                    </GS.TableCellBody>
+                                    <GS.TableCellBody>
+                                        {" "}
+                                        09369780985
+                                    </GS.TableCellBody>
+                                    <GS.TableCellBody>
+                                        {" "}
+                                        index@gmail.com
+                                    </GS.TableCellBody>
+                                    <GS.TableCellBody> تهرون</GS.TableCellBody>
+                                </GS.TableRowBody>
+                            </GS.TableBody>
+                        </GS.Table>
+                    </GS.TableContainer>
+
+                    <div>231</div>
+                </GS.RowMain>
             </GS.FlexBoxDirColumn>
         </S.Product>
     );
