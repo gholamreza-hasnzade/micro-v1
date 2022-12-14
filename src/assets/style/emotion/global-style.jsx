@@ -31,8 +31,7 @@ const FlexBoxCenterJc = styled(Box)`
     align-items: center;
     justify-content: center;
     padding: 25px;
-
-`
+`;
 const FlexGap10 = styled(Box)`
     width: 100%;
     display: flex;
@@ -80,8 +79,7 @@ const RowMain = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
-    margin-top: 16px;
-    height: calc(100vh - 357px);
+        height: calc(100vh - 350px);
 `;
 const TableContainer = styled(TableContainerMUI)``;
 const Table = styled(TableMUI)``;
@@ -103,7 +101,6 @@ const TableRowBody = styled(TableRowMUI)`
 const TableCellBody = styled(TableCellMUI)`
     color: #b4b7bd !important;
     border-bottom: 1px solid #6b728e !important;
-    
 `;
 /* table style */
 
