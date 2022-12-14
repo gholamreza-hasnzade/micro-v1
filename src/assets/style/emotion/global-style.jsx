@@ -9,6 +9,13 @@ const FlexCenterSB = styled(Box)`
     justify-content: space-between;
 `;
 
+const FlexCenterEnd = styled(Box)`
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+`;
+
 const FlexGap10 = styled(Box)`
     width: 100%;
     display: flex;
@@ -58,5 +65,6 @@ export const GlobalStyle = {
     FlexGap10,
     ActionForm,
     FlexBoxCenter,
-    FormControlInput
+    FormControlInput,
+    FlexCenterEnd
 };

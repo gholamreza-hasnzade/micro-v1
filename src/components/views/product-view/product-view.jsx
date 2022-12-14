@@ -11,10 +11,10 @@ export const ProductView = () => {
     return (
         <S.Product>
             <GS.FlexBoxDirColumn>
-                <GS.FlexCenterSB>
-                    <input type={"text"} />
+                <GS.FlexCenterEnd>
                     <LinkButton href={"/product/add"}>محصول جدید</LinkButton>
-                </GS.FlexCenterSB>
+                </GS.FlexCenterEnd>
+                <div>1</div>
             </GS.FlexBoxDirColumn>
         </S.Product>
     );
