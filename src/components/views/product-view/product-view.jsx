@@ -22,118 +22,95 @@ export const ProductView = () => {
                         <GS.Table>
                             <GS.TableHead>
                                 <GS.TableRow>
-                                    <GS.TableCell>نام کاربر</GS.TableCell>
+                                    <GS.TableCell>نام محصول</GS.TableCell>
                                     <GS.TableCell align="left">
-                                        نام خانوادگی
+                                         کد محصول
                                     </GS.TableCell>
                                     <GS.TableCell align="left">
-                                        شماره موبایل{" "}
+                                       تعداد
                                     </GS.TableCell>
                                     <GS.TableCell align="left">
-                                        {" "}
-                                        ایمیل{" "}
-                                    </GS.TableCell>
-                                    <GS.TableCell align="left">
-                                        {" "}
-                                        آدرس{" "}
+                                      قیمت
                                     </GS.TableCell>
                                 </GS.TableRow>
                             </GS.TableHead>
                             <GS.TableBody>
                                 <GS.TableRowBody>
-                                    <GS.TableCellBody>غلامرضا</GS.TableCellBody>
+                                    <GS.TableCellBody>نمر افزار هلو</GS.TableCellBody>
                                     <GS.TableCellBody>
-                                        حسن زاده
+                                         421
                                     </GS.TableCellBody>
                                     <GS.TableCellBody>
-                                        {" "}
-                                        09369780985
+                                       2
                                     </GS.TableCellBody>
                                     <GS.TableCellBody>
-                                        {" "}
-                                        index@gmail.com
+                                      200
                                     </GS.TableCellBody>
-                                    <GS.TableCellBody> تهرون</GS.TableCellBody>
                                 </GS.TableRowBody>
 
                                 <GS.TableRowBody>
-                                    <GS.TableCellBody>غلامرضا</GS.TableCellBody>
+                                    <GS.TableCellBody>نمر افزار هلو</GS.TableCellBody>
                                     <GS.TableCellBody>
-                                        حسن زاده
+                                         421
                                     </GS.TableCellBody>
                                     <GS.TableCellBody>
-                                        {" "}
-                                        09369780985
+                                       2
                                     </GS.TableCellBody>
                                     <GS.TableCellBody>
-                                        {" "}
-                                        index@gmail.com
+                                      200
                                     </GS.TableCellBody>
-                                    <GS.TableCellBody> تهرون</GS.TableCellBody>
                                 </GS.TableRowBody>
 
                                 <GS.TableRowBody>
-                                    <GS.TableCellBody>غلامرضا</GS.TableCellBody>
+                                    <GS.TableCellBody>نمر افزار هلو</GS.TableCellBody>
                                     <GS.TableCellBody>
-                                        حسن زاده
+                                         421
                                     </GS.TableCellBody>
                                     <GS.TableCellBody>
-                                        {" "}
-                                        09369780985
+                                       2
                                     </GS.TableCellBody>
                                     <GS.TableCellBody>
-                                        {" "}
-                                        index@gmail.com
+                                      200
                                     </GS.TableCellBody>
-                                    <GS.TableCellBody> تهرون</GS.TableCellBody>
                                 </GS.TableRowBody>
 
                                 <GS.TableRowBody>
-                                    <GS.TableCellBody>غلامرضا</GS.TableCellBody>
+                                    <GS.TableCellBody>نمر افزار هلو</GS.TableCellBody>
                                     <GS.TableCellBody>
-                                        حسن زاده
+                                         421
                                     </GS.TableCellBody>
                                     <GS.TableCellBody>
-                                        {" "}
-                                        09369780985
+                                       2
                                     </GS.TableCellBody>
                                     <GS.TableCellBody>
-                                        {" "}
-                                        index@gmail.com
+                                      200
                                     </GS.TableCellBody>
-                                    <GS.TableCellBody> تهرون</GS.TableCellBody>
                                 </GS.TableRowBody>
 
                                 <GS.TableRowBody>
-                                    <GS.TableCellBody>غلامرضا</GS.TableCellBody>
+                                    <GS.TableCellBody>نمر افزار هلو</GS.TableCellBody>
                                     <GS.TableCellBody>
-                                        حسن زاده
+                                         421
                                     </GS.TableCellBody>
                                     <GS.TableCellBody>
-                                        {" "}
-                                        09369780985
+                                       2
                                     </GS.TableCellBody>
                                     <GS.TableCellBody>
-                                        {" "}
-                                        index@gmail.com
+                                      200
                                     </GS.TableCellBody>
-                                    <GS.TableCellBody> تهرون</GS.TableCellBody>
                                 </GS.TableRowBody>
 
                                 <GS.TableRowBody>
-                                    <GS.TableCellBody>غلامرضا</GS.TableCellBody>
+                                    <GS.TableCellBody>نمر افزار هلو</GS.TableCellBody>
                                     <GS.TableCellBody>
-                                        حسن زاده
+                                         421
                                     </GS.TableCellBody>
                                     <GS.TableCellBody>
-                                        {" "}
-                                        09369780985
+                                       2
                                     </GS.TableCellBody>
                                     <GS.TableCellBody>
-                                        {" "}
-                                        index@gmail.com
+                                      200
                                     </GS.TableCellBody>
-                                    <GS.TableCellBody> تهرون</GS.TableCellBody>
                                 </GS.TableRowBody>
                             </GS.TableBody>
                         </GS.Table>
