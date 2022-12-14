@@ -1,6 +1,7 @@
 // * import tools
 import React from "react";
 import { useNavigate } from "react-router-dom";
+
 // * import style
 import { GlobalStyle as GS } from "@global/emotion/global-style";
 // * import components
@@ -10,11 +11,11 @@ import {
 } from "@components/common/partials/buttons";
 import { TextFildOutlinedInput } from "@components/common/partials/inputs";
 
-export const ClientAddView = () => {
-    const navigate = useNavigate();
+export const ProductAddView = () => {
+  const navigate = useNavigate();
 
     const handlerGoBack = () => {
-        navigate("/client");
+        navigate("/product");
     };
     return (
         <GS.FlexGap10>
@@ -23,13 +24,13 @@ export const ClientAddView = () => {
                     <GS.FormControlInput>
                         <TextFildOutlinedInput
                             type={"text"}
-                            label={"نام کاربر"}
+                            label={"نام محصول"}
                         />
                     </GS.FormControlInput>
                     <GS.FormControlInput>
                         <TextFildOutlinedInput
                             type={"text"}
-                            label={"نام خانوادگی"}
+                            label={"کد محصول"}
                         />
                     </GS.FormControlInput>
                 </GS.FlexBoxCenter>
@@ -38,29 +39,19 @@ export const ClientAddView = () => {
                     <GS.FormControlInput>
                         <TextFildOutlinedInput
                             type={"number"}
-                            label={"شماره موبایل "}
+                            label={" تعداد "}
                         />
                     </GS.FormControlInput>
                     <GS.FormControlInput>
                         <TextFildOutlinedInput
-                            type={"email"}
-                            label={" ایمیل"}
-                        />
-                    </GS.FormControlInput>
-                </GS.FlexBoxCenter>
-
-                <GS.FlexBoxCenter>
-                    <GS.FormControlInput>
-                        <TextFildOutlinedInput
-                            type={"text"}
-                            label={" آدرس"}
-                            multiline
+                            type={"number"}
+                            label={" قیمت "}
                         />
                     </GS.FormControlInput>
                 </GS.FlexBoxCenter>
             </GS.SubmitForm>
             <GS.ActionForm>
-                <SubmitButton>ثبت  </SubmitButton>
+                <SubmitButton>ثبت </SubmitButton>
                 <OutlineButton onClick={handlerGoBack}>لغو</OutlineButton>
             </GS.ActionForm>
         </GS.FlexGap10>

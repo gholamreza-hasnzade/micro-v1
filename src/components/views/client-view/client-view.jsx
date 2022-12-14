@@ -12,9 +12,8 @@ export const ClientView = () => {
         <S.Client>
             <GS.FlexBoxDirColumn>
                 <GS.FlexCenterSB>
-                    <input type={"text"}/>
+                    <input type={"text"} />
                     <LinkButton href={"/client/add"}>کاربر جدید</LinkButton>
-
                 </GS.FlexCenterSB>
                 <div>1</div>
             </GS.FlexBoxDirColumn>

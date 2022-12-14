@@ -13,7 +13,6 @@ const MainLayout = styled(Box)`
     padding-bottom: 12px;
     margin-right: auto;
     transition: 0.2s linear;
-    height: 100%;
 
     @media (max-width: 880px) {
         width: 100%;
@@ -22,7 +21,11 @@ const MainLayout = styled(Box)`
 `;
 const Content = styled(Box)`
     padding: 15px;
-`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: calc(100% - 0px);
+`;
 const Main = styled.main`
     height: calc(100% - 90px);
     margin: 25px 0;

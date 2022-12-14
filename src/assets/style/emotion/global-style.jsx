@@ -42,7 +42,7 @@ const FlexBoxCenter = styled(Box)`
     width: 100%;
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 20px;
     &:not(:last-child){
         margin-bottom: 25px;
     }

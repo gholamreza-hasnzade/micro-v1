@@ -9,4 +9,5 @@ export { HomeView } from "@components/views/home-view/home-view";
 
 // * import Product View
 export { ProductView } from "@components/views/product-view/product-view";
+export { ProductAddView } from "@components/views/product-view/add/product-add-view";
 // * import Product View
