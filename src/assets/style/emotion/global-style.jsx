@@ -25,6 +25,14 @@ const FlexCenterEnd = styled(Box)`
     padding: 25px;
 `;
 
+const FlexBoxCenterJc = styled(Box)`
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+
+`
 const FlexGap10 = styled(Box)`
     width: 100%;
     display: flex;
@@ -75,18 +83,15 @@ const RowMain = styled.div`
     margin-top: 16px;
     height: calc(100vh - 357px);
 `;
-
 const TableContainer = styled(TableContainerMUI)``;
 const Table = styled(TableMUI)``;
 const TableHead = styled(TableHeadMUI)``;
 const TableRow = styled(TableRowMUI)`
     background-color: #6b728e;
-
 `;
 const TableCell = styled(TableCellMUI)`
     color: #dfa612;
     border-bottom: 1px solid #6b728e !important;
-
 `;
 const TableBody = styled(TableBodyMUI)``;
 const TableRowBody = styled(TableRowMUI)`
@@ -100,7 +105,6 @@ const TableCellBody = styled(TableCellMUI)`
     border-bottom: 1px solid #6b728e !important;
     
 `;
-
 /* table style */
 
 export const GlobalStyle = {
@@ -110,6 +114,7 @@ export const GlobalStyle = {
     FlexGap10,
     ActionForm,
     FlexBoxCenter,
+    FlexBoxCenterJc,
     FormControlInput,
     FlexCenterEnd,
     RowMain,

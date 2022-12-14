@@ -7,6 +7,9 @@ import { GlobalStyle as GS } from "@global/emotion/global-style";
 
 // * import components
 import { LinkButton } from "@components/common/partials/buttons";
+
+// * import components
+import { Pagination } from "@components/common/partials/pagination";
 export const ProductView = () => {
     return (
         <S.Product>
@@ -136,8 +139,10 @@ export const ProductView = () => {
                         </GS.Table>
                     </GS.TableContainer>
 
-                    <div>231</div>
+                    <Pagination />
                 </GS.RowMain>
+
+                
             </GS.FlexBoxDirColumn>
         </S.Product>
     );

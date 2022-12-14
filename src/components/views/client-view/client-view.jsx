@@ -7,6 +7,9 @@ import { LinkButton } from "@components/common/partials/buttons";
 // * import style
 import { ClientViewStyle as S } from "@components/views/client-view/client-view.style";
 import { GlobalStyle as GS } from "@global/emotion/global-style";
+// * import components
+import { Pagination } from "@components/common/partials/pagination";
+
 export const ClientView = () => {
     return (
         <S.Client>
@@ -136,7 +139,7 @@ export const ClientView = () => {
                         </GS.Table>
                     </GS.TableContainer>
 
-                    <div>231</div>
+                    <Pagination />
                 </GS.RowMain>
             </GS.FlexBoxDirColumn>
         </S.Client>
