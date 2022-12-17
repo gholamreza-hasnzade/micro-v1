@@ -7,8 +7,8 @@ import { GlobalStyle as GS } from "@global/emotion/global-style";
 import {
     SubmitButton,
     OutlineButton,
-} from "@components/common/partials/buttons";
-import { TextFildOutlinedInput } from "@components/common/partials/inputs";
+    TextFildOutlinedInput
+} from "@components/common/partials";
 
 export const ClientAddView = () => {
     const navigate = useNavigate();

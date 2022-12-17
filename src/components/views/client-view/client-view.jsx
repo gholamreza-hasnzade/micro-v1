@@ -2,13 +2,13 @@
 import React from "react";
 
 // * import components
-import { LinkButton } from "@components/common/partials/buttons";
+import { LinkButton } from "@components/common/partials";
 
 // * import style
 import { ClientViewStyle as S } from "@components/views/client-view/client-view.style";
 import { GlobalStyle as GS } from "@global/emotion/global-style";
 // * import components
-import { Pagination } from "@components/common/partials/pagination";
+import { Pagination } from "@components/common/partials";
 
 export const ClientView = () => {
     return (

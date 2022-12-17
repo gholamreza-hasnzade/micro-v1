@@ -8,9 +8,9 @@ import { GlobalStyle as GS } from "@global/emotion/global-style";
 import {
     SubmitButton,
     OutlineButton,
-} from "@components/common/partials/buttons";
-import { TextFildOutlinedInput } from "@components/common/partials/inputs";
-import { SelectOption } from "@components/common/partials";
+    TextFildOutlinedInput,
+    SelectOption
+} from "@components/common/partials";
 
 export const ProductAddView = () => {
     const navigate = useNavigate();

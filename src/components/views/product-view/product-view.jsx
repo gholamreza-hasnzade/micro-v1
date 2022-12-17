@@ -6,10 +6,8 @@ import { ProductViewStyle as S } from "@components/views/product-view/product-vi
 import { GlobalStyle as GS } from "@global/emotion/global-style";
 
 // * import components
-import { LinkButton } from "@components/common/partials/buttons";
+import { LinkButton, Pagination } from "@components/common/partials";
 
-// * import components
-import { Pagination } from "@components/common/partials/pagination";
 
 export const ProductView = () => {
     return (

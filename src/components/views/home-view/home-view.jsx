@@ -6,8 +6,7 @@ import { HomeViewStyle as S } from "@components/views/home-view/home-view.style"
 import { GlobalStyle as GS } from "@global/emotion/global-style";
 
 // * import components
-import { Pagination } from "@components/common/partials/pagination";
-import { Caption } from "@components/common/partials/caption";
+import { Caption, Pagination } from "@components/common/partials";
 export const HomeView = () => {
     return (
         <S.Home>
