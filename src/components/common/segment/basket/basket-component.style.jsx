@@ -44,7 +44,7 @@ const ActionBasket = styled(Box)`
 `;
 
 const PlusButton = styled(Button)`
-    background-color: rgb(223 166 18 / 59%);
+    background-color: ${({ theme }) => theme.PRIMARY};
     color: #fff;
     max-width: 35px;
     max-height: 35px;
@@ -53,11 +53,11 @@ const PlusButton = styled(Button)`
     min-width: 0;
     margin-botton: 10px ;
     &:hover {
-        background-color: rgb(223 166 18 / 35%);
+        background-color: ${({ theme }) => theme.PRIMARY};
     }
 `;
 const MinesButton = styled(Button)`
-    background-color: rgb(223 166 18 / 59%);
+    background-color: ${({ theme }) => theme.PRIMARY};
     color: #fff;
     max-width: 35px;
     max-height: 35px;
@@ -65,7 +65,7 @@ const MinesButton = styled(Button)`
     border-radius: 50%;
     min-width: 0;
     &:hover {
-        background-color: rgb(223 166 18 / 35%);
+        background-color: ${({ theme }) => theme.PRIMARY};
     }
 `;
 export const BasketComponentStyle = {

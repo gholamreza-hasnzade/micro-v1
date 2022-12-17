@@ -27,7 +27,7 @@ const Content = styled(Box)`
    // height: calc(100% - 0px);
 `;
 const Main = styled.main`
-    height: calc(100% - 90px);
+    height: calc(100vh - 263px);
     margin: 25px 0;
 `;
 

@@ -9,7 +9,7 @@ const BASE_COLORS = {
 };
 
 const SYSTEM_THEME_COLORS = {
-    PRIMARY: '#dfa612',
+    PRIMARY: '#ffb800',
     ON_PRIMARY: '#FFFFFF',
 
     SUCCESS: '#10B981',

@@ -3,11 +3,11 @@ import React from "react";
 import * as I from "react-feather";
 // * import style
 import { BasketComponentStyle as S } from "@components/common/segment/basket/basket-component.style";
-import { GlobalStyle as GS } from "@global/emotion/global-style";
 
-export const BasketComponent = () => {
+export const BasketComponent = ({ ref }) => {
+    console.log(ref);
     return (
-        <S.Basket>
+        <S.Basket ref={ref}>
             <S.RowBasket>
                 <S.Title>کالای1</S.Title>
                 <S.Price> قیمت کل : 2000 * 1 </S.Price>

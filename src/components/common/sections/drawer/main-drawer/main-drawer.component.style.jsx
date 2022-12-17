@@ -50,20 +50,15 @@ const NavLink = styled(NavLinkRRD)`
     height: 100%;
     border-radius: 6px;
     margin-bottom: 15px;
-
 `;
 
 const RowDisplay = styled(Box)`
     display: flex;
     align-items: center;
     height: 100%;
-    background: ${({ active }) =>
-        active
-            ? "linear-gradient(-118deg, #dfa612,  rgb(0 0 0 / 0%))"
-            : ""};
-    box-shadow: ${({ active }) =>
-        active ? "0 0 10px 1px rgb(231 255 34 / 70%)" : ""};
-    color: ${({ active }) => (active ? "#fff" : "#dfa612")};
+    background: ${({ active, theme }) => (active ? `${theme.PRIMARY}` : "")};
+    color: ${({ active, theme }) =>
+        active ? `${theme.WHITE}` : `${theme.PRIMARY}`};
     border-radius: 5px;
 `;
 const Icon = styled(Box)`
@@ -78,8 +73,8 @@ const Display = styled(Box)`
 `;
 
 const RowIsOpen = styled(Link)`
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 `;
 export const MainDrawerComponentStyle = {
     Drawer,
@@ -89,5 +84,5 @@ export const MainDrawerComponentStyle = {
     RowDisplay,
     Icon,
     Display,
-    RowIsOpen
+    RowIsOpen,
 };

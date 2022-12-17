@@ -88,7 +88,7 @@ const TableRow = styled(TableRowMUI)`
     background-color: #6b728e;
 `;
 const TableCell = styled(TableCellMUI)`
-    color: #dfa612;
+    color: ${({ theme }) => theme.PRIMARY};
     border-bottom: 1px solid #6b728e !important;
 `;
 const TableBody = styled(TableBodyMUI)``;

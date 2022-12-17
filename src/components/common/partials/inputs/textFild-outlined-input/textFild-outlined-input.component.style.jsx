@@ -10,10 +10,10 @@ const TextField = styled(TextFieldMUI)`
     }
     & .MuiOutlinedInput-root {
         & fieldset {
-            border-color: rgb(223 166 18 / 59%);
+            border-color: ${({ theme }) => theme.PRIMARY};
         }
         &:hover fieldset {
-            border-color: rgb(223 166 18 / 59%);
+            border-color: ${({ theme }) => theme.PRIMARY};
         }
     }
 `;
