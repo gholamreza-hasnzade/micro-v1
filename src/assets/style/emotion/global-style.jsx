@@ -36,7 +36,12 @@ const FlexGap10 = styled(Box)`
     width: 100%;
     display: flex;
     align-items: flex-start;
+    flex-direction: row;
     gap: 10px;
+
+    @media (max-width: 880px) {
+        flex-direction: column;
+    }
 `;
 
 const FlexBoxDirColumn = styled(Box)`
@@ -52,6 +57,11 @@ const SubmitForm = styled(Box)`
     display: flex;
     flex-direction: column;
     border-radius: 6px;
+
+    @media (max-width: 880px) {
+        width: 100%;
+        max-width: 100%;
+    }
 `;
 const ActionForm = styled(Box)`
     width: 30%;
@@ -59,6 +69,11 @@ const ActionForm = styled(Box)`
     padding: 25px;
     border-radius: 6px;
     background: ${({ theme }) => theme.SURFACE};
+
+    @media (max-width: 880px) {
+        width: 100%;
+        max-width: 100%;
+    }
 `;
 
 const FlexBoxCenter = styled(Box)`
@@ -79,7 +94,7 @@ const RowMain = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
-        height: calc(100vh - 350px);
+    height: calc(100vh - 350px);
 `;
 const TableContainer = styled(TableContainerMUI)``;
 const Table = styled(TableMUI)``;

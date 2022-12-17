@@ -43,11 +43,11 @@ export const MainDrawerComponent = () => {
                         </S.Logo>
                     )}
 
-                    <S.RowIcon onClick={() => dispatch(openDrawerToggle())}>
+
+                </S.RowIsOpen>
+                <S.RowIcon onClick={() => dispatch(openDrawerToggle())}>
                         {isOpenDrawer ? <I.ArrowRight /> : <I.ArrowLeft />}
                     </S.RowIcon>
-                </S.RowIsOpen>
-
                 <S.DraweRow>
                     {navigation?.map((itm) => (
                         <S.NavLink to={itm.url} title={itm.title} key={itm.id}>

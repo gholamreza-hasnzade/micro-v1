@@ -6,8 +6,8 @@ const Button = styled(ButtonMUI)`
     min-width: 100%;
     border: 1px solid ${({ theme }) => theme.PRIMARY};
     color: #fff;
-    font-size: 13px;
-    padding: 8px 10px;
+    font-size: 15px;
+    padding: 12px 10px;
 `;
 
 export const OutlineButtonComponentStyle = {

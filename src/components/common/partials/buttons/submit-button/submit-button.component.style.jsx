@@ -6,8 +6,8 @@ const Button = styled(ButtonMUI)`
     min-width: 100%;
     background-color: ${({ theme }) => theme.PRIMARY};
     color: ${({ theme }) => theme.WHITE} !important;
-    font-size: 13px;
-    padding: 8px 10px;
+    font-size: 15px;
+    padding: 12px 10px;
     margin-bottom: 16px;
     &:hover {
         background-color: rgb(223 166 18 / 35%);
