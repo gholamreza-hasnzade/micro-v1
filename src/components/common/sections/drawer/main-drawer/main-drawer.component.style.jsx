@@ -14,16 +14,16 @@ const Drawer = styled(Box)`
     overflow-x: hidden;
     background: ${({ theme }) => theme.SURFACE};
     padding-top: 35px;
+    z-index: 100;
     @media (max-width: 880px) {
         width: ${({ isopen }) => (isopen ? "280px" : "0")};
         position: absolute;
-        padding-top: 10px;
-        z-index: 10;
+        padding-top: 50px;
         left: 0;
     }
 
     @media (max-width: 360px) {
-        width: ${({ isopen }) => (isopen ? "240px" : "0")};
+        width: ${({ isopen }) => (isopen ? "280px" : "0")};
         position: absolute;
         padding-top: 10px;
         z-index: 10;

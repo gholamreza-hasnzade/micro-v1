@@ -34,7 +34,7 @@ export const MainDrawerComponent = () => {
             <GS.FlexBoxDirColumn>
                 <S.RowLogo>
                     <S.RowIsOpen to={"/"}>
-                        {isOpenDrawer && (
+                        {(isOpenDrawer || isOpenDrawerInMobile) && (
                             <S.Logo>
                                 <img
                                     alt="شرکت مهندسی نرم افزاری هلو"
@@ -68,7 +68,3 @@ export const MainDrawerComponent = () => {
         </S.Drawer>
     );
 };
-
-{
-    /*  <button onClick={() => dispatch(openDrawerToggle())}>button</button> */
-}
