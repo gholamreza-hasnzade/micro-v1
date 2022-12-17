@@ -1,15 +1,16 @@
 // * Import Tools
-import { createTheme } from '@mui/material/styles';
+import { createTheme } from "@mui/material/styles";
 
 // * Import Constants
-import { THEME_LIGHT } from '@constants/theme';
+import { THEME_LIGHT } from "@constants/theme";
 
- 
-const { palette: { augmentColor } } = createTheme();
-const createColor = (mainColor) => augmentColor({ color: { main: mainColor } })
+const {
+    palette: { augmentColor },
+} = createTheme();
+const createColor = (mainColor) => augmentColor({ color: { main: mainColor } });
 
 export const MATERIAL_UI_THEME_CONFIG = createTheme({
-    direction: 'rtl',
+    direction: "rtl",
     palette: {
         primary: createColor(THEME_LIGHT.PRIMARY),
         info: createColor(THEME_LIGHT.INFO),
@@ -24,72 +25,72 @@ export const MATERIAL_UI_THEME_CONFIG = createTheme({
         brand: createColor(THEME_LIGHT.BRAND),
         default: createColor(THEME_LIGHT.TEXT),
 
-        'primary.light': {
+        "primary.light": {
             main: THEME_LIGHT.PRIMARY_PALE,
-            contrastText: THEME_LIGHT.PRIMARY
+            contrastText: THEME_LIGHT.PRIMARY,
         },
-        'info.light': {
+        "info.light": {
             main: THEME_LIGHT.INFO_PALE,
-            contrastText: THEME_LIGHT.INFO
+            contrastText: THEME_LIGHT.INFO,
         },
-        'danger.light': {
+        "danger.light": {
             main: THEME_LIGHT.PRIMARY_PALE,
-            contrastText: THEME_LIGHT.PRIMARY
+            contrastText: THEME_LIGHT.PRIMARY,
         },
-        'success.light': {
+        "success.light": {
             main: THEME_LIGHT.PRIMARY_PALE,
-            contrastText: THEME_LIGHT.PRIMARY
+            contrastText: THEME_LIGHT.PRIMARY,
         },
-        'rose.light': {
+        "rose.light": {
             main: THEME_LIGHT.PRIMARY_PALE,
-            contrastText: THEME_LIGHT.PRIMARY
+            contrastText: THEME_LIGHT.PRIMARY,
         },
-        'warning.light': {
+        "warning.light": {
             main: THEME_LIGHT.PRIMARY_PALE,
-            contrastText: THEME_LIGHT.PRIMARY
+            contrastText: THEME_LIGHT.PRIMARY,
         },
-        'dark.light': {
+        "dark.light": {
             main: THEME_LIGHT.PRIMARY_PALE,
-            contrastText: THEME_LIGHT.PRIMARY
+            contrastText: THEME_LIGHT.PRIMARY,
         },
-        'secondary.light': {
+        "secondary.light": {
             main: THEME_LIGHT.PRIMARY_PALE,
-            contrastText: THEME_LIGHT.PRIMARY
+            contrastText: THEME_LIGHT.PRIMARY,
         },
-        'violet.light': {
+        "violet.light": {
             main: THEME_LIGHT.PRIMARY_PALE,
-            contrastText: THEME_LIGHT.PRIMARY
+            contrastText: THEME_LIGHT.PRIMARY,
         },
-        'brand.light': {
+        "brand.light": {
             main: THEME_LIGHT.BRAND_PALE,
-            contrastText: THEME_LIGHT.BRAND
-        }
+            contrastText: THEME_LIGHT.BRAND,
+        },
     },
     typography: {
-        fontFamily: 'IRANSans',
+        fontFamily: "IRANSans",
     },
     components: {
         MuiButtonBase: {
             styleOverrides: {
                 root: {
-                    fontFamily: 'IRANSans'
-                }
-            }
+                    fontFamily: "IRANSans",
+                },
+            },
         },
         MuiButton: {
             styleOverrides: {
                 root: {
                     borderRadius: 8,
-                }
-            }
+                },
+            },
         },
         MuiTextField: {
             styleOverrides: {
                 root: {
-                    fontFamily: 'IRANSans',
+                    fontFamily: "IRANSans",
                     width: "100%",
-                }
-            }
-        }
-    }
+                },
+            },
+        },
+    },
 });

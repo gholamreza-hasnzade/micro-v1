@@ -10,6 +10,7 @@ import { LinkButton } from "@components/common/partials/buttons";
 
 // * import components
 import { Pagination } from "@components/common/partials/pagination";
+
 export const ProductView = () => {
     return (
         <S.Product>

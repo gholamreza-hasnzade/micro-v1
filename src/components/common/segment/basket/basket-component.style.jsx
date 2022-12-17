@@ -24,10 +24,19 @@ const RowBasket = styled(Box)`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-direction: column;
     text-align: center;
     &:not(:last-child) {
         border-bottom: 1px solid #b4b7bd !important;
     }
+`;
+
+const RowTitle = styled(Box)`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 10px;
 `;
 
 const Title = styled(Typography)`
@@ -39,7 +48,9 @@ const Total = styled(Typography)``;
 
 const ActionBasket = styled(Box)`
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
 `;
 
 const PlusButton = styled(Button)`
@@ -50,7 +61,7 @@ const PlusButton = styled(Button)`
     padding: 10px;
     border-radius: 50%;
     min-width: 0;
-    margin-botton: 10px ;
+    margin-botton: 10px;
     &:hover {
         background-color: ${({ theme }) => theme.PRIMARY};
     }
@@ -76,4 +87,5 @@ export const BasketComponentStyle = {
     ActionBasket,
     PlusButton,
     MinesButton,
+    RowTitle
 };

@@ -8,8 +8,11 @@ export const BasketComponent = () => {
     return (
         <S.Basket>
             <S.RowBasket>
-                <S.Title>کالای1</S.Title>
-                <S.Price> قیمت کل : 2000 * 1 </S.Price>
+                <S.RowTitle>
+                    <S.Title>کالای1</S.Title>
+                    <S.Price> قیمت کل : 2000 * 1 </S.Price>
+                </S.RowTitle>
+
                 <S.ActionBasket>
                     <S.PlusButton>
                         <I.Plus />

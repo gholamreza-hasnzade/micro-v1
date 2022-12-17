@@ -7,9 +7,6 @@ const TextField = styled(TextFieldMUI)`
         color: ${({ theme }) => theme.WHITE};
     }
     & .MuiOutlinedInput-root {
-        & label {
-            color: red !important;
-        }
         & fieldset {
             border-color: ${({ theme }) => theme.PRIMARY};
         }

@@ -15,7 +15,7 @@ const Overlay = styled(Box)`
     cursor: pointer; /* Add a pointer on hover */
     display: none;
     @media (max-width: 880px) {
-        display: ${({ isOpenDrawer }) => (isOpenDrawer ? "block" : "none")};
+        display: ${({ isopendrawer }) => (isopendrawer ? "block" : "none")};
     }
 `;
 export const OverlayMainComponentStyle = {

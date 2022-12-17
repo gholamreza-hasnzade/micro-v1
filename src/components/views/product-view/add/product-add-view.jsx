@@ -10,9 +10,10 @@ import {
     OutlineButton,
 } from "@components/common/partials/buttons";
 import { TextFildOutlinedInput } from "@components/common/partials/inputs";
+import { SelectOption } from "@components/common/partials";
 
 export const ProductAddView = () => {
-  const navigate = useNavigate();
+    const navigate = useNavigate();
 
     const handlerGoBack = () => {
         navigate("/product");
@@ -47,6 +48,12 @@ export const ProductAddView = () => {
                             type={"number"}
                             label={" قیمت "}
                         />
+                    </GS.FormControlInput>
+                </GS.FlexBoxCenter>
+
+                <GS.FlexBoxCenter>
+                    <GS.FormControlInput>
+                        <SelectOption />
                     </GS.FormControlInput>
                 </GS.FlexBoxCenter>
             </GS.SubmitForm>
