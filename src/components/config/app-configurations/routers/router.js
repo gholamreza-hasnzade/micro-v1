@@ -6,7 +6,7 @@ import { Routes, BrowserRouter, Route } from "react-router-dom";
 import { RoutesPage } from "@components/config/app-configurations/routers/route/routes";
 
 // * import components/layout
-import { MainLayout } from "@components/common/sections/layouts/main-layout/main-layout.component";
+import { MainLayout } from "@components/common/sections";
 const AppRouter = () => {
     return (
         <BrowserRouter>
