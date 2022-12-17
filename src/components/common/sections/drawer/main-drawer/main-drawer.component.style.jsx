@@ -91,9 +91,9 @@ const RowIsOpen = styled(Link)`
 const RowIcon = styled(Box)`
     display: flex;
     color: ${({ theme }) => theme.PRIMARY};
-    @media (max-width: 880px) {
+   /*  @media (max-width: 880px) {
         display: none;
-    }
+    } */
 `;
 export const MainDrawerComponentStyle = {
     Drawer,
