@@ -94,7 +94,7 @@ const RowMain = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: calc(100vh - 350px);
+    //height: calc(100vh - 350px);
 `;
 const TableContainer = styled(TableContainerMUI)``;
 const Table = styled(TableMUI)``;

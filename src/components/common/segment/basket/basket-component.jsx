@@ -6,7 +6,7 @@ import { BasketComponentStyle as S } from "@components/common/segment/basket/bas
 
 export const BasketComponent = () => {
     return (
-        <S.Basket >
+        <S.Basket>
             <S.RowBasket>
                 <S.Title>کالای1</S.Title>
                 <S.Price> قیمت کل : 2000 * 1 </S.Price>

@@ -6,9 +6,8 @@ const Basket = styled(Box)`
     position: absolute;
     right: -23px;
     top: 40px;
-
-    background: red;
-    width: 300px;
+    width: 350px;
+    max-width: 350px;
     border-radius: 6px;
     background: #6b728e;
 
