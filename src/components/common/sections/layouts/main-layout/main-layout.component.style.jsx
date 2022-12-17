@@ -24,11 +24,14 @@ const Content = styled(Box)`
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-   // height: calc(100% - 0px);
+    // height: calc(100% - 0px);
 `;
 const Main = styled.main`
     height: calc(100vh - 263px);
     margin: 25px 0;
+    @media (max-width: 360px) {
+        height: 100%;
+    }
 `;
 
 export const MainLayoutStyle = {

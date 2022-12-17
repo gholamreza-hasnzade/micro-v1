@@ -1,4 +1,4 @@
-import Logo from "@images/logo/png/Logo.png";
+import Logo from "@images/logo/svg/Logo1.svg";
 
 export const IMAGES = {
     LOGO: Logo,

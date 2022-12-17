@@ -4,7 +4,7 @@ import { Pagination as PaginationMUI } from "@mui/material";
 
 const Pagination = styled(PaginationMUI)`
     & li button {
-        color: ${({ theme }) => theme.WHITE};
+        color: ${({ theme }) => theme.WHITE} !important;
         border: 1px solid ${({ theme }) => theme.SURFACE};
     }
 `;

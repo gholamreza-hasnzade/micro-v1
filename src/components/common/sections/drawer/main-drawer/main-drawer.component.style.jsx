@@ -39,12 +39,17 @@ const RowLogo = styled(Box)`
 
     & svg {
         cursor: pointer;
+        color: ${({ theme }) => theme.PRIMARY};
     }
 `;
 const Logo = styled(Box)`
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    width: 100px;
+    img {
+        width: 100%;
+        
+    }
 `;
 
 const DraweRow = styled(Box)`
