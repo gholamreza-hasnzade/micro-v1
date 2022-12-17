@@ -2,7 +2,6 @@
 import { useEffect } from "react";
 
 export const useClickOutSide = (ref, fun) => {
-    console.log(fun);
     useEffect(() => {
         const listener = (e) => {
             if (!ref.current || ref.current.contains(e.target)) {

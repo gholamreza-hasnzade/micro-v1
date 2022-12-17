@@ -33,8 +33,9 @@ const Drawer = styled(Box)`
 
 const Logo = styled(Box)`
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     width: 100%;
+    padding: 0 19px;
 `;
 
 const DraweRow = styled(Box)`
@@ -63,6 +64,7 @@ const RowDisplay = styled(Box)`
 `;
 const Icon = styled(Box)`
     margin: 0 10px;
+    display: flex;
 `;
 const Display = styled(Box)`
     width: 100%;
@@ -76,6 +78,13 @@ const RowIsOpen = styled(Link)`
     display: flex;
     align-items: center;
 `;
+
+const RowIcon = styled(Box)`
+  padding: 0 24px;
+  display: flex;
+  color: ${({ theme }) => theme.PRIMARY};
+
+`;
 export const MainDrawerComponentStyle = {
     Drawer,
     Logo,
@@ -85,4 +94,5 @@ export const MainDrawerComponentStyle = {
     Icon,
     Display,
     RowIsOpen,
+    RowIcon,
 };
