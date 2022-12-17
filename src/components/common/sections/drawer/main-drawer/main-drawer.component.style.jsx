@@ -31,11 +31,20 @@ const Drawer = styled(Box)`
     }
 `;
 
+const RowLogo = styled(Box)`
+    display: flex;
+    justify-content: space-between;
+    padding: 0 19px;
+    align-items: center;
+
+    & svg {
+        cursor: pointer;
+    }
+`;
 const Logo = styled(Box)`
     display: flex;
     justify-content: space-between;
     width: 100%;
-    padding: 0 19px;
 `;
 
 const DraweRow = styled(Box)`
@@ -80,10 +89,11 @@ const RowIsOpen = styled(Link)`
 `;
 
 const RowIcon = styled(Box)`
-  padding: 0 24px;
-  display: flex;
-  color: ${({ theme }) => theme.PRIMARY};
-
+    display: flex;
+    color: ${({ theme }) => theme.PRIMARY};
+    @media (max-width: 880px) {
+        display: none;
+    }
 `;
 export const MainDrawerComponentStyle = {
     Drawer,
@@ -95,4 +105,5 @@ export const MainDrawerComponentStyle = {
     Display,
     RowIsOpen,
     RowIcon,
+    RowLogo,
 };

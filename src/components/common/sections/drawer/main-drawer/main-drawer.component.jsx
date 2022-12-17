@@ -26,28 +26,28 @@ export const MainDrawerComponent = () => {
     const isOpenDrawerInMobile = useAppSelector(
         drawerReduxSelector.isOpenInMobile
     );
-    console.log();
     return (
         <S.Drawer
             isopen={isOpenDrawer}
             isopendrawerinmobile={isOpenDrawerInMobile}
         >
             <GS.FlexBoxDirColumn>
-                <S.RowIsOpen to={"/"}>
-                    {isOpenDrawer && (
-                        <S.Logo>
-                            <img
-                                alt="شرکت مهندسی نرم افزاری هلو"
-                                src={IMAGES.LOGO}
-                            />
-                        </S.Logo>
-                    )}
-
-
-                </S.RowIsOpen>
-                <S.RowIcon onClick={() => dispatch(openDrawerToggle())}>
+                <S.RowLogo>
+                    <S.RowIsOpen to={"/"}>
+                        {isOpenDrawer && (
+                            <S.Logo>
+                                <img
+                                    alt="شرکت مهندسی نرم افزاری هلو"
+                                    src={IMAGES.LOGO}
+                                />
+                            </S.Logo>
+                        )}
+                    </S.RowIsOpen>
+                    <S.RowIcon onClick={() => dispatch(openDrawerToggle())}>
                         {isOpenDrawer ? <I.ArrowRight /> : <I.ArrowLeft />}
                     </S.RowIcon>
+                </S.RowLogo>
+
                 <S.DraweRow>
                     {navigation?.map((itm) => (
                         <S.NavLink to={itm.url} title={itm.title} key={itm.id}>

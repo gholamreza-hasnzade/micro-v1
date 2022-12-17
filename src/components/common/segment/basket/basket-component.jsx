@@ -4,10 +4,9 @@ import * as I from "react-feather";
 // * import style
 import { BasketComponentStyle as S } from "@components/common/segment/basket/basket-component.style";
 
-export const BasketComponent = ({ ref }) => {
-    console.log(ref);
+export const BasketComponent = () => {
     return (
-        <S.Basket ref={ref}>
+        <S.Basket >
             <S.RowBasket>
                 <S.Title>کالای1</S.Title>
                 <S.Price> قیمت کل : 2000 * 1 </S.Price>

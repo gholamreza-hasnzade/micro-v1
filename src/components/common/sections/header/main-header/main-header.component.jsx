@@ -1,6 +1,6 @@
 // * import tools
 import React, { useRef, useState } from "react";
-
+import * as I from "react-feather";
 // * import style
 import { MainHeaderComponentStyle as S } from "@components/common/sections/header/main-header/main-header.component.style";
 // * import global style
@@ -10,7 +10,15 @@ import { Basket } from "@components/common/segment";
 
 // * import hoooks
 import { useClickOutSide } from "@hooks";
+
+// * import store
+import { useAppDispatch, useAppSelector } from "@redux/base/hook-redux";
+import { drawerReduxSelector } from "@redux/slices/drawer/drawer-redux-selector";
+import { openDrawerToggle } from "@redux/slices/drawer/drawer-redux-slice";
+
 export const MainHeaderComponent = () => {
+    const isOpenDrawer = useAppSelector(drawerReduxSelector.isOpen);
+    const dispatch = useAppDispatch();
     const [isOpenBasek, setIsOpenBasek] = useState(false);
     const isOpen_basket = useRef(null);
 
@@ -21,14 +29,22 @@ export const MainHeaderComponent = () => {
         <S.Header component={"header"}>
             <GS.FlexCenterSB>
                 <S.HeaderTitle>فروشگاه آنلاین هلو</S.HeaderTitle>
-                <S.RowShoppingBag>
-                    <S.ShoppingBag
-                        onClick={() => {
-                            setIsOpenBasek((prev) => !prev);
-                        }}
-                    />
-                    <div ref={isOpen_basket}>{isOpenBasek && <Basket />}</div>
-                </S.RowShoppingBag>
+                <S.HeaderRowIcon>
+                    <S.Icon onClick={() => dispatch(openDrawerToggle())}>
+                        {isOpenDrawer ? <I.X /> : <I.AlignJustify />}
+                    </S.Icon>
+
+                    <S.RowShoppingBag>
+                        <S.ShoppingBag
+                            onClick={() => {
+                                setIsOpenBasek((prev) => !prev);
+                            }}
+                        />
+                        <div ref={isOpen_basket}>
+                            {isOpenBasek && <Basket />}
+                        </div>
+                    </S.RowShoppingBag>
+                </S.HeaderRowIcon>
             </GS.FlexCenterSB>
         </S.Header>
     );

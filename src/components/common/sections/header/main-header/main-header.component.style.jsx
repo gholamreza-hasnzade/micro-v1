@@ -21,11 +21,27 @@ const HeaderTitle = styled(Typography)`
 `;
 const ShoppingBag = styled(ShoppingBagRF)`
     cursor: pointer;
-    color: ${({ theme }) => theme.PRIMARY}; ;
+    color: ${({ theme }) => theme.PRIMARY};
+    width: 20px;
 `;
 
 const RowShoppingBag = styled(Box)`
     position: relative;
+`;
+
+const HeaderRowIcon = styled(Box)`
+    display: flex;
+    aligin-item: center;
+    gap: 10px;
+`;
+
+const Icon = styled(Box)`
+    cursor: pointer;
+    color: ${({ theme }) => theme.PRIMARY};
+    display: none;
+    @media (max-width: 880px) {
+        display: block;
+    }
 `;
 
 export const MainHeaderComponentStyle = {
@@ -33,4 +49,6 @@ export const MainHeaderComponentStyle = {
     HeaderTitle,
     ShoppingBag,
     RowShoppingBag,
+    HeaderRowIcon,
+    Icon,
 };
