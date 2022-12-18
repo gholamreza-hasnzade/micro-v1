@@ -1,5 +1,6 @@
 //* import tools
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 // * import style
 import { HomeViewStyle as S } from "@components/views/home-view/home-view.style";
@@ -8,29 +9,33 @@ import { GlobalStyle as GS } from "@global/emotion/global-style";
 // * import components
 import { Caption, Pagination } from "@components/common/partials";
 export const HomeView = () => {
+    const { t } = useTranslation();
     return (
         <S.Home>
             <GS.FlexBoxDirColumn>
-                <Caption>لیست سبد خرید</Caption>
+                <Caption> {t("shopping cart list")} </Caption>
                 <GS.RowMain>
                     <GS.TableContainer>
                         <GS.Table>
                             <GS.TableHead>
                                 <GS.TableRow>
-                                    <GS.TableCell>نام کاربر</GS.TableCell>
-                                    <GS.TableCell align="left">
-                                        نام خانوادگی
+                                    <GS.TableCell>
+                                        {" "}
+                                        {t("name user")}{" "}
                                     </GS.TableCell>
                                     <GS.TableCell align="left">
-                                        شماره موبایل{" "}
+                                        {t("family name user")}
+                                    </GS.TableCell>
+                                    <GS.TableCell align="left">
+                                        {t("mobile number")}{" "}
                                     </GS.TableCell>
                                     <GS.TableCell align="left">
                                         {" "}
-                                        ایمیل{" "}
+                                        {t("email")}{" "}
                                     </GS.TableCell>
                                     <GS.TableCell align="left">
                                         {" "}
-                                        آدرس{" "}
+                                        {t("addres")}{" "}
                                     </GS.TableCell>
                                 </GS.TableRow>
                             </GS.TableHead>
