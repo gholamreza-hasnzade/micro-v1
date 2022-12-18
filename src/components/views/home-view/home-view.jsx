@@ -21,10 +21,10 @@ export const HomeView = () => {
                                 <GS.TableRow>
                                     <GS.TableCell>
                                         {" "}
-                                        {t("name user")}{" "}
+                                        {t("name client")}{" "}
                                     </GS.TableCell>
                                     <GS.TableCell align="left">
-                                        {t("family name user")}
+                                        {t("family name client")}
                                     </GS.TableCell>
                                     <GS.TableCell align="left">
                                         {t("mobile number")}{" "}

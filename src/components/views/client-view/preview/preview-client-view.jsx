@@ -23,7 +23,7 @@ export const PreviewClienView = () => {
                     <GS.PreviewList>
                         <GS.PreviewListItem>
                             <GS.PreviewListItemCaption>
-                                {t("name user")} :
+                                {t("name client")} :
                             </GS.PreviewListItemCaption>
                             <GS.PreviewListTitle>
                                 نرم افزار هلو
@@ -32,7 +32,7 @@ export const PreviewClienView = () => {
 
                         <GS.PreviewListItem>
                             <GS.PreviewListItemCaption>
-                                {t("family name user")} :
+                                {t("family name client")} :
                             </GS.PreviewListItemCaption>
                             <GS.PreviewListTitle>
                                 نرم افزار هلو

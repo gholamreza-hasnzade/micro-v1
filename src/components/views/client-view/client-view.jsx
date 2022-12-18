@@ -20,7 +20,7 @@ export const ClientView = () => {
                 <GS.FlexCenterEnd>
                     <Tooltip title={"کاربر جدید"}>
                         <LinkButton href={"/client/add"}>
-                            {t("add user")}{" "}
+                            {t("client user")}{" "}
                         </LinkButton>
                     </Tooltip>
                 </GS.FlexCenterEnd>
@@ -30,10 +30,10 @@ export const ClientView = () => {
                             <GS.TableHead>
                                 <GS.TableRow>
                                     <GS.TableCell>
-                                        {t("name user")}
+                                        {t("name client")}
                                     </GS.TableCell>
                                     <GS.TableCell align="left">
-                                        {t("family name user")}
+                                        {t("family name client")}
                                     </GS.TableCell>
                                     <GS.TableCell align="left">
                                         {t("mobile number")}{" "}

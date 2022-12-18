@@ -27,13 +27,13 @@ export const ClientAddView = () => {
                     <GS.FormControlInput>
                         <TextFildOutlinedInput
                             type={"text"}
-                            label={t("name user")}
+                            label={t("name client")}
                         />
                     </GS.FormControlInput>
                     <GS.FormControlInput>
                         <TextFildOutlinedInput
                             type={"text"}
-                            label={t("family name user")}
+                            label={t("family name client")}
                         />
                     </GS.FormControlInput>
                 </GS.FlexBoxCenter>
