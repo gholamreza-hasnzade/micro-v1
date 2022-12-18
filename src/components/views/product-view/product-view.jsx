@@ -7,11 +7,13 @@ import { GlobalStyle as GS } from "@global/emotion/global-style";
 
 // * import components
 import { LinkButton, Pagination } from "@components/common/partials";
+import { DeleteModal } from "@components/common/segment";
 
 export const ProductView = () => {
     return (
         <S.Product>
             <GS.FlexBoxDirColumn>
+                <DeleteModal />
                 <GS.FlexCenterEnd>
                     <LinkButton href={"/product/add"}>محصول جدید</LinkButton>
                 </GS.FlexCenterEnd>
