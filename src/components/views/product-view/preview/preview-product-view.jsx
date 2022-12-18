@@ -4,14 +4,16 @@ import React from "react";
 // * import style
 import { GlobalStyle as GS } from "@global/emotion/global-style";
 import { ProductViewStyle as S } from "@components/views/product-view/product-view.style";
-import { LinkButton } from "@components/common/partials/index";
+import { LinkButton, Tooltip } from "@components/common/partials/index";
 
 export const PreviewProductView = () => {
     return (
         <S.Product>
             <GS.FlexBoxDirColumn>
                 <GS.FlexCenterEnd>
-                    <LinkButton href={"/product"}>برگشت </LinkButton>
+                    <Tooltip title="برگشت">
+                        <LinkButton href={"/product"}>برگشت </LinkButton>
+                    </Tooltip>
                 </GS.FlexCenterEnd>
                 <GS.RowPreview>
                     <GS.PreviewList>

@@ -6,16 +6,20 @@ import { ProductViewStyle as S } from "@components/views/product-view/product-vi
 import { GlobalStyle as GS } from "@global/emotion/global-style";
 
 // * import components
-import { LinkButton, Pagination } from "@components/common/partials";
+import { LinkButton, Pagination, Tooltip } from "@components/common/partials";
 //import { DeleteModal } from "@components/common/segment";
 
 export const ProductView = () => {
     return (
         <S.Product>
             <GS.FlexBoxDirColumn>
-               {/*  <DeleteModal /> */}
+                {/*  <DeleteModal /> */}
                 <GS.FlexCenterEnd>
-                    <LinkButton href={"/product/add"}>محصول جدید</LinkButton>
+                    <Tooltip title="محصول جدید">
+                        <LinkButton href={"/product/add"}>
+                            محصول جدید
+                        </LinkButton>
+                    </Tooltip>
                 </GS.FlexCenterEnd>
                 <GS.RowMain>
                     <GS.TableContainer>
@@ -48,17 +52,25 @@ export const ProductView = () => {
 
                                     <GS.TableCellBody>
                                         <GS.TableCellAction>
-                                            <GS.TableCellLink
-                                                to={"/product/preview/1"}
-                                            >
-                                                <I.Eye />
-                                            </GS.TableCellLink>
-                                            <GS.TableCellEdit>
-                                                <I.Edit />
-                                            </GS.TableCellEdit>
-                                            <GS.TableCellEdit>
-                                                <I.Trash />
-                                            </GS.TableCellEdit>
+                                            <Tooltip title="جزییات">
+                                                <GS.TableCellLink
+                                                    to={"/product/preview/1"}
+                                                >
+                                                    <I.Eye />
+                                                </GS.TableCellLink>
+                                            </Tooltip>
+
+                                            <Tooltip title="ویرایش">
+                                                <GS.TableCellEdit>
+                                                    <I.Edit />
+                                                </GS.TableCellEdit>
+                                            </Tooltip>
+
+                                            <Tooltip title="حذف">
+                                                <GS.TableCellEdit>
+                                                    <I.Trash />
+                                                </GS.TableCellEdit>
+                                            </Tooltip>
                                         </GS.TableCellAction>
                                     </GS.TableCellBody>
                                 </GS.TableRowBody>

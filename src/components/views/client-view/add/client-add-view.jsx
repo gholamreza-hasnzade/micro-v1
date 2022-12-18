@@ -7,7 +7,8 @@ import { GlobalStyle as GS } from "@global/emotion/global-style";
 import {
     SubmitButton,
     OutlineButton,
-    TextFildOutlinedInput
+    TextFildOutlinedInput,
+    Tooltip,
 } from "@components/common/partials";
 
 export const ClientAddView = () => {
@@ -60,8 +61,12 @@ export const ClientAddView = () => {
                 </GS.FlexBoxCenter>
             </GS.SubmitForm>
             <GS.ActionForm>
-                <SubmitButton>ثبت  </SubmitButton>
-                <OutlineButton onClick={handlerGoBack}>لغو</OutlineButton>
+                <Tooltip title="ثبت">
+                    <SubmitButton>ثبت </SubmitButton>
+                </Tooltip>
+                <Tooltip title="لغو" placement="bottom">
+                    <OutlineButton onClick={handlerGoBack}>لغو</OutlineButton>
+                </Tooltip>
             </GS.ActionForm>
         </GS.FlexGap10>
     );

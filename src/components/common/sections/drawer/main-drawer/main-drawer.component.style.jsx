@@ -70,7 +70,7 @@ const NavLink = styled(NavLinkRRD)`
 const RowDisplay = styled(Box)`
     display: flex;
     align-items: center;
-    height: 100%;
+    height: 50px;
     background: ${({ active, theme }) => (active ? `${theme.PRIMARY}` : "")};
     color: ${({ active, theme }) =>
         active ? `${theme.WHITE}` : `${theme.PRIMARY}`};

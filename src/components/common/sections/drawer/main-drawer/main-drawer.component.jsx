@@ -19,6 +19,7 @@ import { IMAGES } from "@constants/content";
 
 // * import navigation
 import navigation from "@components/config/app-configurations/routers/navigation";
+import { Tooltip } from "@components/common/partials";
 
 export const MainDrawerComponent = () => {
     const dispatch = useAppDispatch();
@@ -50,16 +51,18 @@ export const MainDrawerComponent = () => {
 
                 <S.DraweRow>
                     {navigation?.map((itm) => (
-                        <S.NavLink to={itm.url} title={itm.title} key={itm.id}>
+                        <S.NavLink to={itm.url} key={itm.id}>
                             {({ isActive }) => (
-                                <S.RowDisplay
-                                    active={isActive ? "active" : undefined}
-                                >
-                                    <S.Icon>{itm.icon}</S.Icon>
-                                    {isOpenDrawer ? (
-                                        <S.Display> {itm.title} </S.Display>
-                                    ) : null}
-                                </S.RowDisplay>
+                                <Tooltip title={itm.title}>
+                                    <S.RowDisplay
+                                        active={isActive ? "active" : undefined}
+                                    >
+                                        <S.Icon>{itm.icon}</S.Icon>
+                                        {isOpenDrawer ? (
+                                            <S.Display> {itm.title} </S.Display>
+                                        ) : null}
+                                    </S.RowDisplay>
+                                </Tooltip>
                             )}
                         </S.NavLink>
                     ))}

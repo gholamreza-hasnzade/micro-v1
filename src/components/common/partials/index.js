@@ -7,4 +7,4 @@ export { CaptionComponent as Caption } from "@components/common/partials/caption
 export { TextFildOutlinedInputComponent as TextFildOutlinedInput } from "@components/common/partials/inputs/textFild-outlined-input/textFild-outlined-input.component";
 export { MainOverlayComponent as MainOverlay } from "@components/common/partials/overlays/main-overlay/overlay-main-component";
 export { PaginationComponent as Pagination } from "@components/common/partials/pagination/pagination-component";
-export { TooltipComponent as Tooltip } from "@components/common/partials/tooltips/tooltip/tooltip-component";
+export { TooltipComponent as Tooltip } from "@components/common/partials/tooltip/tooltip-component";

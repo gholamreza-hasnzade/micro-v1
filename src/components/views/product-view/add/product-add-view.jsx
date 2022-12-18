@@ -9,7 +9,8 @@ import {
     SubmitButton,
     OutlineButton,
     TextFildOutlinedInput,
-    SelectOption
+    SelectOption,
+    Tooltip,
 } from "@components/common/partials";
 
 export const ProductAddView = () => {
@@ -58,8 +59,12 @@ export const ProductAddView = () => {
                 </GS.FlexBoxCenter>
             </GS.SubmitForm>
             <GS.ActionForm>
-                <SubmitButton>ثبت </SubmitButton>
-                <OutlineButton onClick={handlerGoBack}>لغو</OutlineButton>
+                <Tooltip title="ثبت">
+                    <SubmitButton>ثبت </SubmitButton>
+                </Tooltip>
+                <Tooltip title="لغو" placement="bottom">
+                    <OutlineButton onClick={handlerGoBack}>لغو</OutlineButton>
+                </Tooltip>
             </GS.ActionForm>
         </GS.FlexGap10>
     );

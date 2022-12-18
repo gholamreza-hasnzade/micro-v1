@@ -2,7 +2,7 @@
 import React from "react";
 import * as I from "react-feather";
 // * import components
-import { LinkButton } from "@components/common/partials";
+import { LinkButton, Tooltip } from "@components/common/partials";
 
 // * import style
 import { ClientViewStyle as S } from "@components/views/client-view/client-view.style";
@@ -15,7 +15,9 @@ export const ClientView = () => {
         <S.Client>
             <GS.FlexBoxDirColumn>
                 <GS.FlexCenterEnd>
-                    <LinkButton href={"/client/add"}>کاربر جدید</LinkButton>
+                    <Tooltip title={"کاربر جدید"}>
+                        <LinkButton href={"/client/add"}>کاربر جدید</LinkButton>
+                    </Tooltip>
                 </GS.FlexCenterEnd>
                 <GS.RowMain>
                     <GS.TableContainer>
@@ -60,22 +62,27 @@ export const ClientView = () => {
 
                                     <GS.TableCellBody>
                                         <GS.TableCellAction>
-                                            <GS.TableCellLink
-                                                to={"/client/preview/1"}
-                                            >
-                                                <I.Eye />
-                                            </GS.TableCellLink>
-                                            <GS.TableCellEdit>
-                                                <I.Edit />
-                                            </GS.TableCellEdit>
-                                            <GS.TableCellEdit>
-                                                <I.Trash />
-                                            </GS.TableCellEdit>
+                                            <Tooltip title="جزییات">
+                                                <GS.TableCellLink
+                                                    to={"/client/preview/1"}
+                                                >
+                                                    <I.Eye />
+                                                </GS.TableCellLink>
+                                            </Tooltip>
+                                            <Tooltip title="ویرایش">
+                                                <GS.TableCellEdit>
+                                                    <I.Edit />
+                                                </GS.TableCellEdit>
+                                            </Tooltip>
+
+                                            <Tooltip title="حذف">
+                                                <GS.TableCellEdit>
+                                                    <I.Trash />
+                                                </GS.TableCellEdit>
+                                            </Tooltip>
                                         </GS.TableCellAction>
                                     </GS.TableCellBody>
                                 </GS.TableRowBody>
-
-                          
                             </GS.TableBody>
                         </GS.Table>
                     </GS.TableContainer>

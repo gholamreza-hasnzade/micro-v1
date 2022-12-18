@@ -5,15 +5,18 @@ import React from "react";
 import { ClientViewStyle as S } from "@components/views/client-view/client-view.style";
 import { GlobalStyle as GS } from "@global/emotion/global-style";
 // * import components
-import { LinkButton } from "@components/common/partials";
+import { LinkButton, Tooltip } from "@components/common/partials";
 
 export const PreviewClienView = () => {
     return (
         <S.Client>
             <GS.FlexBoxDirColumn>
                 <GS.FlexCenterEnd>
-                    <LinkButton href={"/client"}>برگشت </LinkButton>
+                    <Tooltip title="برگشت">
+                        <LinkButton href={"/client"}>برگشت </LinkButton>
+                    </Tooltip>
                 </GS.FlexCenterEnd>
+
                 <GS.RowPreview>
                     <GS.PreviewList>
                         <GS.PreviewListItem>
