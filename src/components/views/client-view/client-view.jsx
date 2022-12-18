@@ -1,6 +1,6 @@
 // * import tools
 import React from "react";
-
+import * as I from "react-feather";
 // * import components
 import { LinkButton } from "@components/common/partials";
 
@@ -37,6 +37,9 @@ export const ClientView = () => {
                                         {" "}
                                         آدرس{" "}
                                     </GS.TableCell>
+                                    <GS.TableCell align="left">
+                                        عملیات
+                                    </GS.TableCell>
                                 </GS.TableRow>
                             </GS.TableHead>
                             <GS.TableBody>
@@ -54,87 +57,25 @@ export const ClientView = () => {
                                         index@gmail.com
                                     </GS.TableCellBody>
                                     <GS.TableCellBody> تهرون</GS.TableCellBody>
+
+                                    <GS.TableCellBody>
+                                        <GS.TableCellAction>
+                                            <GS.TableCellLink
+                                                to={"/client/preview/1"}
+                                            >
+                                                <I.Eye />
+                                            </GS.TableCellLink>
+                                            <GS.TableCellEdit>
+                                                <I.Edit />
+                                            </GS.TableCellEdit>
+                                            <GS.TableCellEdit>
+                                                <I.Trash />
+                                            </GS.TableCellEdit>
+                                        </GS.TableCellAction>
+                                    </GS.TableCellBody>
                                 </GS.TableRowBody>
 
-                                <GS.TableRowBody>
-                                    <GS.TableCellBody>غلامرضا</GS.TableCellBody>
-                                    <GS.TableCellBody>
-                                        حسن زاده
-                                    </GS.TableCellBody>
-                                    <GS.TableCellBody>
-                                        {" "}
-                                        09369780985
-                                    </GS.TableCellBody>
-                                    <GS.TableCellBody>
-                                        {" "}
-                                        index@gmail.com
-                                    </GS.TableCellBody>
-                                    <GS.TableCellBody> تهرون</GS.TableCellBody>
-                                </GS.TableRowBody>
-
-                                <GS.TableRowBody>
-                                    <GS.TableCellBody>غلامرضا</GS.TableCellBody>
-                                    <GS.TableCellBody>
-                                        حسن زاده
-                                    </GS.TableCellBody>
-                                    <GS.TableCellBody>
-                                        {" "}
-                                        09369780985
-                                    </GS.TableCellBody>
-                                    <GS.TableCellBody>
-                                        {" "}
-                                        index@gmail.com
-                                    </GS.TableCellBody>
-                                    <GS.TableCellBody> تهرون</GS.TableCellBody>
-                                </GS.TableRowBody>
-
-                                <GS.TableRowBody>
-                                    <GS.TableCellBody>غلامرضا</GS.TableCellBody>
-                                    <GS.TableCellBody>
-                                        حسن زاده
-                                    </GS.TableCellBody>
-                                    <GS.TableCellBody>
-                                        {" "}
-                                        09369780985
-                                    </GS.TableCellBody>
-                                    <GS.TableCellBody>
-                                        {" "}
-                                        index@gmail.com
-                                    </GS.TableCellBody>
-                                    <GS.TableCellBody> تهرون</GS.TableCellBody>
-                                </GS.TableRowBody>
-
-                                <GS.TableRowBody>
-                                    <GS.TableCellBody>غلامرضا</GS.TableCellBody>
-                                    <GS.TableCellBody>
-                                        حسن زاده
-                                    </GS.TableCellBody>
-                                    <GS.TableCellBody>
-                                        {" "}
-                                        09369780985
-                                    </GS.TableCellBody>
-                                    <GS.TableCellBody>
-                                        {" "}
-                                        index@gmail.com
-                                    </GS.TableCellBody>
-                                    <GS.TableCellBody> تهرون</GS.TableCellBody>
-                                </GS.TableRowBody>
-
-                                <GS.TableRowBody>
-                                    <GS.TableCellBody>غلامرضا</GS.TableCellBody>
-                                    <GS.TableCellBody>
-                                        حسن زاده
-                                    </GS.TableCellBody>
-                                    <GS.TableCellBody>
-                                        {" "}
-                                        09369780985
-                                    </GS.TableCellBody>
-                                    <GS.TableCellBody>
-                                        {" "}
-                                        index@gmail.com
-                                    </GS.TableCellBody>
-                                    <GS.TableCellBody> تهرون</GS.TableCellBody>
-                                </GS.TableRowBody>
+                          
                             </GS.TableBody>
                         </GS.Table>
                     </GS.TableContainer>

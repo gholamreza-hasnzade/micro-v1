@@ -10,6 +10,7 @@ import {
     TableBody as TableBodyMUI,
     Typography as TypographyMUI,
 } from "@mui/material";
+import { Link as LinkRRD } from "react-router-dom";
 
 const FlexCenterSB = styled(Box)`
     width: 100%;
@@ -118,6 +119,49 @@ const TableCellBody = styled(TableCellMUI)`
     color: #b4b7bd !important;
     border-bottom: 1px solid #6b728e !important;
 `;
+const TableCellAction = styled(Box)`
+    display: flex;
+    align-item: center;
+    gap: 15px;
+`;
+const TableCellLink = styled(LinkRRD)`
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    svg {
+        color: #b4b7bd;
+        width: 18px;
+        transition: 0.3s;
+
+    }
+
+    &:hover svg {
+        color: ${({ theme }) => theme.PRIMARY};
+    }
+`;
+const TableCellEdit = styled(Box)`
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    svg {
+        color: #b4b7bd;
+        width: 18px;
+        transition: 0.3s;
+
+    }
+    &:hover svg {
+        color: ${({ theme }) => theme.PRIMARY};
+    }
+`;
+
 /* table style */
 
 /* preview style */
@@ -161,6 +205,9 @@ export const GlobalStyle = {
     TableRowBody,
     TableBody,
     TableCellBody,
+    TableCellAction,
+    TableCellLink,
+    TableCellEdit,
 
     RowPreview,
     PreviewList,
