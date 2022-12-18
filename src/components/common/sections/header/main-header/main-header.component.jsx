@@ -1,6 +1,8 @@
 // * import tools
 import React, { useRef, useState } from "react";
 import * as I from "react-feather";
+import { useTranslation } from "react-i18next";
+
 // * import style
 import { MainHeaderComponentStyle as S } from "@components/common/sections/header/main-header/main-header.component.style";
 // * import global style
@@ -22,6 +24,7 @@ export const MainHeaderComponent = () => {
     const dispatch = useAppDispatch();
     const [isOpenBasek, setIsOpenBasek] = useState(false);
     const isOpen_basket = useRef(null);
+    const { t } = useTranslation();
 
     useClickOutSide(isOpen_basket, () => {
         setIsOpenBasek(false);
@@ -29,14 +32,14 @@ export const MainHeaderComponent = () => {
     return (
         <S.Header component={"header"}>
             <GS.FlexCenterSB>
-                <S.HeaderTitle>فروشگاه آنلاین هلو</S.HeaderTitle>
+                <S.HeaderTitle> {t("online shoping holoo")} </S.HeaderTitle>
                 <S.HeaderRowIcon>
                     <S.Icon onClick={() => dispatch(openDrawerToggle())}>
                         {isOpenDrawer ? <I.X /> : <I.AlignJustify />}
                     </S.Icon>
 
                     <S.RowShoppingBag>
-                        <Tooltip title="سبد خرید">
+                        <Tooltip title={t("basket buy")}>
                             <S.ShoppingBag
                                 onClick={() => {
                                     setIsOpenBasek((prev) => !prev);

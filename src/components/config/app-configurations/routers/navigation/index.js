@@ -5,14 +5,14 @@ import { User, CreditCard } from "react-feather";
 export default [
     {
         id: "client",
-        title: "کاربر",
+        title: "client",
         url: "/client",
         icon: <User />,
         children: [],
     },
     {
         id: "product",
-        title: "محصول",
+        title: "product",
         url: "/product",
         icon: <CreditCard />,
         children: [],

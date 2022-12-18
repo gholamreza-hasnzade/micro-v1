@@ -1,5 +1,7 @@
 // * import tools
 import React from "react";
+import { useTranslation } from "react-i18next";
+
 // * import Icons
 import * as I from "react-feather";
 
@@ -22,6 +24,7 @@ import navigation from "@components/config/app-configurations/routers/navigation
 import { Tooltip } from "@components/common/partials";
 
 export const MainDrawerComponent = () => {
+    const { t } = useTranslation();
     const dispatch = useAppDispatch();
     const isOpenDrawer = useAppSelector(drawerReduxSelector.isOpen);
     const isOpenDrawerInMobile = useAppSelector(
@@ -38,7 +41,7 @@ export const MainDrawerComponent = () => {
                         {(isOpenDrawer || isOpenDrawerInMobile) && (
                             <S.Logo>
                                 <img
-                                    alt="شرکت مهندسی نرم افزاری هلو"
+                                    alt={t("compony software holoo")}
                                     src={IMAGES.LOGO}
                                 />
                             </S.Logo>
@@ -53,13 +56,16 @@ export const MainDrawerComponent = () => {
                     {navigation?.map((itm) => (
                         <S.NavLink to={itm.url} key={itm.id}>
                             {({ isActive }) => (
-                                <Tooltip title={itm.title}>
+                                <Tooltip title={t(itm.title)}>
                                     <S.RowDisplay
                                         active={isActive ? "active" : undefined}
                                     >
                                         <S.Icon>{itm.icon}</S.Icon>
                                         {isOpenDrawer ? (
-                                            <S.Display> {itm.title} </S.Display>
+                                            <S.Display>
+                                                {" "}
+                                                {t(itm.title)}{" "}
+                                            </S.Display>
                                         ) : null}
                                     </S.RowDisplay>
                                 </Tooltip>
