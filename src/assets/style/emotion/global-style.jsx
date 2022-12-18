@@ -8,6 +8,7 @@ import {
     TableRow as TableRowMUI,
     TableCell as TableCellMUI,
     TableBody as TableBodyMUI,
+    Typography as TypographyMUI,
 } from "@mui/material";
 
 const FlexCenterSB = styled(Box)`
@@ -119,6 +120,27 @@ const TableCellBody = styled(TableCellMUI)`
 `;
 /* table style */
 
+/* preview style */
+const RowPreview = styled(RowMain)`
+    padding: 25px;
+    border-top: 3px solid ${({ theme }) => theme.PRIMARY};
+`;
+const PreviewList = styled.ul``;
+const PreviewListItem = styled.li`
+    display: flex;
+    align-item: center;
+    margin-top: 10px;
+`;
+const PreviewListItemCaption = styled(TypographyMUI)`
+    color: ${({ theme }) => theme.PRIMARY};
+    font-size: 16px;
+    font-weight: 700;
+    padding-right: 5px;
+`;
+const PreviewListTitle = styled(TypographyMUI)`
+    color: ${({ theme }) => theme.WHITE};
+`;
+
 export const GlobalStyle = {
     FlexCenterSB,
     FlexBoxDirColumn,
@@ -139,4 +161,10 @@ export const GlobalStyle = {
     TableRowBody,
     TableBody,
     TableCellBody,
+
+    RowPreview,
+    PreviewList,
+    PreviewListItem,
+    PreviewListItemCaption,
+    PreviewListTitle,
 };
