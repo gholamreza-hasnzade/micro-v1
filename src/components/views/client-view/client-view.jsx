@@ -18,7 +18,7 @@ export const ClientView = () => {
         <S.Client>
             <GS.FlexBoxDirColumn>
                 <GS.FlexCenterEnd>
-                    <Tooltip title={"کاربر جدید"}>
+                    <Tooltip title={t("client user")}>
                         <LinkButton href={"/client/add"}>
                             {t("client user")}{" "}
                         </LinkButton>
