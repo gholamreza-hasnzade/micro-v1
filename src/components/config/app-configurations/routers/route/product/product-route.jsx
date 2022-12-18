@@ -13,7 +13,7 @@ const ProductRoute = [
         exact: true,
     },
     {
-        path: "product/preview/:id",
+        path: "/product/preview/:id",
         element: <PreviewProductView />,
         exact: true,
     },

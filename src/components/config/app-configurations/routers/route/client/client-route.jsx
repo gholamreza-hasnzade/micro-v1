@@ -1,4 +1,4 @@
-import { ClientView, ClientAddView } from "@components/views";
+import { ClientView, ClientAddView, PreviewClienView } from "@components/views";
 
 
 
@@ -11,6 +11,11 @@ const ClientRoute = [
     {
         path: "/client/add",
         element: <ClientAddView />,
+        exact: true,
+    },
+    {
+        path: "/client/preview/:id",
+        element: <PreviewClienView />,
         exact: true,
     },
 ];
