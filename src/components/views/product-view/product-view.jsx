@@ -1,6 +1,8 @@
 // * import tools
 import React from "react";
 import * as I from "react-feather";
+import { useTranslation } from "react-i18next";
+
 // * import style
 import { ProductViewStyle as S } from "@components/views/product-view/product-view.style";
 import { GlobalStyle as GS } from "@global/emotion/global-style";
@@ -10,14 +12,15 @@ import { LinkButton, Pagination, Tooltip } from "@components/common/partials";
 //import { DeleteModal } from "@components/common/segment";
 
 export const ProductView = () => {
+    const { t } = useTranslation();
     return (
         <S.Product>
             <GS.FlexBoxDirColumn>
                 {/*  <DeleteModal /> */}
                 <GS.FlexCenterEnd>
-                    <Tooltip title="محصول جدید">
+                    <Tooltip title={t("add product")}>
                         <LinkButton href={"/product/add"}>
-                            محصول جدید
+                            {t("add product")}
                         </LinkButton>
                     </Tooltip>
                 </GS.FlexCenterEnd>
@@ -26,18 +29,20 @@ export const ProductView = () => {
                         <GS.Table>
                             <GS.TableHead>
                                 <GS.TableRow>
-                                    <GS.TableCell>نام محصول</GS.TableCell>
-                                    <GS.TableCell align="left">
-                                        کد محصول
+                                    <GS.TableCell>
+                                        {t("name product")}
                                     </GS.TableCell>
                                     <GS.TableCell align="left">
-                                        تعداد
+                                        {t("code product")}
                                     </GS.TableCell>
                                     <GS.TableCell align="left">
-                                        قیمت
+                                        {t("quntity")}
                                     </GS.TableCell>
                                     <GS.TableCell align="left">
-                                        عملیات
+                                        {t("price")}
+                                    </GS.TableCell>
+                                    <GS.TableCell align="left">
+                                        {t("operation")}
                                     </GS.TableCell>
                                 </GS.TableRow>
                             </GS.TableHead>
@@ -52,7 +57,7 @@ export const ProductView = () => {
 
                                     <GS.TableCellBody>
                                         <GS.TableCellAction>
-                                            <Tooltip title="جزییات">
+                                            <Tooltip title={t("details")}>
                                                 <GS.TableCellLink
                                                     to={"/product/preview/1"}
                                                 >
@@ -60,13 +65,13 @@ export const ProductView = () => {
                                                 </GS.TableCellLink>
                                             </Tooltip>
 
-                                            <Tooltip title="ویرایش">
+                                            <Tooltip title={t("edit")}>
                                                 <GS.TableCellEdit>
                                                     <I.Edit />
                                                 </GS.TableCellEdit>
                                             </Tooltip>
 
-                                            <Tooltip title="حذف">
+                                            <Tooltip title={t("حذف")}>
                                                 <GS.TableCellEdit>
                                                     <I.Trash />
                                                 </GS.TableCellEdit>

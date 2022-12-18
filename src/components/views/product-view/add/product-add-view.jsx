@@ -1,6 +1,7 @@
 // * import tools
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 // * import style
 import { GlobalStyle as GS } from "@global/emotion/global-style";
@@ -14,6 +15,7 @@ import {
 } from "@components/common/partials";
 
 export const ProductAddView = () => {
+    const { t } = useTranslation();
     const navigate = useNavigate();
 
     const handlerGoBack = () => {
@@ -26,13 +28,13 @@ export const ProductAddView = () => {
                     <GS.FormControlInput>
                         <TextFildOutlinedInput
                             type={"text"}
-                            label={"نام محصول"}
+                            label={t("name product")}
                         />
                     </GS.FormControlInput>
                     <GS.FormControlInput>
                         <TextFildOutlinedInput
                             type={"text"}
-                            label={"کد محصول"}
+                            label={t("code product")}
                         />
                     </GS.FormControlInput>
                 </GS.FlexBoxCenter>
@@ -41,13 +43,13 @@ export const ProductAddView = () => {
                     <GS.FormControlInput>
                         <TextFildOutlinedInput
                             type={"number"}
-                            label={" تعداد "}
+                            label={t("operation")}
                         />
                     </GS.FormControlInput>
                     <GS.FormControlInput>
                         <TextFildOutlinedInput
                             type={"number"}
-                            label={" قیمت "}
+                            label={t("price")}
                         />
                     </GS.FormControlInput>
                 </GS.FlexBoxCenter>
@@ -59,11 +61,13 @@ export const ProductAddView = () => {
                 </GS.FlexBoxCenter>
             </GS.SubmitForm>
             <GS.ActionForm>
-                <Tooltip title="ثبت">
-                    <SubmitButton>ثبت </SubmitButton>
+                <Tooltip title={t("save")}>
+                    <SubmitButton>{t("save")} </SubmitButton>
                 </Tooltip>
-                <Tooltip title="لغو" placement="bottom">
-                    <OutlineButton onClick={handlerGoBack}>لغو</OutlineButton>
+                <Tooltip title={t("cansel")} placement="bottom">
+                    <OutlineButton onClick={handlerGoBack}>
+                        {t("cansel")}
+                    </OutlineButton>
                 </Tooltip>
             </GS.ActionForm>
         </GS.FlexGap10>

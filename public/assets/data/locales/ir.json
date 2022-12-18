@@ -1,3 +1,14 @@
 {
-    "React" : "سلام بر ریکت"
+    "Welcome to React": "خوش آمدید به ریکت",
+    "add product" : "محصول جدید",
+    "name product" : "نام محصول",
+    "code product" : "کد محصول",
+    "quntity": "تعداد",
+    "price": "قیمت",
+    "operation": "عملیان",
+    "edit": "ویرایش",
+    "delete":"حذف",
+    "details":"جزییات",
+    "save": "ذخیره",
+    "cansel" : "انصراف"
 }
