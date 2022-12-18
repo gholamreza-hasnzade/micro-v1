@@ -1,5 +1,6 @@
 // * import tools
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 // * imprort style
 import { ClientViewStyle as S } from "@components/views/client-view/client-view.style";
@@ -8,12 +9,13 @@ import { GlobalStyle as GS } from "@global/emotion/global-style";
 import { LinkButton, Tooltip } from "@components/common/partials";
 
 export const PreviewClienView = () => {
+    const { t } = useTranslation();
     return (
         <S.Client>
             <GS.FlexBoxDirColumn>
                 <GS.FlexCenterEnd>
-                    <Tooltip title="برگشت">
-                        <LinkButton href={"/client"}>برگشت </LinkButton>
+                    <Tooltip title={t("return")}>
+                        <LinkButton href={"/client"}>{t("return")} </LinkButton>
                     </Tooltip>
                 </GS.FlexCenterEnd>
 
@@ -21,7 +23,7 @@ export const PreviewClienView = () => {
                     <GS.PreviewList>
                         <GS.PreviewListItem>
                             <GS.PreviewListItemCaption>
-                                نام کاربر :
+                                {t("name user")} :
                             </GS.PreviewListItemCaption>
                             <GS.PreviewListTitle>
                                 نرم افزار هلو
@@ -30,7 +32,7 @@ export const PreviewClienView = () => {
 
                         <GS.PreviewListItem>
                             <GS.PreviewListItemCaption>
-                                نام خانوادگی کاربر :
+                                {t("family name user")} :
                             </GS.PreviewListItemCaption>
                             <GS.PreviewListTitle>
                                 نرم افزار هلو
@@ -39,21 +41,21 @@ export const PreviewClienView = () => {
 
                         <GS.PreviewListItem>
                             <GS.PreviewListItemCaption>
-                                شماره موبایل :
+                                {t("mobile number")} :
                             </GS.PreviewListItemCaption>
                             <GS.PreviewListTitle>4</GS.PreviewListTitle>
                         </GS.PreviewListItem>
 
                         <GS.PreviewListItem>
                             <GS.PreviewListItemCaption>
-                                ایمیل :
+                                {t("email")} :
                             </GS.PreviewListItemCaption>
                             <GS.PreviewListTitle>5000</GS.PreviewListTitle>
                         </GS.PreviewListItem>
 
                         <GS.PreviewListItem>
                             <GS.PreviewListItemCaption>
-                                آدرس :
+                                {t("addres")} :
                             </GS.PreviewListItemCaption>
                             <GS.PreviewListTitle>5000</GS.PreviewListTitle>
                         </GS.PreviewListItem>

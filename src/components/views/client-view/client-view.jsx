@@ -1,6 +1,8 @@
 // * import tools
 import React from "react";
 import * as I from "react-feather";
+import { useTranslation } from "react-i18next";
+
 // * import components
 import { LinkButton, Tooltip } from "@components/common/partials";
 
@@ -11,12 +13,15 @@ import { GlobalStyle as GS } from "@global/emotion/global-style";
 import { Pagination } from "@components/common/partials";
 
 export const ClientView = () => {
+    const { t } = useTranslation();
     return (
         <S.Client>
             <GS.FlexBoxDirColumn>
                 <GS.FlexCenterEnd>
                     <Tooltip title={"کاربر جدید"}>
-                        <LinkButton href={"/client/add"}>کاربر جدید</LinkButton>
+                        <LinkButton href={"/client/add"}>
+                            {t("add user")}{" "}
+                        </LinkButton>
                     </Tooltip>
                 </GS.FlexCenterEnd>
                 <GS.RowMain>
@@ -24,23 +29,25 @@ export const ClientView = () => {
                         <GS.Table>
                             <GS.TableHead>
                                 <GS.TableRow>
-                                    <GS.TableCell>نام کاربر</GS.TableCell>
-                                    <GS.TableCell align="left">
-                                        نام خانوادگی
+                                    <GS.TableCell>
+                                        {t("name user")}
                                     </GS.TableCell>
                                     <GS.TableCell align="left">
-                                        شماره موبایل{" "}
+                                        {t("family name user")}
+                                    </GS.TableCell>
+                                    <GS.TableCell align="left">
+                                        {t("mobile number")}{" "}
                                     </GS.TableCell>
                                     <GS.TableCell align="left">
                                         {" "}
-                                        ایمیل{" "}
+                                        {t("email")}{" "}
                                     </GS.TableCell>
                                     <GS.TableCell align="left">
                                         {" "}
-                                        آدرس{" "}
+                                        {t("addres")}{" "}
                                     </GS.TableCell>
                                     <GS.TableCell align="left">
-                                        عملیات
+                                        {t("operation")}
                                     </GS.TableCell>
                                 </GS.TableRow>
                             </GS.TableHead>
@@ -62,20 +69,20 @@ export const ClientView = () => {
 
                                     <GS.TableCellBody>
                                         <GS.TableCellAction>
-                                            <Tooltip title="جزییات">
+                                            <Tooltip title={t("details")}>
                                                 <GS.TableCellLink
                                                     to={"/client/preview/1"}
                                                 >
                                                     <I.Eye />
                                                 </GS.TableCellLink>
                                             </Tooltip>
-                                            <Tooltip title="ویرایش">
+                                            <Tooltip title={t("edit")}>
                                                 <GS.TableCellEdit>
                                                     <I.Edit />
                                                 </GS.TableCellEdit>
                                             </Tooltip>
 
-                                            <Tooltip title="حذف">
+                                            <Tooltip title={t("delete")}>
                                                 <GS.TableCellEdit>
                                                     <I.Trash />
                                                 </GS.TableCellEdit>

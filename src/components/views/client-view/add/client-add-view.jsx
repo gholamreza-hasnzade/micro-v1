@@ -1,6 +1,8 @@
 // * import tools
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+
 // * import style
 import { GlobalStyle as GS } from "@global/emotion/global-style";
 // * import components
@@ -12,6 +14,7 @@ import {
 } from "@components/common/partials";
 
 export const ClientAddView = () => {
+    const { t } = useTranslation();
     const navigate = useNavigate();
 
     const handlerGoBack = () => {
@@ -24,13 +27,13 @@ export const ClientAddView = () => {
                     <GS.FormControlInput>
                         <TextFildOutlinedInput
                             type={"text"}
-                            label={"نام کاربر"}
+                            label={t("name user")}
                         />
                     </GS.FormControlInput>
                     <GS.FormControlInput>
                         <TextFildOutlinedInput
                             type={"text"}
-                            label={"نام خانوادگی"}
+                            label={t("family name user")}
                         />
                     </GS.FormControlInput>
                 </GS.FlexBoxCenter>
@@ -39,13 +42,13 @@ export const ClientAddView = () => {
                     <GS.FormControlInput>
                         <TextFildOutlinedInput
                             type={"number"}
-                            label={"شماره موبایل "}
+                            label={t("mobile number")}
                         />
                     </GS.FormControlInput>
                     <GS.FormControlInput>
                         <TextFildOutlinedInput
                             type={"email"}
-                            label={" ایمیل"}
+                            label={t("email")}
                         />
                     </GS.FormControlInput>
                 </GS.FlexBoxCenter>
@@ -54,18 +57,20 @@ export const ClientAddView = () => {
                     <GS.FormControlInput>
                         <TextFildOutlinedInput
                             type={"text"}
-                            label={" آدرس"}
+                            label={t("addres")}
                             multiline
                         />
                     </GS.FormControlInput>
                 </GS.FlexBoxCenter>
             </GS.SubmitForm>
             <GS.ActionForm>
-                <Tooltip title="ثبت">
-                    <SubmitButton>ثبت </SubmitButton>
+                <Tooltip title={t("save")}>
+                    <SubmitButton>{t("save")}</SubmitButton>
                 </Tooltip>
-                <Tooltip title="لغو" placement="bottom">
-                    <OutlineButton onClick={handlerGoBack}>لغو</OutlineButton>
+                <Tooltip title={t("cansel")} placement="bottom">
+                    <OutlineButton onClick={handlerGoBack}>
+                        {t("cansel")}
+                    </OutlineButton>
                 </Tooltip>
             </GS.ActionForm>
         </GS.FlexGap10>
