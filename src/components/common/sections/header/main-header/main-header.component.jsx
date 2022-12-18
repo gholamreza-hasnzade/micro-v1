@@ -15,6 +15,7 @@ import { useClickOutSide } from "@hooks";
 import { useAppDispatch, useAppSelector } from "@redux/base/hook-redux";
 import { drawerReduxSelector } from "@redux/slices/drawer/drawer-redux-selector";
 import { openDrawerToggle } from "@redux/slices/drawer/drawer-redux-slice";
+import { Tooltip } from "@components/common/partials";
 
 export const MainHeaderComponent = () => {
     const isOpenDrawer = useAppSelector(drawerReduxSelector.isOpen);
@@ -35,11 +36,14 @@ export const MainHeaderComponent = () => {
                     </S.Icon>
 
                     <S.RowShoppingBag>
-                        <S.ShoppingBag
-                            onClick={() => {
-                                setIsOpenBasek((prev) => !prev);
-                            }}
-                        />
+                        <Tooltip title="سبد خرید">
+                            <S.ShoppingBag
+                                onClick={() => {
+                                    setIsOpenBasek((prev) => !prev);
+                                }}
+                            />
+                        </Tooltip>
+
                         <div ref={isOpen_basket}>
                             {isOpenBasek && <Basket />}
                         </div>
