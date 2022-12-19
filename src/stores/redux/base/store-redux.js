@@ -1,11 +1,14 @@
 // * Import Redux Tools
 import { configureStore } from "@reduxjs/toolkit";
+import rootReducer from "../rootReducer";
 
-// * Import Redux Slices
-import { drawerReduxSlice } from "../slices/drawer/drawer-redux-slice";
+// * Import roorReducer
 
 export const storeRedux = configureStore({
-    reducer: {
-        drawer: drawerReduxSlice,
+    reducer: rootReducer,
+    middleware: (getDefaultMiddleware) => {
+        return getDefaultMiddleware({
+            serializableCheck: false,
+        });
     },
 });
