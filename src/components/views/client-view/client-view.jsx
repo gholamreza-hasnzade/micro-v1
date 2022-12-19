@@ -59,8 +59,12 @@ export const ClientView = () => {
                                 </GS.TableRow>
                             </GS.TableHead>
                             <GS.TableBody>
-                                {datas?.data?.map((data, index) => (
-                                    <ClientPartView data={data} key={index}  index={index}/>
+                                {datas?.datas?.map((data, index) => (
+                                    <ClientPartView
+                                        data={data}
+                                        key={index}
+                                        index={index}
+                                    />
                                 ))}
                             </GS.TableBody>
                         </GS.Table>

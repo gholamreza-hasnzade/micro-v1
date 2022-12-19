@@ -1,3 +1,4 @@
+/* getUsers */
 export const getUsersPendingReduxReducer = (state, action) => {
     state.datas = [];
     state.total = 0;
@@ -7,7 +8,7 @@ export const getUsersPendingReduxReducer = (state, action) => {
 };
 
 export const getUsersFulfilledReduxReducer = (state, action) => {
-    state.data = action?.payload?.datas;
+    state.datas = action?.payload?.datas;
     state.total = action?.payload?.total;
     state.current_page = action?.payload?.current_page;
     state.last_page = action?.payload?.last_page;
@@ -21,3 +22,8 @@ export const getUsersRejectedReduxReducer = (state, action) => {
     state.last_page = 0;
     state.loading = false;
 };
+/* getUsers */
+
+/* get By Id Uset */
+//export const get
+/* get By Id Uset */

@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 // * Import Redux
 import { clientReduxInitialState } from "./client-redux-initial-state";
-import { getUsers } from "./client-redux-action";
+import { getUsers, getBytUser } from "./client-redux-action";
 import {
     getUsersPendingReduxReducer,
     getUsersFulfilledReduxReducer,
@@ -14,9 +14,14 @@ const clientSlice = createSlice({
     name: "client",
     initialState: clientReduxInitialState,
     extraReducers: (builder) => {
+        /* getUsers */
         builder.addCase(getUsers.pending, getUsersPendingReduxReducer);
         builder.addCase(getUsers.fulfilled, getUsersFulfilledReduxReducer);
         builder.addCase(getUsers.rejected, getUsersRejectedReduxReducer);
+        /* getUsers */
+        /* get By Id User  */
+       // builder.addCase(getBytUser.pending);
+        /* get By Id User  */
     },
 });
 
