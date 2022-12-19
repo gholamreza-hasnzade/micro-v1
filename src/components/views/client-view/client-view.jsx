@@ -1,18 +1,28 @@
 // * import tools
-import React from "react";
-import * as I from "react-feather";
+import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
 // * import components
 import { LinkButton, Tooltip } from "@components/common/partials";
+import { ClientPartView } from "@components/views/client-view/part/client-part-view";
+import { Pagination } from "@components/common/partials";
 
 // * import style
 import { ClientViewStyle as S } from "@components/views/client-view/client-view.style";
 import { GlobalStyle as GS } from "@global/emotion/global-style";
-// * import components
-import { Pagination } from "@components/common/partials";
+
+// * import store
+import { getUsers } from "@redux/slices/client/client-redux-action";
+import { useAppDispatch, useAppSelector } from "@redux/base/hook-redux";
 
 export const ClientView = () => {
+    const data = useAppSelector((stata) => stata?.client);
+    const dispatch = useAppDispatch();
+    useEffect(() => {
+        dispatch(getUsers());
+    }, [dispatch]);
+    console.log(data?.data);
+
     const { t } = useTranslation();
     return (
         <S.Client>
@@ -29,14 +39,12 @@ export const ClientView = () => {
                         <GS.Table>
                             <GS.TableHead>
                                 <GS.TableRow>
+                                    <GS.TableCell>{t("row")}</GS.TableCell>
                                     <GS.TableCell>
                                         {t("name client")}
                                     </GS.TableCell>
                                     <GS.TableCell align="left">
                                         {t("family name client")}
-                                    </GS.TableCell>
-                                    <GS.TableCell align="left">
-                                        {t("mobile number")}{" "}
                                     </GS.TableCell>
                                     <GS.TableCell align="left">
                                         {" "}
@@ -52,44 +60,9 @@ export const ClientView = () => {
                                 </GS.TableRow>
                             </GS.TableHead>
                             <GS.TableBody>
-                                <GS.TableRowBody>
-                                    <GS.TableCellBody>غلامرضا</GS.TableCellBody>
-                                    <GS.TableCellBody>
-                                        حسن زاده
-                                    </GS.TableCellBody>
-                                    <GS.TableCellBody>
-                                        {" "}
-                                        09369780985
-                                    </GS.TableCellBody>
-                                    <GS.TableCellBody>
-                                        {" "}
-                                        index@gmail.com
-                                    </GS.TableCellBody>
-                                    <GS.TableCellBody> تهرون</GS.TableCellBody>
-
-                                    <GS.TableCellBody>
-                                        <GS.TableCellAction>
-                                            <Tooltip title={t("details")}>
-                                                <GS.TableCellLink
-                                                    to={"/client/preview/1"}
-                                                >
-                                                    <I.Eye />
-                                                </GS.TableCellLink>
-                                            </Tooltip>
-                                            <Tooltip title={t("edit")}>
-                                                <GS.TableCellEdit>
-                                                    <I.Edit />
-                                                </GS.TableCellEdit>
-                                            </Tooltip>
-
-                                            <Tooltip title={t("delete")}>
-                                                <GS.TableCellEdit>
-                                                    <I.Trash />
-                                                </GS.TableCellEdit>
-                                            </Tooltip>
-                                        </GS.TableCellAction>
-                                    </GS.TableCellBody>
-                                </GS.TableRowBody>
+                                {data?.data?.map((data, index) => (
+                                    <ClientPartView data={data} key={index}  index={index}/>
+                                ))}
                             </GS.TableBody>
                         </GS.Table>
                     </GS.TableContainer>
