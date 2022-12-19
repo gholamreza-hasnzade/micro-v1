@@ -1,7 +1,7 @@
 export const notificationTypes = {
-    success: "success",
+    success: "200",
     info: "info",
-    warning: "warning",
+    warning: "500",
     error: "error",
     default: "default",
 };
