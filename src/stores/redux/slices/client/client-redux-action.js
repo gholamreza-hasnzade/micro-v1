@@ -19,14 +19,14 @@ export const getUsers = createAsyncThunk("getUsers", async () => {
         return {
             data: response.data?.data ? response.data?.data : response.data,
             last_page: response?.data?.last_page
-                ? response?.last_page
+                ? response?.data?.last_page
                 : response?.last_page,
-            total: response?.data?.total ? response?.total : response?.total,
+            total: response?.data?.total
+                ? response?.data?.total
+                : response?.total,
             current_page: response?.data?.current_page
-                ? response?.current_page
+                ? response?.data?.current_page
                 : response?.current_page,
         };
-    } else {
-        console.log(response);
     }
 });
