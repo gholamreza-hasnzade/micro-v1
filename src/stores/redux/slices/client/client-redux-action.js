@@ -63,3 +63,14 @@ export const deleteUser = createAsyncThunk(
         }
     }
 );
+
+export const postUser = createAsyncThunk("postUser", async (params) => {
+    const { baseURL9000, v1 } = endpoints;
+
+    const response = await callApi({
+        baseURL: baseURL9000,
+        url: `${v1}/user/${params}`,
+        method: requestMethodes.post,
+        body :params.formaData
+    });
+})
