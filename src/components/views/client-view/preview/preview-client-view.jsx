@@ -13,7 +13,6 @@ import { getBytUser } from "@redux/slices/client/client-redux-action";
 
 export const PreviewClienView = () => {
     const data = useAppSelector((stata) => stata?.client);
-    console.log(data?.data?.first_name);
     const { id } = useParams();
     const { t } = useTranslation();
 

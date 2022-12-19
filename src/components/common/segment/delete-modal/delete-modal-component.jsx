@@ -8,22 +8,24 @@ import { DeleteModalComponentStyle as S } from "@components/common/segment/delet
 import { GlobalStyle as GS } from "@global/emotion/global-style";
 import { SubmitButton, OutlineButton } from "@components/common/partials";
 
-export const DeleteModalComponent = () => {
+export const DeleteModalComponent = ({ isOpen, onClick }) => {
     const { t } = useTranslation();
     return (
         <>
-        <S.Overly />
-            <S.RowDeleteModal>
+            <S.Overly isopen={isOpen} />
+            <S.RowDeleteModal isopen={isOpen}>
                 <S.RowImage>
                     <I.AlertTriangle />
                 </S.RowImage>
                 <S.Title>{t("Are you sure to delete this field ?")}</S.Title>
                 <GS.FlexCenterSB>
                     <S.RowButton>
-                        <SubmitButton>{t("delete")}</SubmitButton>
+                        <SubmitButton >
+                            {t("delete")}
+                        </SubmitButton>
                     </S.RowButton>
                     <S.RowButton>
-                        <OutlineButton>{t("cansel")}</OutlineButton>
+                        <OutlineButton onClick={onClick}>{t("cansel")}</OutlineButton>
                     </S.RowButton>
                 </GS.FlexCenterSB>
             </S.RowDeleteModal>

@@ -4,7 +4,7 @@ export const getUsersPendingReduxReducer = (state, action) => {
     state.total = 0;
     state.current_page = 0;
     state.last_page = 0;
-    state.loading = false;
+    state.loading = true;
 };
 
 export const getUsersFulfilledReduxReducer = (state, action) => {
@@ -12,7 +12,7 @@ export const getUsersFulfilledReduxReducer = (state, action) => {
     state.total = action?.payload?.total;
     state.current_page = action?.payload?.current_page;
     state.last_page = action?.payload?.last_page;
-    state.loading = true;
+    state.loading = false;
 };
 
 export const getUsersRejectedReduxReducer = (state, action) => {
@@ -20,22 +20,36 @@ export const getUsersRejectedReduxReducer = (state, action) => {
     state.total = 0;
     state.current_page = 0;
     state.last_page = 0;
-    state.loading = false;
+    state.loading = true;
 };
 /* getUsers */
 
 /* get By Id Uset */
 export const getByIdUserPendingReduxReducer = (state, action) => {
     state.data = {};
-    state.loading = false;
+    state.loading = true;
 };
 export const getByIdUserFulfilledReduxReducer = (state, action) => {
     state.data = action?.payload?.data;
     state.loading = false;
 };
-
 export const getByIdUserRejectedReduxReducer = (state, action) => {
     state.data = {};
-    state.loading = false;
+    state.loading = true;
 };
 /* get By Id Uset */
+
+/* delete User */
+export const deleteUserPendingReduxReducer = (state, action) => {
+    state.loading = true;
+};
+export const deleteUserFulfilledReduxReducer = (state, action) => {
+    state.loading = false;
+    const lists = action?.payload?.datas;
+    state.datas = lists?.filter((item) => item.id !== action?.payload?.id);
+    state.total = state.total - 1;
+};
+export const deleteUserRejectedReduxReducer = (state, action) => {
+    state.loading = true;
+};
+/* delete User */
