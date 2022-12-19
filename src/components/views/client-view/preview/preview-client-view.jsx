@@ -1,6 +1,7 @@
 // * import tools
 import React from "react";
 import { useTranslation } from "react-i18next";
+import { useParams } from "react-router-dom";
 
 // * imprort style
 import { ClientViewStyle as S } from "@components/views/client-view/client-view.style";
@@ -9,6 +10,7 @@ import { GlobalStyle as GS } from "@global/emotion/global-style";
 import { LinkButton, Tooltip } from "@components/common/partials";
 
 export const PreviewClienView = () => {
+    const { id } = useParams();
     const { t } = useTranslation();
     return (
         <S.Client>

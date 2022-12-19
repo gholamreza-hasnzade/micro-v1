@@ -16,12 +16,11 @@ import { getUsers } from "@redux/slices/client/client-redux-action";
 import { useAppDispatch, useAppSelector } from "@redux/base/hook-redux";
 
 export const ClientView = () => {
-    const data = useAppSelector((stata) => stata?.client);
+    const datas = useAppSelector((stata) => stata?.client);
     const dispatch = useAppDispatch();
     useEffect(() => {
         dispatch(getUsers());
     }, [dispatch]);
-    console.log(data?.data);
 
     const { t } = useTranslation();
     return (
@@ -60,7 +59,7 @@ export const ClientView = () => {
                                 </GS.TableRow>
                             </GS.TableHead>
                             <GS.TableBody>
-                                {data?.data?.map((data, index) => (
+                                {datas?.data?.map((data, index) => (
                                     <ClientPartView data={data} key={index}  index={index}/>
                                 ))}
                             </GS.TableBody>

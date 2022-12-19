@@ -17,7 +17,7 @@ export const getUsers = createAsyncThunk("getUsers", async () => {
     });
     if (response?.status) {
         return {
-            data: response.data?.data ? response.data?.data : response.data,
+            datas: response.data?.data ? response.data?.data : response.data,
             last_page: response?.data?.last_page
                 ? response?.data?.last_page
                 : response?.last_page,
