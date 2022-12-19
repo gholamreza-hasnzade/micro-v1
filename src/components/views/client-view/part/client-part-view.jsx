@@ -7,6 +7,7 @@ import { useTranslation } from "react-i18next";
 import { GlobalStyle as GS } from "@global/emotion/global-style";
 import { Tooltip } from "@components/common/partials";
 import { DeleteModal } from "@components/common/segment";
+import { deleteUser } from "@redux/slices/client/client-redux-action";
 
 export const ClientPartView = ({ data, index }) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -15,9 +16,15 @@ export const ClientPartView = ({ data, index }) => {
     const handleIsOpenModal = () => {
         setIsOpen(!isOpen);
     };
+
     return (
         <>
-            <DeleteModal isOpen={isOpen}  onClick={handleIsOpenModal}/>
+            <DeleteModal
+                isOpen={isOpen}
+                onClick={handleIsOpenModal}
+                onDelete={() => deleteUser(data?.id)}
+                setIsOpen={setIsOpen}
+            />
             <GS.TableRowBody>
                 <GS.TableCellBody>{index + 1}</GS.TableCellBody>
                 <GS.TableCellBody>{data?.first_name}</GS.TableCellBody>

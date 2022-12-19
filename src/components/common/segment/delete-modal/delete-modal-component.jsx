@@ -7,9 +7,20 @@ import { useTranslation } from "react-i18next";
 import { DeleteModalComponentStyle as S } from "@components/common/segment/delete-modal/delete-modal-component.style";
 import { GlobalStyle as GS } from "@global/emotion/global-style";
 import { SubmitButton, OutlineButton } from "@components/common/partials";
+import { useAppDispatch } from "@redux/base/hook-redux";
 
-export const DeleteModalComponent = ({ isOpen, onClick }) => {
+export const DeleteModalComponent = ({
+    isOpen,
+    onClick,
+    setIsOpen,
+    onDelete,
+}) => {
+    const dispatch = useAppDispatch();
     const { t } = useTranslation();
+    const handleOnDelete = () => {
+        dispatch(onDelete());
+        setIsOpen(!isOpen);
+    };
     return (
         <>
             <S.Overly isopen={isOpen} />
@@ -20,12 +31,14 @@ export const DeleteModalComponent = ({ isOpen, onClick }) => {
                 <S.Title>{t("Are you sure to delete this field ?")}</S.Title>
                 <GS.FlexCenterSB>
                     <S.RowButton>
-                        <SubmitButton >
+                        <SubmitButton onClick={handleOnDelete}>
                             {t("delete")}
                         </SubmitButton>
                     </S.RowButton>
                     <S.RowButton>
-                        <OutlineButton onClick={onClick}>{t("cansel")}</OutlineButton>
+                        <OutlineButton onClick={onClick}>
+                            {t("cansel")}
+                        </OutlineButton>
                     </S.RowButton>
                 </GS.FlexCenterSB>
             </S.RowDeleteModal>

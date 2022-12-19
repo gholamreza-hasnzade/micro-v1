@@ -48,7 +48,7 @@ export const getBytUser = createAsyncThunk("getUser", async (params) => {
 export const deleteUser = createAsyncThunk(
     "deleteUser",
     async (params, { rejectWithValue, getState, dispatch }) => {
-        const { datas } = getState()?.datas;
+        const data = getState()?.client.datas;
         const { baseURL9000, v1 } = endpoints;
         const response = await callApi({
             baseURL: baseURL9000,
@@ -57,8 +57,8 @@ export const deleteUser = createAsyncThunk(
         });
         if (response?.status) {
             return {
-                postList: datas,
-                baseInfo_id: params,
+                datas: data,
+                user_id: params,
             };
         }
     }

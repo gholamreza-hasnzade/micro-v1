@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 // * Import Redux
 import { clientReduxInitialState } from "./client-redux-initial-state";
-import { getUsers, getBytUser } from "./client-redux-action";
+import { getUsers, getBytUser, deleteUser } from "./client-redux-action";
 import {
     getUsersPendingReduxReducer,
     getUsersFulfilledReduxReducer,
@@ -11,6 +11,9 @@ import {
     getByIdUserPendingReduxReducer,
     getByIdUserFulfilledReduxReducer,
     getByIdUserRejectedReduxReducer,
+    deleteUserPendingReduxReducer,
+    deleteUserFulfilledReduxReducer,
+    deleteUserRejectedReduxReducer,
 } from "./client-redux-reducer";
 
 const clientSlice = createSlice({
@@ -27,6 +30,12 @@ const clientSlice = createSlice({
         builder.addCase(getBytUser.fulfilled, getByIdUserFulfilledReduxReducer);
         builder.addCase(getBytUser.rejected, getByIdUserRejectedReduxReducer);
         /* get By Id User  */
+
+        /* delete user */
+        builder.addCase(deleteUser.pending, deleteUserPendingReduxReducer);
+        builder.addCase(deleteUser.fulfilled, deleteUserFulfilledReduxReducer);
+        builder.addCase(deleteUser.rejected, deleteUserRejectedReduxReducer);
+        /* delete user */
     },
 });
 
