@@ -29,6 +29,7 @@ export const ClientPartView = ({ data, index }) => {
                 <GS.TableCellBody>{index + 1}</GS.TableCellBody>
                 <GS.TableCellBody>{data?.first_name}</GS.TableCellBody>
                 <GS.TableCellBody> {data?.last_name} </GS.TableCellBody>
+                <GS.TableCellBody> {data?.phone} </GS.TableCellBody>
                 <GS.TableCellBody> {data?.email}</GS.TableCellBody>
                 <GS.TableCellBody> {data?.address} </GS.TableCellBody>
 

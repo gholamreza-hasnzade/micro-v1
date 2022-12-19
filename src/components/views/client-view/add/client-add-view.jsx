@@ -42,7 +42,7 @@ export const ClientAddView = () => {
                     <GS.FormControlInput>
                         <TextFildOutlinedInput
                             type={"number"}
-                            label={t("mobile number")}
+                            label={t("phone")}
                         />
                     </GS.FormControlInput>
                     <GS.FormControlInput>

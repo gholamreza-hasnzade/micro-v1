@@ -47,6 +47,10 @@ export const ClientView = () => {
                                     </GS.TableCell>
                                     <GS.TableCell align="left">
                                         {" "}
+                                        {t("phone")}{" "}
+                                    </GS.TableCell>
+                                    <GS.TableCell align="left">
+                                        {" "}
                                         {t("email")}{" "}
                                     </GS.TableCell>
                                     <GS.TableCell align="left">

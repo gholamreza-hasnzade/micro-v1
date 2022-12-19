@@ -28,7 +28,7 @@ export const HomeView = () => {
                                         {t("family name client")}
                                     </GS.TableCell>
                                     <GS.TableCell align="left">
-                                        {t("mobile number")}{" "}
+                                        {t("phone")}{" "}
                                     </GS.TableCell>
                                     <GS.TableCell align="left">
                                         {" "}
