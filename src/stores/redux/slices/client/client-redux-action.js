@@ -35,8 +35,12 @@ export const getBytUser = createAsyncThunk("getUser", async (params) => {
     const { baseURL9000, v1 } = endpoints;
     const response = await callApi({
         baseURL: baseURL9000,
-        url: `${v1}/user`,
+        url: `${v1}/user/${params}`,
         method: requestMethodes.get,
     });
-    console.log(response);
-})
+    if (response?.status) {
+        return {
+            data: response.data?.data ? response.data?.data : response.data,
+        };
+    }
+});

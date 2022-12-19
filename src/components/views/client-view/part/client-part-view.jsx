@@ -8,7 +8,6 @@ import { GlobalStyle as GS } from "@global/emotion/global-style";
 import { Tooltip } from "@components/common/partials";
 
 export const ClientPartView = ({ data, index }) => {
-    console.log(data);
     const { t } = useTranslation();
 
     return (

@@ -8,6 +8,9 @@ import {
     getUsersPendingReduxReducer,
     getUsersFulfilledReduxReducer,
     getUsersRejectedReduxReducer,
+    getByIdUserPendingReduxReducer,
+    getByIdUserFulfilledReduxReducer,
+    getByIdUserRejectedReduxReducer,
 } from "./client-redux-reducer";
 
 const clientSlice = createSlice({
@@ -20,7 +23,9 @@ const clientSlice = createSlice({
         builder.addCase(getUsers.rejected, getUsersRejectedReduxReducer);
         /* getUsers */
         /* get By Id User  */
-       // builder.addCase(getBytUser.pending);
+        builder.addCase(getBytUser.pending, getByIdUserPendingReduxReducer);
+        builder.addCase(getBytUser.fulfilled, getByIdUserFulfilledReduxReducer);
+        builder.addCase(getBytUser.rejected, getByIdUserRejectedReduxReducer);
         /* get By Id User  */
     },
 });

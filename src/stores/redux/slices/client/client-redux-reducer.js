@@ -25,5 +25,17 @@ export const getUsersRejectedReduxReducer = (state, action) => {
 /* getUsers */
 
 /* get By Id Uset */
-//export const get
+export const getByIdUserPendingReduxReducer = (state, action) => {
+    state.data = {};
+    state.loading = false;
+};
+export const getByIdUserFulfilledReduxReducer = (state, action) => {
+    state.data = action?.payload?.data;
+    state.loading = false;
+};
+
+export const getByIdUserRejectedReduxReducer = (state, action) => {
+    state.data = {};
+    state.loading = false;
+};
 /* get By Id Uset */
