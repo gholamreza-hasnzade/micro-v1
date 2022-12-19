@@ -7,7 +7,7 @@ import axios from "axios";
 // * import constants
 import { bodyTypes, notificationTypes } from "@constants/content";
 // * import endpoints
-import { endpoints } from "./config";
+//import { endpoints } from "./config";
 
 // ** Notification
 import { notification } from "@redux/slices/notification/notification-redux-slice";
@@ -16,9 +16,8 @@ let dispatch = null;
 export const setDispatch = (d) => {
     dispatch = d;
 };
-
-const callApi = async (requestData) => {
-    const { url, body, method, bodyType, params } = requestData;
+export const callApi = async (requestData) => {
+    const { url, body, method, bodyType, params, baseURL } = requestData;
     let data;
     let ContentType;
 
@@ -35,14 +34,13 @@ const callApi = async (requestData) => {
         data = body;
         ContentType = "application/json";
     }
-
     try {
         const response = await axios({
             url: url,
 
             method: method,
 
-            baseURL: `${endpoints.v1}`,
+            baseURL: baseURL,
 
             headers: {
                 "X-Requested-With": "XMLHttpRequest",
@@ -108,5 +106,3 @@ const callApi = async (requestData) => {
         return error?.response?.data;
     }
 };
-
-export default callApi;

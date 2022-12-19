@@ -1,5 +1,5 @@
 //* import tools
-import React from "react";
+import React, {useEffect} from "react";
 import { useTranslation } from "react-i18next";
 
 // * import style
@@ -8,8 +8,15 @@ import { GlobalStyle as GS } from "@global/emotion/global-style";
 
 // * import components
 import { Caption, Pagination } from "@components/common/partials";
+import { getUsers } from "@redux/slices/client/client-redux-action";
+import { useDispatch } from "react-redux";
 export const HomeView = () => {
+    const dispatsh = useDispatch()
     const { t } = useTranslation();
+    useEffect(() => {
+      dispatsh(getUsers())
+    }, [dispatsh])
+    
     return (
         <S.Home>
             <GS.FlexBoxDirColumn>
