@@ -29,12 +29,14 @@ export const ClientAddView = () => {
         email: "",
         address: "",
         phone: "",
+        formErrors: {},
     });
     const handleClientChange = (e) => {
         const { name, value } = e.target;
+        delete formErrors[name];
         setForm({ ...form, [name]: value });
     };
-    const { first_name, last_name, email, address, phone } = form;
+    const { first_name, last_name, email, address, phone, formErrors } = form;
 
     const clientValidation = Yup.object({
         first_name: Yup.string()
@@ -51,7 +53,7 @@ export const ClientAddView = () => {
             .trim()
             .required(t("required field"))
             .min(3, t("must be at least 3 characters"))
-            .max(10, t("must not be greater than 120 characters")),
+            .max(120, t("must not be greater than 120 characters")),
         phone: Yup.string().trim().required(t("required field")),
         /* .min(11, t("must be at least 11 characters")) */
         // .max(11, t("must not be greater than 11 characters")),
@@ -59,6 +61,7 @@ export const ClientAddView = () => {
     const handlerGoBack = () => {
         navigate("/client");
     };
+    console.log(phone);
     const handleSubmit = async (e) => {
         try {
             const { baseURL9000, v1 } = endpoints;
@@ -67,7 +70,7 @@ export const ClientAddView = () => {
                 last_name: e.last_name,
                 email: e.email,
                 address: e.address,
-                phone: "09369880985",
+                phone: e.phone,
                 password: "123456",
                 password_confirmation: "123456",
             };
@@ -79,10 +82,18 @@ export const ClientAddView = () => {
             });
             if (result?.status) {
                 navigate("/client");
+            } else {
+                setForm((prevState) => ({
+                    ...prevState,
+                    formErrors: {
+                        ...prevState.formErrors,
+                        ...result?.errors,
+                    },
+                }));
             }
-            console.log(result);
         } catch (error) {}
     };
+    console.log(formErrors);
     return (
         <GS.FlexGap10>
             <Formik
@@ -103,7 +114,8 @@ export const ClientAddView = () => {
                             <GS.FormControlInput>
                                 <TextFildOutlinedInput
                                     type={"text"}
-                                    name="first_name"
+                                    name={"first_name"}
+                                   // error={formErrors?.first_name[0]}
                                     label={t("name client")}
                                     onChange={handleClientChange}
                                 />
@@ -111,7 +123,8 @@ export const ClientAddView = () => {
                             <GS.FormControlInput>
                                 <TextFildOutlinedInput
                                     type={"text"}
-                                    name="last_name"
+                                    name={"last_name"}
+                                   // error={formErrors?.last_name[0]}
                                     label={t("family name client")}
                                     onChange={handleClientChange}
                                 />
@@ -121,8 +134,9 @@ export const ClientAddView = () => {
                         <GS.FlexBoxCenter>
                             <GS.FormControlInput>
                                 <TextFildOutlinedInput
-                                    type={"number"}
-                                    name="phone"
+                                    type={"text"}
+                                    name={"phone"}
+                                   // error={formErrors?.phone[0]}
                                     label={t("phone")}
                                     onChange={handleClientChange}
                                 />
@@ -130,7 +144,8 @@ export const ClientAddView = () => {
                             <GS.FormControlInput>
                                 <TextFildOutlinedInput
                                     type={"email"}
-                                    name="email"
+                                  //  error={formErrors?.email[0]}
+                                    name={"email"}
                                     label={t("email")}
                                     onChange={handleClientChange}
                                 />
@@ -141,7 +156,8 @@ export const ClientAddView = () => {
                             <GS.FormControlInput>
                                 <TextFildOutlinedInput
                                     type={"text"}
-                                    name="address"
+                                    name={"address"}
+                                    //error={formErrors?.address[0]}
                                     label={t("addres")}
                                     onChange={handleClientChange}
                                     multiline

@@ -34,5 +34,7 @@
     "must not be greater than 64 characters": "نباید بیشتر از 64 کاراکتر باشد",
     "must not be greater than 11 characters": "نباید بیشتر از 11 کاراکتر باشد",
     "must not be greater than 120 characters": "نباید بیشتر از 120 کاراکتر باشد",
-    "no insert info": "no insert info"
+    "no insert info": "no insert info",
+    "The email has already been taken." : "ایمیل قبلا گرفته شده است"
+
 }
