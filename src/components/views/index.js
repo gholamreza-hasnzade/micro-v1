@@ -1,6 +1,7 @@
 // * import Client View
 export { ClientView } from "@components/views/client-view/client-view";
 export { ClientAddView } from "@components/views/client-view/add/client-add-view";
+export { ClientEditView } from "@components/views/client-view/edit/client-edit-view";
 export { PreviewClienView } from "@components/views/client-view/preview/preview-client-view";
 // * import Client View
 
