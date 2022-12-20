@@ -174,7 +174,7 @@ const RowPreview = styled(RowMain)`
 const PreviewList = styled.ul``;
 const PreviewListItem = styled.li`
     display: flex;
-    align-item: center;
+    align-items: center;
     margin-top: 10px;
 `;
 const PreviewListItemCaption = styled(TypographyMUI)`

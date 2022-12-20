@@ -7,12 +7,13 @@ import { useParams } from "react-router-dom";
 import { ClientViewStyle as S } from "@components/views/client-view/client-view.style";
 import { GlobalStyle as GS } from "@global/emotion/global-style";
 // * import components
-import { LinkButton, Tooltip } from "@components/common/partials";
+import { LinkButton, Skeleton, Tooltip } from "@components/common/partials";
 import { useAppDispatch, useAppSelector } from "@redux/base/hook-redux";
 import { getBytUser } from "@redux/slices/client/client-redux-action";
 
 export const PreviewClienView = () => {
     const data = useAppSelector((stata) => stata?.client);
+    console.log(data);
     const { id } = useParams();
     const { t } = useTranslation();
 
@@ -38,7 +39,15 @@ export const PreviewClienView = () => {
                                 {t("name client")} :
                             </GS.PreviewListItemCaption>
                             <GS.PreviewListTitle>
-                                {data?.data?.first_name || "ثبت نشده است"}
+                                {data?.loading ? (
+                                    <Skeleton
+                                        width={"150px"}
+                                        height={"25px"}
+                                        variant="rounded"
+                                    />
+                                ) : (
+                                    data?.data?.first_name || "ثبت نشده است"
+                                )}
                             </GS.PreviewListTitle>
                         </GS.PreviewListItem>
 
@@ -47,7 +56,15 @@ export const PreviewClienView = () => {
                                 {t("family name client")} :
                             </GS.PreviewListItemCaption>
                             <GS.PreviewListTitle>
-                                {data?.data?.last_name || "ثبت نشده است"}
+                                {data?.loading ? (
+                                    <Skeleton
+                                        width={"150px"}
+                                        height={"25px"}
+                                        variant="rounded"
+                                    />
+                                ) : (
+                                    data?.data?.last_name || "ثبت نشده است"
+                                )}
                             </GS.PreviewListTitle>
                         </GS.PreviewListItem>
 
@@ -56,8 +73,15 @@ export const PreviewClienView = () => {
                                 {t("phone")} :
                             </GS.PreviewListItemCaption>
                             <GS.PreviewListTitle>
-                                {" "}
-                                {data?.data?.phone || "ثبت نشده است"}
+                                {data?.loading ? (
+                                    <Skeleton
+                                        width={"150px"}
+                                        height={"25px"}
+                                        variant="rounded"
+                                    />
+                                ) : (
+                                    data?.data?.phone || "ثبت نشده است"
+                                )}
                             </GS.PreviewListTitle>
                         </GS.PreviewListItem>
 
@@ -66,8 +90,15 @@ export const PreviewClienView = () => {
                                 {t("email")} :
                             </GS.PreviewListItemCaption>
                             <GS.PreviewListTitle>
-                                {" "}
-                                {data?.data?.email || "ثبت نشده است"}
+                                {data?.loading ? (
+                                    <Skeleton
+                                        width={"150px"}
+                                        height={"25px"}
+                                        variant="rounded"
+                                    />
+                                ) : (
+                                    data?.data?.email || "ثبت نشده است"
+                                )}
                             </GS.PreviewListTitle>
                         </GS.PreviewListItem>
 
@@ -76,8 +107,15 @@ export const PreviewClienView = () => {
                                 {t("addres")} :
                             </GS.PreviewListItemCaption>
                             <GS.PreviewListTitle>
-                                {" "}
-                                {data?.data?.address || "ثبت نشده است"}
+                                {data?.loading ? (
+                                    <Skeleton
+                                        width={"150px"}
+                                        height={"25px"}
+                                        variant="rounded"
+                                    />
+                                ) : (
+                                    data?.data?.address || "ثبت نشده است"
+                                )}
                             </GS.PreviewListTitle>
                         </GS.PreviewListItem>
                     </GS.PreviewList>
