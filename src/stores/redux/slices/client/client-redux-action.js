@@ -8,12 +8,15 @@ import {
 // * import redux
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
-export const getUsers = createAsyncThunk("getUsers", async () => {
+export const getUsers = createAsyncThunk("getUsers", async (page) => {
     const { baseURL9000, v1 } = endpoints;
     const response = await callApi({
         baseURL: baseURL9000,
         url: `${v1}/user`,
         method: requestMethodes.get,
+        params: {
+            page: page,
+        },
     });
     if (response?.status) {
         return {
