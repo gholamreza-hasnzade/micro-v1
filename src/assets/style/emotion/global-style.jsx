@@ -97,7 +97,7 @@ const RowMain = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
-    max-height: 340px;
+    max-height: 320px;
     //height: calc(100vh - 350px);
 `;
 const TableContainer = styled(TableContainerMUI)``;
