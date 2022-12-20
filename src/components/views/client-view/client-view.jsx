@@ -1,5 +1,5 @@
 // * import tools
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 // * import components
@@ -16,13 +16,17 @@ import { getUsers } from "@redux/slices/client/client-redux-action";
 import { useAppDispatch, useAppSelector } from "@redux/base/hook-redux";
 
 export const ClientView = () => {
+    const [currentPage, setCurrentPage] = useState(1);
     const datas = useAppSelector((stata) => stata?.client);
     const dispatch = useAppDispatch();
-    useEffect(() => {
-        dispatch(getUsers());
-    }, [dispatch]);
-
     const { t } = useTranslation();
+    useEffect(() => {
+        dispatch(getUsers(currentPage));
+    }, [dispatch, currentPage]);
+
+    const setCurrentPageNo = (event, pageNumber) => {
+        setCurrentPage(Number(pageNumber));
+    };
     return (
         <S.Client>
             <GS.FlexBoxDirColumn>
@@ -74,7 +78,11 @@ export const ClientView = () => {
                         </GS.Table>
                     </GS.TableContainer>
 
-                    <Pagination />
+                    <Pagination
+                        data={datas}
+                        setCurrentPageNo={setCurrentPageNo}
+                        currentPage={currentPage}
+                    />
                 </GS.RowMain>
             </GS.FlexBoxDirColumn>
         </S.Client>
