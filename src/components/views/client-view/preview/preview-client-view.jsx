@@ -8,16 +8,16 @@ import { ClientViewStyle as S } from "@components/views/client-view/client-view.
 import { GlobalStyle as GS } from "@global/emotion/global-style";
 // * import components
 import { LinkButton, Skeleton, Tooltip } from "@components/common/partials";
+// * import store
 import { useAppDispatch, useAppSelector } from "@redux/base/hook-redux";
 import { getBytUser } from "@redux/slices/client/client-redux-action";
 
 export const PreviewClienView = () => {
     const data = useAppSelector((stata) => stata?.client);
-    console.log(data);
     const { id } = useParams();
+    const dispatch = useAppDispatch();
     const { t } = useTranslation();
 
-    const dispatch = useAppDispatch();
     useEffect(() => {
         if (id) {
             dispatch(getBytUser(id));

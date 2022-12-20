@@ -1,5 +1,5 @@
 // * import tools
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import * as Yup from "yup";
@@ -20,7 +20,7 @@ import {
 } from "@components/config/app-configurations/callApi";
 import { requestMethodes } from "@constants/content";
 
-export const ClientAddView = () => {
+export const ClientAddView = ({ id, clientInfo, editMode }) => {
     const { t } = useTranslation();
     const navigate = useNavigate();
     const [form, setForm] = useState({
@@ -61,7 +61,6 @@ export const ClientAddView = () => {
     const handlerGoBack = () => {
         navigate("/client");
     };
-    console.log(phone);
     const handleSubmit = async (e) => {
         try {
             const { baseURL9000, v1 } = endpoints;
@@ -74,26 +73,55 @@ export const ClientAddView = () => {
                 password: "123456",
                 password_confirmation: "123456",
             };
-            const result = await callApi({
-                baseURL: baseURL9000,
-                url: `${v1}/user`,
-                method: requestMethodes.post,
-                body: bodyForm,
-            });
-            if (result?.status) {
-                navigate("/client");
+            if (editMode) {
+                const result = await callApi({
+                    baseURL: baseURL9000,
+                    url: `${v1}/user/${id}`,
+                    method: requestMethodes.put,
+                    body: bodyForm,
+                });
+                if (result?.status) {
+                    navigate("/client");
+                } else {
+                    setForm((prevState) => ({
+                        ...prevState,
+                        formErrors: {
+                            ...prevState.formErrors,
+                            ...result?.errors,
+                        },
+                    }));
+                }
             } else {
-                setForm((prevState) => ({
-                    ...prevState,
-                    formErrors: {
-                        ...prevState.formErrors,
-                        ...result?.errors,
-                    },
-                }));
+                const result = await callApi({
+                    baseURL: baseURL9000,
+                    url: `${v1}/user`,
+                    method: requestMethodes.post,
+                    body: bodyForm,
+                });
+                if (result?.status) {
+                    navigate("/client");
+                } else {
+                    setForm((prevState) => ({
+                        ...prevState,
+                        formErrors: {
+                            ...prevState.formErrors,
+                            ...result?.errors,
+                        },
+                    }));
+                }
             }
         } catch (error) {}
     };
-    console.log(formErrors);
+    // ** set data by id
+
+    useEffect(() => {
+        if (editMode && clientInfo) {
+            setForm((prevState) => ({
+                ...prevState,
+                ...clientInfo,
+            }));
+        }
+    }, [editMode, clientInfo]);
     return (
         <GS.FlexGap10>
             <Formik
@@ -115,7 +143,7 @@ export const ClientAddView = () => {
                                 <TextFildOutlinedInput
                                     type={"text"}
                                     name={"first_name"}
-                                   // error={formErrors?.first_name[0]}
+                                    // error={formErrors?.first_name[0]}
                                     label={t("name client")}
                                     onChange={handleClientChange}
                                 />
@@ -124,7 +152,7 @@ export const ClientAddView = () => {
                                 <TextFildOutlinedInput
                                     type={"text"}
                                     name={"last_name"}
-                                   // error={formErrors?.last_name[0]}
+                                    // error={formErrors?.last_name[0]}
                                     label={t("family name client")}
                                     onChange={handleClientChange}
                                 />
@@ -136,7 +164,7 @@ export const ClientAddView = () => {
                                 <TextFildOutlinedInput
                                     type={"text"}
                                     name={"phone"}
-                                   // error={formErrors?.phone[0]}
+                                    // error={formErrors?.phone[0]}
                                     label={t("phone")}
                                     onChange={handleClientChange}
                                 />
@@ -144,7 +172,7 @@ export const ClientAddView = () => {
                             <GS.FormControlInput>
                                 <TextFildOutlinedInput
                                     type={"email"}
-                                  //  error={formErrors?.email[0]}
+                                    //  error={formErrors?.email[0]}
                                     name={"email"}
                                     label={t("email")}
                                     onChange={handleClientChange}

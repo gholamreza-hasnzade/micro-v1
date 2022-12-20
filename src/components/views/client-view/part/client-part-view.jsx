@@ -2,21 +2,28 @@
 import React, { useState } from "react";
 import * as I from "react-feather";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
 //* import style
 import { GlobalStyle as GS } from "@global/emotion/global-style";
+
+// * import components
 import { Tooltip } from "@components/common/partials";
 import { DeleteModal } from "@components/common/segment";
+
+// * import store
 import { deleteUser } from "@redux/slices/client/client-redux-action";
 
 export const ClientPartView = ({ data, index }) => {
     const [isOpen, setIsOpen] = useState(false);
     const { t } = useTranslation();
-
+    const navigate = useNavigate();
     const handleIsOpenModal = () => {
         setIsOpen(!isOpen);
     };
-
+    const handleEditClick = () => {
+        navigate(`/client/edit/${data?.id}`);
+    };
     return (
         <>
             <DeleteModal
@@ -43,7 +50,7 @@ export const ClientPartView = ({ data, index }) => {
                             </GS.TableCellLink>
                         </Tooltip>
                         <Tooltip title={t("edit")}>
-                            <GS.TableCellEdit>
+                            <GS.TableCellEdit onClick={handleEditClick}>
                                 <I.Edit />
                             </GS.TableCellEdit>
                         </Tooltip>
