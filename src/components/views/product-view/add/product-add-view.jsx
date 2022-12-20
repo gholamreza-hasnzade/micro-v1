@@ -23,7 +23,7 @@ export const ProductAddView = () => {
     };
     return (
         <GS.FlexGap10>
-            <GS.SubmitForm component={"form"}>
+            <GS.SubmitForm>
                 <GS.FlexBoxCenter>
                     <GS.FormControlInput>
                         <TextFildOutlinedInput

@@ -77,7 +77,7 @@ export const PreviewClienView = () => {
                             </GS.PreviewListItemCaption>
                             <GS.PreviewListTitle>
                                 {" "}
-                                {data?.data?.addres || "ثبت نشده است"}
+                                {data?.data?.address || "ثبت نشده است"}
                             </GS.PreviewListTitle>
                         </GS.PreviewListItem>
                     </GS.PreviewList>

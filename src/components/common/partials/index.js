@@ -9,3 +9,4 @@ export { MainOverlayComponent as MainOverlay } from "@components/common/partials
 export { PaginationComponent as Pagination } from "@components/common/partials/pagination/pagination-component";
 export { TooltipComponent as Tooltip } from "@components/common/partials/tooltip/tooltip-component";
 export { SkeletonComponent as Skeleton } from "@components/common/partials/loadings/skeleton/skeleton-component";
+export { ErrorMessageComponent as ErrorMessage } from "@components/common/partials/typographys/error-message/error-message-component";

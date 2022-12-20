@@ -25,6 +25,13 @@
     "return": "return",
     "compony software holoo": "compony software holoo",
     "copy right": "© 1401 - All rights reserved for Helo software engineering company",
-    "Server Error": "Server Error"
+    "Server Error": "Server Error",
+    "required field": "required field",
+    "must be at least 3 characters" : "must be at least 3 characters",
+    "must be at least 11 characters" : "must be at least 11 characters",
+    "must not be greater than 64 characters" : "must not be greater than 64 characters",
+    "must not be greater than 11 characters" : "must not be greater than 11 characters",
+    "must not be greater than 120 characters" : "must not be greater than 120 characters"
+
 
 }

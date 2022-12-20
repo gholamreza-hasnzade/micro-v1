@@ -11,6 +11,7 @@ import {
     Typography as TypographyMUI,
 } from "@mui/material";
 import { Link as LinkRRD } from "react-router-dom";
+import { Form } from "formik";
 
 const FlexCenterSB = styled(Box)`
     width: 100%;
@@ -51,7 +52,7 @@ const FlexBoxDirColumn = styled(Box)`
     flex-direction: column;
     width: 100%;
 `;
-const SubmitForm = styled(Box)`
+const SubmitForm = styled(Form)`
     width: 70%;
     max-width: 70%;
     background: ${({ theme }) => theme.SURFACE};
@@ -96,6 +97,7 @@ const RowMain = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
+    max-height: 340px;
     //height: calc(100vh - 350px);
 `;
 const TableContainer = styled(TableContainerMUI)``;
