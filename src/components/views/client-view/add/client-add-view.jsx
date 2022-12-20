@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import * as Yup from "yup";
-import { Formik, Field } from "formik";
+import { Formik } from "formik";
 
 // * import style
 import { GlobalStyle as GS } from "@global/emotion/global-style";
@@ -13,14 +13,17 @@ import {
     OutlineButton,
     TextFildOutlinedInput,
     Tooltip,
+    Skeleton,
 } from "@components/common/partials";
 import {
     callApi,
     endpoints,
 } from "@components/config/app-configurations/callApi";
+
+// * import constants
 import { requestMethodes } from "@constants/content";
 
-export const ClientAddView = ({ id, clientInfo, editMode }) => {
+export const ClientAddView = ({ id, clientInfo, editMode, loading }) => {
     const { t } = useTranslation();
     const navigate = useNavigate();
     const [form, setForm] = useState({
@@ -140,56 +143,76 @@ export const ClientAddView = ({ id, clientInfo, editMode }) => {
                     <GS.SubmitForm id="myform">
                         <GS.FlexBoxCenter>
                             <GS.FormControlInput>
-                                <TextFildOutlinedInput
-                                    type={"text"}
-                                    name={"first_name"}
-                                    // error={formErrors?.first_name[0]}
-                                    label={t("name client")}
-                                    onChange={handleClientChange}
-                                />
+                                {loading ? (
+                                    <Skeleton width={"100%"} height="80px" />
+                                ) : (
+                                    <TextFildOutlinedInput
+                                        type={"text"}
+                                        name={"first_name"}
+                                        // error={formErrors?.first_name[0]}
+                                        label={t("name client")}
+                                        onChange={handleClientChange}
+                                    />
+                                )}
                             </GS.FormControlInput>
                             <GS.FormControlInput>
-                                <TextFildOutlinedInput
-                                    type={"text"}
-                                    name={"last_name"}
-                                    // error={formErrors?.last_name[0]}
-                                    label={t("family name client")}
-                                    onChange={handleClientChange}
-                                />
-                            </GS.FormControlInput>
-                        </GS.FlexBoxCenter>
-
-                        <GS.FlexBoxCenter>
-                            <GS.FormControlInput>
-                                <TextFildOutlinedInput
-                                    type={"text"}
-                                    name={"phone"}
-                                    // error={formErrors?.phone[0]}
-                                    label={t("phone")}
-                                    onChange={handleClientChange}
-                                />
-                            </GS.FormControlInput>
-                            <GS.FormControlInput>
-                                <TextFildOutlinedInput
-                                    type={"email"}
-                                    //  error={formErrors?.email[0]}
-                                    name={"email"}
-                                    label={t("email")}
-                                    onChange={handleClientChange}
-                                />
+                                {loading ? (
+                                    <Skeleton width={"100%"} height="80px" />
+                                ) : (
+                                    <TextFildOutlinedInput
+                                        type={"text"}
+                                        name={"last_name"}
+                                        // error={formErrors?.last_name[0]}
+                                        label={t("family name client")}
+                                        onChange={handleClientChange}
+                                    />
+                                )}
                             </GS.FormControlInput>
                         </GS.FlexBoxCenter>
 
                         <GS.FlexBoxCenter>
                             <GS.FormControlInput>
-                                <TextFildOutlinedInput
-                                    type={"text"}
-                                    name={"address"}
-                                    //error={formErrors?.address[0]}
-                                    label={t("addres")}
-                                    onChange={handleClientChange}
-                                    multiline
-                                />
+                                {loading ? (
+                                    <Skeleton width={"100%"} height="80px" />
+                                ) : (
+                                    <TextFildOutlinedInput
+                                        type={"text"}
+                                        name={"phone"}
+                                        // error={formErrors?.phone[0]}
+                                        label={t("phone")}
+                                        onChange={handleClientChange}
+                                    />
+                                )}
+                            </GS.FormControlInput>
+                            <GS.FormControlInput>
+                                {loading ? (
+                                    <Skeleton width={"100%"} height="80px" />
+                                ) : (
+                                    <TextFildOutlinedInput
+                                        type={"email"}
+                                        //  error={formErrors?.email[0]}
+                                        name={"email"}
+                                        label={t("email")}
+                                        onChange={handleClientChange}
+                                    />
+                                )}
+                            </GS.FormControlInput>
+                        </GS.FlexBoxCenter>
+
+                        <GS.FlexBoxCenter>
+                            <GS.FormControlInput>
+                                {loading ? (
+                                    <Skeleton width={"100%"} height="80px" />
+                                ) : (
+                                    <TextFildOutlinedInput
+                                        type={"text"}
+                                        name={"address"}
+                                        //error={formErrors?.address[0]}
+                                        label={t("addres")}
+                                        onChange={handleClientChange}
+                                        multiline
+                                    />
+                                )}
                             </GS.FormControlInput>
                         </GS.FlexBoxCenter>
                     </GS.SubmitForm>
@@ -198,14 +221,22 @@ export const ClientAddView = ({ id, clientInfo, editMode }) => {
 
             <GS.ActionForm>
                 <Tooltip title={t("save")}>
-                    <SubmitButton form="myform" type="submit">
-                        {t("save")}
-                    </SubmitButton>
+                    {loading ? (
+                        <Skeleton width={"100%"} height="100px" />
+                    ) : (
+                        <SubmitButton form="myform" type="submit">
+                            {editMode ? t("edit") : t("save")}
+                        </SubmitButton>
+                    )}
                 </Tooltip>
                 <Tooltip title={t("cansel")} placement="bottom">
-                    <OutlineButton onClick={handlerGoBack}>
-                        {t("cansel")}
-                    </OutlineButton>
+                    {loading ? (
+                        <Skeleton width={"100%"} height="100px" />
+                    ) : (
+                        <OutlineButton onClick={handlerGoBack}>
+                            {t("cansel")}
+                        </OutlineButton>
+                    )}
                 </Tooltip>
             </GS.ActionForm>
         </GS.FlexGap10>

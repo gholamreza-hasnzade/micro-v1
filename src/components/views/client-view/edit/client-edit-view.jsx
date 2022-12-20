@@ -17,5 +17,5 @@ export const ClientEditView = () => {
         }
     }, [dispatch, id]);
 
-    return <ClientAddView clientInfo={data?.data} id={id} editMode />;
+    return <ClientAddView clientInfo={data?.data} loading={data?.loading} id={id} editMode />;
 };

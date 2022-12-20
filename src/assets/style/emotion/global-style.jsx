@@ -84,12 +84,14 @@ const FlexBoxCenter = styled(Box)`
     display: flex;
     align-items: center;
     gap: 20px;
-    &:not(:last-child) {
+    margin-bottom: 25px;
+   /*  &:not(:last-child) {
         margin-bottom: 25px;
-    }
+    } */
 `;
 const FormControlInput = styled(Box)`
     width: 100%;
+    height: 50px;
 `;
 
 /* table style */
