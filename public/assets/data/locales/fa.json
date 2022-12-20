@@ -29,11 +29,10 @@
     "Server Error": "خطای سرور، مجدد تلاش نمایید",
     "row": "ردیف",
     "required field": "این فیلد اجباری می باشد",
-    "must be at least 3 characters" : "باید حداقل 3 کاراکتر باشد",
-    "must be at least 11 characters" : "باید حداقل 11 کاراکتر باشد",
-    "must not be greater than 64 characters" : "نباید بیشتر از 64 کاراکتر باشد",
-    "must not be greater than 11 characters" : "نباید بیشتر از 11 کاراکتر باشد",
-    "must not be greater than 120 characters" : "نباید بیشتر از 120 کاراکتر باشد"
-
-
+    "must be at least 3 characters": "باید حداقل 3 کاراکتر باشد",
+    "must be at least 11 characters": "باید حداقل 11 کاراکتر باشد",
+    "must not be greater than 64 characters": "نباید بیشتر از 64 کاراکتر باشد",
+    "must not be greater than 11 characters": "نباید بیشتر از 11 کاراکتر باشد",
+    "must not be greater than 120 characters": "نباید بیشتر از 120 کاراکتر باشد",
+    "no insert info": "no insert info"
 }

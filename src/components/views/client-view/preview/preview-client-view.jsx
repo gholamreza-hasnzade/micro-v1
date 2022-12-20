@@ -46,7 +46,8 @@ export const PreviewClienView = () => {
                                         variant="rounded"
                                     />
                                 ) : (
-                                    data?.data?.first_name || "ثبت نشده است"
+                                    data?.data?.first_name ||
+                                    t("no insert info")
                                 )}
                             </GS.PreviewListTitle>
                         </GS.PreviewListItem>
@@ -63,7 +64,7 @@ export const PreviewClienView = () => {
                                         variant="rounded"
                                     />
                                 ) : (
-                                    data?.data?.last_name || "ثبت نشده است"
+                                    data?.data?.last_name || t("no insert info")
                                 )}
                             </GS.PreviewListTitle>
                         </GS.PreviewListItem>
@@ -80,7 +81,7 @@ export const PreviewClienView = () => {
                                         variant="rounded"
                                     />
                                 ) : (
-                                    data?.data?.phone || "ثبت نشده است"
+                                    data?.data?.phone || t("no insert info")
                                 )}
                             </GS.PreviewListTitle>
                         </GS.PreviewListItem>
@@ -97,7 +98,7 @@ export const PreviewClienView = () => {
                                         variant="rounded"
                                     />
                                 ) : (
-                                    data?.data?.email || "ثبت نشده است"
+                                    data?.data?.email || t("no insert info")
                                 )}
                             </GS.PreviewListTitle>
                         </GS.PreviewListItem>
@@ -114,7 +115,7 @@ export const PreviewClienView = () => {
                                         variant="rounded"
                                     />
                                 ) : (
-                                    data?.data?.address || "ثبت نشده است"
+                                    data?.data?.address || t("no insert info")
                                 )}
                             </GS.PreviewListTitle>
                         </GS.PreviewListItem>
