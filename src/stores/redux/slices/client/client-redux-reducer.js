@@ -45,7 +45,6 @@ export const deleteUserPendingReduxReducer = (state, action) => {
 };
 export const deleteUserFulfilledReduxReducer = (state, action) => {
     state.loading = false;
-    console.log(action?.payload?.datas);
     const lists = action?.payload?.datas;
     state.datas = lists?.filter((item) => item.id !== action?.payload?.user_id);
     state.total = state.total - 1;

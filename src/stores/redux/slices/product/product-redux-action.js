@@ -49,3 +49,23 @@ export const getByIdProduct = createAsyncThunk("getByIdProduct", async (id) => {
         };
     }
 });
+
+// * delete Product
+export const deleteProduct = createAsyncThunk(
+    "deleteProduct",
+    async (id, { rejectWithValue, getState, dispatch }) => {
+        const data = getState()?.product.datas;
+        const { baseURL9000, v1 } = endpoints;
+        const response = await callApi({
+            baseURL: baseURL9000,
+            url: `${v1}/product/${id}`,
+            method: requestMethodes.delete,
+        });
+        if (response?.status) {
+            return {
+                datas: data,
+                product_id: id,
+            };
+        }
+    }
+);
