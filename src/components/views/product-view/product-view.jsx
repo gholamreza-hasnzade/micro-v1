@@ -1,6 +1,5 @@
 // * import tools
-import React from "react";
-import * as I from "react-feather";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 // * import style
@@ -8,82 +7,100 @@ import { ProductViewStyle as S } from "@components/views/product-view/product-vi
 import { GlobalStyle as GS } from "@global/emotion/global-style";
 
 // * import components
-import { LinkButton, Pagination, Tooltip } from "@components/common/partials";
-//import { DeleteModal } from "@components/common/segment";
+import {
+    LinkButton,
+    Pagination,
+    Skeleton,
+    Tooltip,
+} from "@components/common/partials";
+import { ProductPartView } from "@components/views/product-view/part/product-part-view";
+// * import store
+import { getProducts } from "@redux/slices/product/product-redux-action";
+import { useAppDispatch, useAppSelector } from "@redux/base/hook-redux";
 
 export const ProductView = () => {
+    const [currentPage, setCurrentPage] = useState(1);
+
+    const datas = useAppSelector((state) => state?.product);
+    const dispatch = useAppDispatch();
     const { t } = useTranslation();
+    useEffect(() => {
+        dispatch(getProducts(currentPage));
+    }, [dispatch, currentPage]);
+
+    const setCurrentPageNo = (event, pageNumber) => {
+        setCurrentPage(Number(pageNumber));
+    };
     return (
         <S.Product>
             <GS.FlexBoxDirColumn>
-                {/*  <DeleteModal /> */}
                 <GS.FlexCenterEnd>
                     <Tooltip title={t("add product")}>
-                        <LinkButton href={"/product/add"}>
-                            {t("add product")}
-                        </LinkButton>
+                        {datas?.loading ? (
+                            <Skeleton
+                                width={"100px"}
+                                height={"45px"}
+                                variant="rounded"
+                            />
+                        ) : (
+                            <LinkButton href={"/product/add"}>
+                                {t("add product")}
+                            </LinkButton>
+                        )}
                     </Tooltip>
                 </GS.FlexCenterEnd>
                 <GS.RowMain>
-                    <GS.TableContainer>
-                        <GS.Table>
-                            <GS.TableHead>
-                                <GS.TableRow>
-                                    <GS.TableCell>
-                                        {t("name product")}
-                                    </GS.TableCell>
-                                    <GS.TableCell align="left">
-                                        {t("code product")}
-                                    </GS.TableCell>
-                                    <GS.TableCell align="left">
-                                        {t("quntity")}
-                                    </GS.TableCell>
-                                    <GS.TableCell align="left">
-                                        {t("price")}
-                                    </GS.TableCell>
-                                    <GS.TableCell align="left">
-                                        {t("operation")}
-                                    </GS.TableCell>
-                                </GS.TableRow>
-                            </GS.TableHead>
-                            <GS.TableBody>
-                                <GS.TableRowBody>
-                                    <GS.TableCellBody>
-                                        نمر افزار هلو
-                                    </GS.TableCellBody>
-                                    <GS.TableCellBody>421</GS.TableCellBody>
-                                    <GS.TableCellBody>2</GS.TableCellBody>
-                                    <GS.TableCellBody>200</GS.TableCellBody>
+                    {datas?.loading ? (
+                        <Skeleton
+                            width={"100%"}
+                            height={"320px"}
+                            variant="rounded"
+                        />
+                    ) : (
+                        <>
+                            <GS.TableContainer>
+                                <GS.Table>
+                                    <GS.TableHead>
+                                        <GS.TableRow>
+                                            <GS.TableCell>
+                                                {t("row")}
+                                            </GS.TableCell>
+                                            <GS.TableCell>
+                                                {t("name product")}
+                                            </GS.TableCell>
+                                            <GS.TableCell align="left">
+                                                {t("code product")}
+                                            </GS.TableCell>
+                                            <GS.TableCell align="left">
+                                                {t("quntity")}
+                                            </GS.TableCell>
+                                            <GS.TableCell align="left">
+                                                {t("price")}
+                                            </GS.TableCell>
+                                            <GS.TableCell align="left">
+                                                {t("operation")}
+                                            </GS.TableCell>
+                                        </GS.TableRow>
+                                    </GS.TableHead>
+                                    <GS.TableBody>
+                                        {datas?.datas?.map((item, index) => (
+                                            <ProductPartView
+                                                key={index}
+                                                index={index}
+                                                data={item}
+                                            />
+                                        ))}
+                                    </GS.TableBody>
+                                </GS.Table>
+                            </GS.TableContainer>
 
-                                    <GS.TableCellBody>
-                                        <GS.TableCellAction>
-                                            <Tooltip title={t("details")}>
-                                                <GS.TableCellLink
-                                                    to={"/product/preview/1"}
-                                                >
-                                                    <I.Eye />
-                                                </GS.TableCellLink>
-                                            </Tooltip>
-
-                                            <Tooltip title={t("edit")}>
-                                                <GS.TableCellEdit>
-                                                    <I.Edit />
-                                                </GS.TableCellEdit>
-                                            </Tooltip>
-
-                                            <Tooltip title={t("حذف")}>
-                                                <GS.TableCellEdit>
-                                                    <I.Trash />
-                                                </GS.TableCellEdit>
-                                            </Tooltip>
-                                        </GS.TableCellAction>
-                                    </GS.TableCellBody>
-                                </GS.TableRowBody>
-                            </GS.TableBody>
-                        </GS.Table>
-                    </GS.TableContainer>
-
-                    <Pagination />
+                            <Pagination
+                                data={datas}
+                                setCurrentPageNo={setCurrentPageNo}
+                                currentPage={currentPage}
+                            />
+                        </>
+                    )}
                 </GS.RowMain>
             </GS.FlexBoxDirColumn>
         </S.Product>
