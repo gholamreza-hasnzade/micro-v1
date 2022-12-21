@@ -5,7 +5,11 @@ import { createSlice } from "@reduxjs/toolkit";
 import { productReduxInitialState } from "./product-redux-initial-state";
 
 // * Import redux-action
-import { getByIdProduct, getProducts } from "./product-redux-action";
+import {
+    deleteProduct,
+    getByIdProduct,
+    getProducts,
+} from "./product-redux-action";
 // * Import redux-reducer
 import {
     getProductsPendingReduxReducer,
@@ -14,20 +18,25 @@ import {
     getByIdProductPendingReduxReducer,
     getByIdProductFulfilledReduxReducer,
     getByIdProductRejectedReduxReducer,
+    deleteProductPendingReduxReducer,
+    deleteProductRejectedReduxReducer,
+    deleteProductFulfilledReduxReducer,
 } from "./product-redux-reducer";
 
 const productSlice = createSlice({
     name: " product",
     initialState: productReduxInitialState,
     extraReducers: (builder) => {
-        /* get Products */
+        // * get all Products
         builder.addCase(getProducts.pending, getProductsPendingReduxReducer);
         builder.addCase(
             getProducts.fulfilled,
             getProductsFulfilledReduxReducer
         );
         builder.addCase(getProducts.rejected, getProductsRejectedReduxReducer);
-        /* get Products */
+        // * get all Products
+
+        // * get by id Products
         builder.addCase(
             getByIdProduct.pending,
             getByIdProductPendingReduxReducer
@@ -40,6 +49,22 @@ const productSlice = createSlice({
             getByIdProduct.rejected,
             getByIdProductRejectedReduxReducer
         );
+        // * get by id Products
+
+        // * delete product
+        builder.addCase(
+            deleteProduct.pending,
+            deleteProductPendingReduxReducer
+        );
+        builder.addCase(
+            deleteProduct.fulfilled,
+            deleteProductFulfilledReduxReducer
+        );
+        builder.addCase(
+            deleteProduct.rejected,
+            deleteProductRejectedReduxReducer
+        );
+        // * delete product
     },
 });
 export const productReduxSlice = productSlice.reducer;

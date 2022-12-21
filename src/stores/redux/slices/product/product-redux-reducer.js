@@ -8,7 +8,6 @@ export const getProductsPendingReduxReducer = (state, action) => {
 };
 
 export const getProductsFulfilledReduxReducer = (state, action) => {
-    console.log(action?.payload);
     state.datas = action?.payload?.datas;
     state.total = action?.payload?.total;
     state.current_page = action?.payload?.current_page;

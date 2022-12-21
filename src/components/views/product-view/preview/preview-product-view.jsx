@@ -18,7 +18,6 @@ import { getByIdProduct } from "@redux/slices/product/product-redux-action";
 
 export const PreviewProductView = () => {
     const { item, loading } = useAppSelector((state) => state.product);
-    console.log(loading);
     const dispatch = useAppDispatch();
     const { id } = useParams();
     const { t } = useTranslation();

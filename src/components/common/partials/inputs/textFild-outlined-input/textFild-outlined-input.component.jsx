@@ -15,7 +15,6 @@ export const TextFildOutlinedInputComponent = ({
 }) => {
     const { t } = useTranslation();
     const [field, meta] = useField(props);
-  //  console.log(field);
     return (
         <>
             <S.TextField

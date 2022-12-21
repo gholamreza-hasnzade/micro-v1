@@ -25,9 +25,7 @@ export const getProducts = createAsyncThunk("getProducts", async (page) => {
             last_page: response?.data?.last_page
                 ? response?.data?.last_page
                 : response?.last_page,
-            total: response?.data?.total
-                ? response?.data?.total
-                : response?.total,
+            total: response?.data?.total,
             current_page: response?.data?.current_page
                 ? response?.data?.current_page
                 : response?.current_page,

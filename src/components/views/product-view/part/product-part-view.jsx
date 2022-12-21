@@ -10,12 +10,13 @@ import { DeleteModal } from "@components/common/segment";
 
 // * import style
 import { GlobalStyle as GS } from "@global/emotion/global-style";
+import { deleteProduct } from "@redux/slices/product/product-redux-action";
 
 export const ProductPartView = ({ data, index }) => {
     const [isOpen, setIsOpen] = useState(false);
     const { t } = useTranslation();
     const navigate = useNavigate();
-
+    
     const handleIsOpenModal = () => {
         setIsOpen(!isOpen);
     };
@@ -27,7 +28,7 @@ export const ProductPartView = ({ data, index }) => {
             <DeleteModal
                 isOpen={isOpen}
                 onClick={handleIsOpenModal}
-                //onDelete={() => deleteUser(data?.id)}
+                onDelete={() => deleteProduct(data?.id)}
                 setIsOpen={setIsOpen}
             />
             <GS.TableRowBody>
