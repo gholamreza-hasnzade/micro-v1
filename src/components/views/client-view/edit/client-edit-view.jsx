@@ -6,14 +6,14 @@ import { useParams } from "react-router-dom";
 import { ClientAddView } from "@components/views";
 // * import store
 import { useAppDispatch, useAppSelector } from "@redux/base/hook-redux";
-import { getBytUser } from "@redux/slices/client/client-redux-action";
+import { getByIdUser } from "@redux/slices/client/client-redux-action";
 export const ClientEditView = () => {
     const data = useAppSelector((stata) => stata?.client);
     const { id } = useParams();
     const dispatch = useAppDispatch();
     useEffect(() => {
         if (id) {
-            dispatch(getBytUser(id));
+            dispatch(getByIdUser(id));
         }
     }, [dispatch, id]);
 

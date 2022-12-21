@@ -8,6 +8,7 @@ import {
 // * import redux
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
+/* get all User  */
 export const getUsers = createAsyncThunk("getUsers", async (page) => {
     const { baseURL9000, v1 } = endpoints;
     const response = await callApi({
@@ -34,7 +35,8 @@ export const getUsers = createAsyncThunk("getUsers", async (page) => {
     }
 });
 
-export const getBytUser = createAsyncThunk("getUser", async (params) => {
+/* get User By id */
+export const getByIdUser = createAsyncThunk("getByIdUser", async (params) => {
     const { baseURL9000, v1 } = endpoints;
     const response = await callApi({
         baseURL: baseURL9000,
@@ -48,6 +50,7 @@ export const getBytUser = createAsyncThunk("getUser", async (params) => {
     }
 });
 
+/* delete User By id */
 export const deleteUser = createAsyncThunk(
     "deleteUser",
     async (params, { rejectWithValue, getState, dispatch }) => {
