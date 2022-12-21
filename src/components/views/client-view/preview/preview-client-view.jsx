@@ -46,7 +46,7 @@ export const PreviewClienView = () => {
                                         variant="rounded"
                                     />
                                 ) : (
-                                    data?.data?.first_name ||
+                                    data?.data?.first_name ??
                                     t("no insert info")
                                 )}
                             </GS.PreviewListTitle>
@@ -64,7 +64,7 @@ export const PreviewClienView = () => {
                                         variant="rounded"
                                     />
                                 ) : (
-                                    data?.data?.last_name || t("no insert info")
+                                    data?.data?.last_name ?? t("no insert info")
                                 )}
                             </GS.PreviewListTitle>
                         </GS.PreviewListItem>
@@ -81,7 +81,7 @@ export const PreviewClienView = () => {
                                         variant="rounded"
                                     />
                                 ) : (
-                                    data?.data?.phone || t("no insert info")
+                                    data?.data?.phone ?? t("no insert info")
                                 )}
                             </GS.PreviewListTitle>
                         </GS.PreviewListItem>
@@ -98,7 +98,7 @@ export const PreviewClienView = () => {
                                         variant="rounded"
                                     />
                                 ) : (
-                                    data?.data?.email || t("no insert info")
+                                    data?.data?.email ?? t("no insert info")
                                 )}
                             </GS.PreviewListTitle>
                         </GS.PreviewListItem>
@@ -115,7 +115,7 @@ export const PreviewClienView = () => {
                                         variant="rounded"
                                     />
                                 ) : (
-                                    data?.data?.address || t("no insert info")
+                                    data?.data?.address ?? t("no insert info")
                                 )}
                             </GS.PreviewListTitle>
                         </GS.PreviewListItem>
