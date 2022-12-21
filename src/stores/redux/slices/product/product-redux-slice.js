@@ -5,12 +5,15 @@ import { createSlice } from "@reduxjs/toolkit";
 import { productReduxInitialState } from "./product-redux-initial-state";
 
 // * Import redux-action
-import { getProducts } from "./product-redux-action";
+import { getByIdProduct, getProducts } from "./product-redux-action";
 // * Import redux-reducer
 import {
     getProductsPendingReduxReducer,
     getProductsFulfilledReduxReducer,
     getProductsRejectedReduxReducer,
+    getByIdProductPendingReduxReducer,
+    getByIdProductFulfilledReduxReducer,
+    getByIdProductRejectedReduxReducer,
 } from "./product-redux-reducer";
 
 const productSlice = createSlice({
@@ -25,6 +28,18 @@ const productSlice = createSlice({
         );
         builder.addCase(getProducts.rejected, getProductsRejectedReduxReducer);
         /* get Products */
+        builder.addCase(
+            getByIdProduct.pending,
+            getByIdProductPendingReduxReducer
+        );
+        builder.addCase(
+            getByIdProduct.fulfilled,
+            getByIdProductFulfilledReduxReducer
+        );
+        builder.addCase(
+            getByIdProduct.rejected,
+            getByIdProductRejectedReduxReducer
+        );
     },
 });
 export const productReduxSlice = productSlice.reducer;

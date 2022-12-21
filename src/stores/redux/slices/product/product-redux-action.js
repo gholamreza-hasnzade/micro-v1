@@ -34,3 +34,18 @@ export const getProducts = createAsyncThunk("getProducts", async (page) => {
         };
     }
 });
+
+// * get by id product
+export const getByIdProduct = createAsyncThunk("getByIdProduct", async (id) => {
+    const { baseURL9000, v1 } = endpoints;
+    const response = await callApi({
+        baseURL: baseURL9000,
+        url: `${v1}/product/${id}`,
+        method: requestMethodes.get,
+    });
+    if (response?.status) {
+        return {
+            item: response.data?.data ? response.data?.data : response.data,
+        };
+    }
+});

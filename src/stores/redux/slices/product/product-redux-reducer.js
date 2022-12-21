@@ -8,7 +8,7 @@ export const getProductsPendingReduxReducer = (state, action) => {
 };
 
 export const getProductsFulfilledReduxReducer = (state, action) => {
-    console.log( action?.payload);
+    console.log(action?.payload);
     state.datas = action?.payload?.datas;
     state.total = action?.payload?.total;
     state.current_page = action?.payload?.current_page;
@@ -24,3 +24,20 @@ export const getProductsRejectedReduxReducer = (state, action) => {
     state.loading = true;
 };
 /* get all product Reducer */
+
+/* get by id product  Reducer*/
+export const getByIdProductPendingReduxReducer = (state, action) => {
+    state.item = {};
+    state.loading = true;
+};
+
+export const getByIdProductFulfilledReduxReducer = (state, action) => {
+    state.item = action?.payload?.item;
+    state.loading = false;
+};
+
+export const getByIdProductRejectedReduxReducer = (state, action) => {
+    state.item = {};
+    state.loading = true;
+};
+/* get by id product  Reducer*/
