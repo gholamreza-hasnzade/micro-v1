@@ -56,7 +56,7 @@ export const MainDrawerComponent = () => {
                     {navigation?.map((itm) => (
                         <S.NavLink to={itm.url} key={itm.id}>
                             {({ isActive }) => (
-                                <Tooltip title={t(itm.title)}>
+                                <Tooltip title={t(itm.title)} placement="right">
                                     <S.RowDisplay
                                         active={isActive ? "active" : undefined}
                                     >
