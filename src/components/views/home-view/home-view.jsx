@@ -1,5 +1,5 @@
 //* import tools
-import React from "react";
+import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
 // * import style
@@ -8,8 +8,15 @@ import { GlobalStyle as GS } from "@global/emotion/global-style";
 
 // * import components
 import { Caption, Pagination } from "@components/common/partials";
+import { HomePartView } from "@components/views";
+import { useAppDispatch } from "@redux/base/hook-redux";
+import { getOrders } from "@redux/slices/order/order-redux-action";
 export const HomeView = () => {
     const { t } = useTranslation();
+    const dispatch = useAppDispatch();
+    useEffect(() => {
+        dispatch(getOrders(1));
+    }, [dispatch]);
 
     return (
         <S.Home>
@@ -41,21 +48,7 @@ export const HomeView = () => {
                                 </GS.TableRow>
                             </GS.TableHead>
                             <GS.TableBody>
-                                <GS.TableRowBody>
-                                    <GS.TableCellBody>غلامرضا</GS.TableCellBody>
-                                    <GS.TableCellBody>
-                                        حسن زاده
-                                    </GS.TableCellBody>
-                                    <GS.TableCellBody>
-                                        {" "}
-                                        09369780985
-                                    </GS.TableCellBody>
-                                    <GS.TableCellBody>
-                                        {" "}
-                                        index@gmail.com
-                                    </GS.TableCellBody>
-                                    <GS.TableCellBody> تهرون</GS.TableCellBody>
-                                </GS.TableRowBody>
+                                <HomePartView />
                             </GS.TableBody>
                         </GS.Table>
                     </GS.TableContainer>

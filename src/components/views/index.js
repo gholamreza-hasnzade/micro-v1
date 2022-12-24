@@ -7,6 +7,7 @@ export { PreviewClienView } from "@components/views/client-view/preview/preview-
 
 // * import Home View
 export { HomeView } from "@components/views/home-view/home-view";
+export { HomePartView } from "@components/views/home-view/part/home-part-view";
 // * import Home View
 
 // * import Product View
