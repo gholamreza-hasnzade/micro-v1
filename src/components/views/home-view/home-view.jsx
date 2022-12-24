@@ -1,5 +1,5 @@
 //* import tools
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 // * import style
@@ -9,15 +9,21 @@ import { GlobalStyle as GS } from "@global/emotion/global-style";
 // * import components
 import { Caption, Pagination } from "@components/common/partials";
 import { HomePartView } from "@components/views";
-import { useAppDispatch } from "@redux/base/hook-redux";
+import { useAppDispatch, useAppSelector } from "@redux/base/hook-redux";
 import { getOrders } from "@redux/slices/order/order-redux-action";
 export const HomeView = () => {
+    const [currentPage, setCurrentPage] = useState(1);
+
     const { t } = useTranslation();
+    const data = useAppSelector((state) => state?.order);
     const dispatch = useAppDispatch();
     useEffect(() => {
-        dispatch(getOrders(1));
-    }, [dispatch]);
+        dispatch(getOrders(currentPage));
+    }, [dispatch, currentPage]);
 
+    const setCurrentPageNo = (event, pageNumber) => {
+        setCurrentPage(Number(pageNumber));
+    };
     return (
         <S.Home>
             <GS.FlexBoxDirColumn>
@@ -48,12 +54,18 @@ export const HomeView = () => {
                                 </GS.TableRow>
                             </GS.TableHead>
                             <GS.TableBody>
-                                <HomePartView />
+                                {data?.datas?.map((data, index) => (
+                                    <HomePartView key={index} item={data} />
+                                ))}
                             </GS.TableBody>
                         </GS.Table>
                     </GS.TableContainer>
 
-                    <Pagination />
+                    <Pagination
+                        data={data}
+                        setCurrentPageNo={setCurrentPageNo}
+                        currentPage={currentPage}
+                    />
                 </GS.RowMain>
             </GS.FlexBoxDirColumn>
         </S.Home>
