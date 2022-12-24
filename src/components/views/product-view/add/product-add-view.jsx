@@ -18,7 +18,16 @@ import {
 import { useAppDispatch, useAppSelector } from "@redux/base/hook-redux";
 import { getUsers } from "@redux/slices/client/client-redux-action";
 
-export const ProductAddView = () => {
+// * import  config
+import {
+    callApi,
+    endpoints,
+} from "@components/config/app-configurations/callApi";
+
+// * import constants
+import { requestMethodes } from "@constants/content";
+
+export const ProductAddView = ({ id, productInfo, editMode, loading }) => {
     const datas = useAppSelector((stata) => stata?.client);
     const dispatch = useAppDispatch();
 
@@ -64,8 +73,56 @@ export const ProductAddView = () => {
     const handlerGoBack = () => {
         navigate("/product");
     };
-    const handleSubmit = (e) => {
-        console.log(e);
+    const handleSubmit = async (e) => {
+        try {
+            const { baseURL9000, v1 } = endpoints;
+            const bodyForm = {
+                user_id: e.user_id,
+                name: e.name,
+                code: Number(e.code),
+                price: Number(e.price),
+                total: Number(e.total),
+            };
+            if (editMode) {
+                const result = await callApi({
+                    baseURL: baseURL9000,
+                    url: `${v1}/product/${id}`,
+                    method: requestMethodes.put,
+                    body: bodyForm,
+                });
+
+                if (result?.status) {
+                    navigate("/product");
+                } else {
+                    setForm((prevState) => ({
+                        ...prevState,
+                        formErrors: {
+                            ...prevState.formErrors,
+                            ...result?.errors,
+                        },
+                    }));
+                }
+            } else {
+                const result = await callApi({
+                    baseURL: baseURL9000,
+                    url: `${v1}/product`,
+                    method: requestMethodes.post,
+                    body: bodyForm,
+                });
+
+                if (result?.status) {
+                    navigate("/product");
+                } else {
+                    setForm((prevState) => ({
+                        ...prevState,
+                        formErrors: {
+                            ...prevState.formErrors,
+                            ...result?.errors,
+                        },
+                    }));
+                }
+            }
+        } catch (error) {}
     };
     return (
         <GS.FlexGap10>
