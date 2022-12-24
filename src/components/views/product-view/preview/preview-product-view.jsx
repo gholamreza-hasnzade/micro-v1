@@ -18,6 +18,7 @@ import { getByIdProduct } from "@redux/slices/product/product-redux-action";
 
 export const PreviewProductView = () => {
     const { item, loading } = useAppSelector((state) => state.product);
+    console.log(item?.user);
     const dispatch = useAppDispatch();
     const { id } = useParams();
     const { t } = useTranslation();
@@ -111,6 +112,38 @@ export const PreviewProductView = () => {
                                     />
                                 ) : (
                                     item?.price ?? t("no insert info")
+                                )}
+                            </GS.PreviewListTitle>
+                        </GS.PreviewListItem>
+                        <GS.PreviewListItem>
+                            <GS.PreviewListItemCaption>
+                                {t("client user")} :
+                            </GS.PreviewListItemCaption>
+                            <GS.PreviewListTitle>
+                                {loading ? (
+                                    <Skeleton
+                                        width={"150px"}
+                                        height={"25px"}
+                                        variant="rounded"
+                                    />
+                                ) : (
+                                    item?.user?.first_name ?? t("no insert info")
+                                )}
+                            </GS.PreviewListTitle>
+                        </GS.PreviewListItem>
+                        <GS.PreviewListItem>
+                            <GS.PreviewListItemCaption>
+                                {t("family name client")} :
+                            </GS.PreviewListItemCaption>
+                            <GS.PreviewListTitle>
+                                {loading ? (
+                                    <Skeleton
+                                        width={"150px"}
+                                        height={"25px"}
+                                        variant="rounded"
+                                    />
+                                ) : (
+                                    item?.user?.last_name ?? t("no insert info")
                                 )}
                             </GS.PreviewListTitle>
                         </GS.PreviewListItem>

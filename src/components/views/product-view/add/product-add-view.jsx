@@ -14,6 +14,7 @@ import {
     TextFildOutlinedInput,
     SelectOption,
     Tooltip,
+    Skeleton,
 } from "@components/common/partials";
 import { useAppDispatch, useAppSelector } from "@redux/base/hook-redux";
 import { getUsers } from "@redux/slices/client/client-redux-action";
@@ -124,9 +125,9 @@ export const ProductAddView = ({ id, productInfo, editMode, loading }) => {
             }
         } catch (error) {}
     };
-     // ** set data by id
+    // ** set data by id
 
-     useEffect(() => {
+    useEffect(() => {
         if (editMode && productInfo) {
             setForm((prevState) => ({
                 ...prevState,
@@ -152,56 +153,76 @@ export const ProductAddView = ({ id, productInfo, editMode, loading }) => {
                     <GS.SubmitForm id="myProductForm">
                         <GS.FlexBoxCenter>
                             <GS.FormControlInput>
-                                <TextFildOutlinedInput
-                                    type={"text"}
-                                    name={"name"}
-                                    onChange={handleProductChange}
-                                    label={t("name product")}
-                                />
+                                {loading ? (
+                                    <Skeleton width={"100%"} height="80px" />
+                                ) : (
+                                    <TextFildOutlinedInput
+                                        type={"text"}
+                                        name={"name"}
+                                        onChange={handleProductChange}
+                                        label={t("name product")}
+                                    />
+                                )}
                             </GS.FormControlInput>
                             <GS.FormControlInput>
-                                <TextFildOutlinedInput
-                                    type={"text"}
-                                    name={"code"}
-                                    label={t("code product")}
-                                />
-                            </GS.FormControlInput>
-                        </GS.FlexBoxCenter>
-
-                        <GS.FlexBoxCenter>
-                            <GS.FormControlInput>
-                                <TextFildOutlinedInput
-                                    type={"text"}
-                                    name={"total"}
-                                    onChange={handleProductChange}
-                                    label={t("total")}
-                                />
-                            </GS.FormControlInput>
-                            <GS.FormControlInput>
-                                <TextFildOutlinedInput
-                                    type={"text"}
-                                    name={"price"}
-                                    label={t("price")}
-                                />
+                                {loading ? (
+                                    <Skeleton width={"100%"} height="80px" />
+                                ) : (
+                                    <TextFildOutlinedInput
+                                        type={"text"}
+                                        name={"code"}
+                                        label={t("code product")}
+                                    />
+                                )}
                             </GS.FormControlInput>
                         </GS.FlexBoxCenter>
 
                         <GS.FlexBoxCenter>
                             <GS.FormControlInput>
-                                <SelectOption
-                                    label={t("client")}
-                                    id={"client-id-1"}
-                                    name="user_id"
-                                >
-                                    {datas?.datas?.map((itm, index) => (
-                                        <GS.MenuItem
-                                            key={index}
-                                            value={itm?.id}
-                                        >
-                                            {itm?.first_name}
-                                        </GS.MenuItem>
-                                    ))}
-                                </SelectOption>
+                                {loading ? (
+                                    <Skeleton width={"100%"} height="80px" />
+                                ) : (
+                                    <TextFildOutlinedInput
+                                        type={"text"}
+                                        name={"total"}
+                                        onChange={handleProductChange}
+                                        label={t("total")}
+                                    />
+                                )}
+                            </GS.FormControlInput>
+                            <GS.FormControlInput>
+                                {loading ? (
+                                    <Skeleton width={"100%"} height="80px" />
+                                ) : (
+                                    <TextFildOutlinedInput
+                                        type={"text"}
+                                        name={"price"}
+                                        label={t("price")}
+                                    />
+                                )}
+                            </GS.FormControlInput>
+                        </GS.FlexBoxCenter>
+
+                        <GS.FlexBoxCenter>
+                            <GS.FormControlInput>
+                                {loading ? (
+                                    <Skeleton width={"100%"} height="80px" />
+                                ) : (
+                                    <SelectOption
+                                        label={t("client")}
+                                        id={"client-id-1"}
+                                        name="user_id"
+                                    >
+                                        {datas?.datas?.map((itm, index) => (
+                                            <GS.MenuItem
+                                                key={index}
+                                                value={itm?.id}
+                                            >
+                                                {itm?.first_name}
+                                            </GS.MenuItem>
+                                        ))}
+                                    </SelectOption>
+                                )}
                             </GS.FormControlInput>
                         </GS.FlexBoxCenter>
                     </GS.SubmitForm>
@@ -210,14 +231,22 @@ export const ProductAddView = ({ id, productInfo, editMode, loading }) => {
 
             <GS.ActionForm>
                 <Tooltip title={t("save")}>
-                    <SubmitButton form="myProductForm">
-                        {t("save")}{" "}
-                    </SubmitButton>
+                    {loading ? (
+                        <Skeleton width={"100%"} height="100px" />
+                    ) : (
+                        <SubmitButton form="myProductForm">
+                            {editMode ? t("edit") : t("save")}
+                        </SubmitButton>
+                    )}
                 </Tooltip>
                 <Tooltip title={t("cansel")} placement="bottom">
-                    <OutlineButton onClick={handlerGoBack}>
-                        {t("cansel")}
-                    </OutlineButton>
+                    {loading ? (
+                        <Skeleton width={"100%"} height="100px" />
+                    ) : (
+                        <OutlineButton onClick={handlerGoBack}>
+                            {t("cansel")}
+                        </OutlineButton>
+                    )}
                 </Tooltip>
             </GS.ActionForm>
         </GS.FlexGap10>
