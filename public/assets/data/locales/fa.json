@@ -37,5 +37,9 @@
     "must not be greater than 120 characters": "نباید بیشتر از 120 کاراکتر باشد",
     "must not be greater than 4 characters": "نباید بیشتر از 4 کاراکتر باشد",
     "no insert info": "ثبت نشده است",
-    "The email has already been taken." : "ایمیل قبلا گرفته شده است"
+    "The email has already been taken." : "ایمیل قبلا گرفته شده است",
+    "Added Successfully": "با موفقیت ایجاد شد",
+    "Edited Successfully": "ویرایش با موفقیت انجام شد"
+
+
 }

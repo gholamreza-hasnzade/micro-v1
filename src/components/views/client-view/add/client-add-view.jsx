@@ -21,10 +21,13 @@ import {
 } from "@components/config/app-configurations/callApi";
 
 // * import constants
-import { requestMethodes } from "@constants/content";
+import { notificationTypes, requestMethodes } from "@constants/content";
+import { notification } from "@redux/slices/notification/notification-redux-slice";
+import { useAppDispatch } from "@redux/base/hook-redux";
 
 export const ClientAddView = ({ id, clientInfo, editMode, loading }) => {
     const { t } = useTranslation();
+    const dispatch = useAppDispatch();
     const navigate = useNavigate();
     const [form, setForm] = useState({
         first_name: "",
@@ -101,8 +104,15 @@ export const ClientAddView = ({ id, clientInfo, editMode, loading }) => {
                     method: requestMethodes.post,
                     body: bodyForm,
                 });
-                if (result?.status) {
+                if (result?.status === true) {
                     navigate("/client");
+                    dispatch(
+                        notification({
+                            showNotification: true,
+                            type: notificationTypes.success,
+                            content: "Added Successfully",
+                        })
+                    );
                 } else {
                     setForm((prevState) => ({
                         ...prevState,

@@ -1,6 +1,6 @@
 import { notificationTypes } from "@constants/content";
 
-export const initialState = {
+export const initialStateNotification = {
     showNotification: false,
     type: notificationTypes.success,
     content: "",

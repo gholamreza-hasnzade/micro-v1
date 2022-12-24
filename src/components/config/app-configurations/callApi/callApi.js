@@ -37,11 +37,8 @@ export const callApi = async (requestData) => {
     try {
         const response = await axios({
             url: url,
-
             method: method,
-
             baseURL: baseURL,
-
             headers: {
                 "X-Requested-With": "XMLHttpRequest",
                 "Content-Type": ContentType,
@@ -51,12 +48,10 @@ export const callApi = async (requestData) => {
                 "Access-Control-Allow-Headers":
                     "Origin, X-Requested-With, Content-Type, Accept",
             },
-
             data: data,
-
             params: params,
         });
-        if (response?.data?.status?.code === 500) {
+        if (response?.status === 500) {
             dispatch(
                 notification({
                     showNotification: true,
@@ -64,7 +59,7 @@ export const callApi = async (requestData) => {
                     content: "Server Error",
                 })
             );
-        } else if (response?.data?.status?.type === "warning") {
+        } else if (response?.status === "warning") {
             const message = Object.values(response?.data?.status?.message)[0];
             dispatch(
                 notification({
