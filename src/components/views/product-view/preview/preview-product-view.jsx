@@ -60,7 +60,7 @@ export const PreviewProductView = () => {
                                         variant="rounded"
                                     />
                                 ) : (
-                                    item?.name ?? t("no insert info")
+                                    item?.name ?? t("No Insert Info")
                                 )}
                             </GS.PreviewListTitle>
                         </GS.PreviewListItem>
@@ -77,7 +77,7 @@ export const PreviewProductView = () => {
                                         variant="rounded"
                                     />
                                 ) : (
-                                    item?.code ?? t("no insert info")
+                                    item?.code ?? t("No Insert Info")
                                 )}
                             </GS.PreviewListTitle>
                         </GS.PreviewListItem>
@@ -94,7 +94,7 @@ export const PreviewProductView = () => {
                                         variant="rounded"
                                     />
                                 ) : (
-                                    item?.total ?? t("no insert info")
+                                    item?.total ?? t("No Insert Info")
                                 )}
                             </GS.PreviewListTitle>
                         </GS.PreviewListItem>
@@ -111,7 +111,7 @@ export const PreviewProductView = () => {
                                         variant="rounded"
                                     />
                                 ) : (
-                                    item?.price ?? t("no insert info")
+                                    item?.price ?? t("No Insert Info")
                                 )}
                             </GS.PreviewListTitle>
                         </GS.PreviewListItem>
@@ -127,7 +127,7 @@ export const PreviewProductView = () => {
                                         variant="rounded"
                                     />
                                 ) : (
-                                    item?.user?.first_name ?? t("no insert info")
+                                    item?.user?.first_name ?? t("No Insert Info")
                                 )}
                             </GS.PreviewListTitle>
                         </GS.PreviewListItem>
@@ -143,7 +143,7 @@ export const PreviewProductView = () => {
                                         variant="rounded"
                                     />
                                 ) : (
-                                    item?.user?.last_name ?? t("no insert info")
+                                    item?.user?.last_name ?? t("No Insert Info")
                                 )}
                             </GS.PreviewListTitle>
                         </GS.PreviewListItem>

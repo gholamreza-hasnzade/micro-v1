@@ -8,6 +8,7 @@ import { GlobalStyle as GS } from "@global/emotion/global-style";
 
 // * import components
 import {
+    EmptyComponent,
     LinkButton,
     Pagination,
     Skeleton,
@@ -33,76 +34,86 @@ export const ProductView = () => {
     };
     return (
         <S.Product>
-            <GS.FlexBoxDirColumn>
-                <GS.FlexCenterEnd>
-                    <Tooltip title={t("add product")}>
+            {datas?.datas?.length === 0 ? (
+                <EmptyComponent
+                    caption={t("No Insert Info")}
+                    title={t("add product")}
+                    href={"/product/add"}
+                />
+            ) : (
+                <GS.FlexBoxDirColumn>
+                    <GS.FlexCenterEnd>
+                        <Tooltip title={t("add product")}>
+                            {datas?.loading ? (
+                                <Skeleton
+                                    width={"100px"}
+                                    height={"45px"}
+                                    variant="rounded"
+                                />
+                            ) : (
+                                <LinkButton href={"/product/add"}>
+                                    {t("add product")}
+                                </LinkButton>
+                            )}
+                        </Tooltip>
+                    </GS.FlexCenterEnd>
+                    <GS.RowMain>
                         {datas?.loading ? (
                             <Skeleton
-                                width={"100px"}
-                                height={"45px"}
+                                width={"100%"}
+                                height={"320px"}
                                 variant="rounded"
                             />
                         ) : (
-                            <LinkButton href={"/product/add"}>
-                                {t("add product")}
-                            </LinkButton>
-                        )}
-                    </Tooltip>
-                </GS.FlexCenterEnd>
-                <GS.RowMain>
-                    {datas?.loading ? (
-                        <Skeleton
-                            width={"100%"}
-                            height={"320px"}
-                            variant="rounded"
-                        />
-                    ) : (
-                        <>
-                            <GS.TableContainer>
-                                <GS.Table>
-                                    <GS.TableHead>
-                                        <GS.TableRow>
-                                            <GS.TableCell>
-                                                {t("row")}
-                                            </GS.TableCell>
-                                            <GS.TableCell>
-                                                {t("name product")}
-                                            </GS.TableCell>
-                                            <GS.TableCell align="left">
-                                                {t("code product")}
-                                            </GS.TableCell>
-                                            <GS.TableCell align="left">
-                                                {t("quntity")}
-                                            </GS.TableCell>
-                                            <GS.TableCell align="left">
-                                                {t("price")}
-                                            </GS.TableCell>
-                                            <GS.TableCell align="left">
-                                                {t("operation")}
-                                            </GS.TableCell>
-                                        </GS.TableRow>
-                                    </GS.TableHead>
-                                    <GS.TableBody>
-                                        {datas?.datas?.map((item, index) => (
-                                            <ProductPartView
-                                                key={index}
-                                                index={index}
-                                                data={item}
-                                            />
-                                        ))}
-                                    </GS.TableBody>
-                                </GS.Table>
-                            </GS.TableContainer>
+                            <>
+                                <GS.TableContainer>
+                                    <GS.Table>
+                                        <GS.TableHead>
+                                            <GS.TableRow>
+                                                <GS.TableCell>
+                                                    {t("row")}
+                                                </GS.TableCell>
+                                                <GS.TableCell>
+                                                    {t("name product")}
+                                                </GS.TableCell>
+                                                <GS.TableCell align="left">
+                                                    {t("code product")}
+                                                </GS.TableCell>
+                                                <GS.TableCell align="left">
+                                                    {t("quntity")}
+                                                </GS.TableCell>
+                                                <GS.TableCell align="left">
+                                                    {t("price")}
+                                                </GS.TableCell>
+                                                <GS.TableCell align="left">
+                                                    {t("operation")}
+                                                </GS.TableCell>
+                                            </GS.TableRow>
+                                        </GS.TableHead>
+                                        <GS.TableBody>
+                                            {datas?.datas?.map(
+                                                (item, index) => (
+                                                    <ProductPartView
+                                                        key={index}
+                                                        index={index}
+                                                        data={item}
+                                                    />
+                                                )
+                                            )}
+                                        </GS.TableBody>
+                                    </GS.Table>
+                                </GS.TableContainer>
 
-                            <Pagination
-                                data={datas}
-                                setCurrentPageNo={setCurrentPageNo}
-                                currentPage={currentPage}
-                            />
-                        </>
-                    )}
-                </GS.RowMain>
-            </GS.FlexBoxDirColumn>
+                                <Pagination
+                                    data={datas}
+                                    setCurrentPageNo={setCurrentPageNo}
+                                    currentPage={currentPage}
+                                />
+                            </>
+                        )}
+                    </GS.RowMain>
+                </GS.FlexBoxDirColumn>
+            )}
         </S.Product>
     );
 };

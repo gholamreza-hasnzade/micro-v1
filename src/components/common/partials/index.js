@@ -10,4 +10,5 @@ export { PaginationComponent as Pagination } from "@components/common/partials/p
 export { TooltipComponent as Tooltip } from "@components/common/partials/tooltip/tooltip-component";
 export { SkeletonComponent as Skeleton } from "@components/common/partials/loadings/skeleton/skeleton-component";
 export { ErrorMessageComponent as ErrorMessage } from "@components/common/partials/typographys/error-message/error-message-component";
-export { ToastNotificationComponent as  ToastNotification} from "@components/common/partials/toast-notification/toast-notification-component";
+export { ToastNotificationComponent as ToastNotification } from "@components/common/partials/toast-notification/toast-notification-component";
+export { EmptyComponent} from "@components/common/partials/emptys/empty-component";

@@ -3,7 +3,12 @@ import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 // * import components
-import { LinkButton, Skeleton, Tooltip } from "@components/common/partials";
+import {
+    EmptyComponent,
+    LinkButton,
+    Skeleton,
+    Tooltip,
+} from "@components/common/partials";
 import { ClientPartView } from "@components/views/client-view/part/client-part-view";
 import { Pagination } from "@components/common/partials";
 
@@ -29,82 +34,92 @@ export const ClientView = () => {
     };
     return (
         <S.Client>
-            <GS.FlexBoxDirColumn>
-                <GS.FlexCenterEnd>
-                    <Tooltip title={t("client user")}>
+            {datas?.datas.length === 0 ? (
+                <EmptyComponent
+                    caption={t("No Insert Info")}
+                    title={t("client user")}
+                    href={"/client/add"}
+                />
+            ) : (
+                <GS.FlexBoxDirColumn>
+                    <GS.FlexCenterEnd>
+                        <Tooltip title={t("client user")}>
+                            {datas?.loading ? (
+                                <Skeleton
+                                    width={"100px"}
+                                    height={"45px"}
+                                    variant="rounded"
+                                />
+                            ) : (
+                                <LinkButton href={"/client/add"}>
+                                    {t("client user")}{" "}
+                                </LinkButton>
+                            )}
+                        </Tooltip>
+                    </GS.FlexCenterEnd>
+                    <GS.RowMain>
                         {datas?.loading ? (
                             <Skeleton
-                                width={"100px"}
-                                height={"45px"}
+                                width={"100%"}
+                                height={"320px"}
                                 variant="rounded"
                             />
                         ) : (
-                            <LinkButton href={"/client/add"}>
-                                {t("client user")}{" "}
-                            </LinkButton>
-                        )}
-                    </Tooltip>
-                </GS.FlexCenterEnd>
-                <GS.RowMain>
-                    {datas?.loading ? (
-                        <Skeleton
-                            width={"100%"}
-                            height={"320px"}
-                            variant="rounded"
-                        />
-                    ) : (
-                        <>
-                            <GS.TableContainer>
-                                <GS.Table>
-                                    <GS.TableHead>
-                                        <GS.TableRow>
-                                            <GS.TableCell>
-                                                {t("row")}
-                                            </GS.TableCell>
-                                            <GS.TableCell>
-                                                {t("name client")}
-                                            </GS.TableCell>
-                                            <GS.TableCell align="left">
-                                                {t("family name client")}
-                                            </GS.TableCell>
-                                            <GS.TableCell align="left">
-                                                {" "}
-                                                {t("phone")}{" "}
-                                            </GS.TableCell>
-                                            <GS.TableCell align="left">
-                                                {" "}
-                                                {t("email")}{" "}
-                                            </GS.TableCell>
-                                            <GS.TableCell align="left">
-                                                {" "}
-                                                {t("addres")}{" "}
-                                            </GS.TableCell>
-                                            <GS.TableCell align="left">
-                                                {t("operation")}
-                                            </GS.TableCell>
-                                        </GS.TableRow>
-                                    </GS.TableHead>
-                                    <GS.TableBody>
-                                        {datas?.datas?.map((data, index) => (
-                                            <ClientPartView
-                                                data={data}
-                                                key={index}
-                                                index={index}
-                                            />
-                                        ))}
-                                    </GS.TableBody>
-                                </GS.Table>
-                            </GS.TableContainer>
+                            <>
+                                <GS.TableContainer>
+                                    <GS.Table>
+                                        <GS.TableHead>
+                                            <GS.TableRow>
+                                                <GS.TableCell>
+                                                    {t("row")}
+                                                </GS.TableCell>
+                                                <GS.TableCell>
+                                                    {t("name client")}
+                                                </GS.TableCell>
+                                                <GS.TableCell align="left">
+                                                    {t("family name client")}
+                                                </GS.TableCell>
+                                                <GS.TableCell align="left">
+                                                    {" "}
+                                                    {t("phone")}{" "}
+                                                </GS.TableCell>
+                                                <GS.TableCell align="left">
+                                                    {" "}
+                                                    {t("email")}{" "}
+                                                </GS.TableCell>
+                                                <GS.TableCell align="left">
+                                                    {" "}
+                                                    {t("addres")}{" "}
+                                                </GS.TableCell>
+                                                <GS.TableCell align="left">
+                                                    {t("operation")}
+                                                </GS.TableCell>
+                                            </GS.TableRow>
+                                        </GS.TableHead>
+                                        <GS.TableBody>
+                                            {datas?.datas?.map(
+                                                (data, index) => (
+                                                    <ClientPartView
+                                                        data={data}
+                                                        key={index}
+                                                        index={index}
+                                                    />
+                                                )
+                                            )}
+                                        </GS.TableBody>
+                                    </GS.Table>
+                                </GS.TableContainer>
 
-                            <Pagination
-                                data={datas}
-                                setCurrentPageNo={setCurrentPageNo}
-                                currentPage={currentPage}
-                            />
-                        </>
-                    )}
-                </GS.RowMain>
-            </GS.FlexBoxDirColumn>
+                                <Pagination
+                                    data={datas}
+                                    setCurrentPageNo={setCurrentPageNo}
+                                    currentPage={currentPage}
+                                />
+                            </>
+                        )}
+                    </GS.RowMain>
+                </GS.FlexBoxDirColumn>
+            )}
         </S.Client>
     );
 };
