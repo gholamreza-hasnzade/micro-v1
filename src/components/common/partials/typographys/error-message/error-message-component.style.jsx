@@ -5,7 +5,7 @@ import { Typography as TypographyMUI } from "@mui/material";
 const Typography = styled(TypographyMUI)`
     font-size: 11px;
     color: ${({ theme }) => theme.PRIMARY};
-    margint-top: 1px;
+    margin-top: 5px;
 `;
 
 export const ErrorMessageComponentStyle = {

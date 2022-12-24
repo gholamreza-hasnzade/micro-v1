@@ -32,8 +32,7 @@
     "must not be greater than 64 characters" : "must not be greater than 64 characters",
     "must not be greater than 11 characters" : "must not be greater than 11 characters",
     "must not be greater than 120 characters" : "must not be greater than 120 characters",
+    "must not be greater than 4 characters" : "must not be greater than 4 characters",
     "no insert info" :"no insert info",
     "The email has already been taken." : "The email has already been taken"
-
-
 }

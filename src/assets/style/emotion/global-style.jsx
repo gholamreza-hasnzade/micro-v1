@@ -9,6 +9,7 @@ import {
     TableCell as TableCellMUI,
     TableBody as TableBodyMUI,
     Typography as TypographyMUI,
+    MenuItem as MenuItemMUI,
 } from "@mui/material";
 import { Link as LinkRRD } from "react-router-dom";
 import { Form } from "formik";
@@ -85,13 +86,13 @@ const FlexBoxCenter = styled(Box)`
     align-items: center;
     gap: 20px;
     margin-bottom: 25px;
-   /*  &:not(:last-child) {
+    /*  &:not(:last-child) {
         margin-bottom: 25px;
     } */
 `;
 const FormControlInput = styled(Box)`
     width: 100%;
-    height: 50px;
+    //height: 50px;
 `;
 
 /* table style */
@@ -140,7 +141,6 @@ const TableCellLink = styled(LinkRRD)`
         color: #b4b7bd;
         width: 18px;
         transition: 0.3s;
-
     }
 
     &:hover svg {
@@ -159,7 +159,6 @@ const TableCellEdit = styled(Box)`
         color: #b4b7bd;
         width: 18px;
         transition: 0.3s;
-
     }
     &:hover svg {
         color: ${({ theme }) => theme.PRIMARY};
@@ -189,8 +188,6 @@ const PreviewListTitle = styled(TypographyMUI)`
     color: ${({ theme }) => theme.WHITE};
 `;
 
-
-
 const Overlay = styled(Box)`
     position: fixed; /* Sit on top of the page content */
     width: 100%; /* Full width (cover the whole page) */
@@ -200,8 +197,10 @@ const Overlay = styled(Box)`
     right: 0;
     bottom: 0;
     background-color: rgba(34, 40, 49, 0.5); /* Black background with opacity */
-    cursor: pointer; /* Add a pointer on hover */    
+    cursor: pointer; /* Add a pointer on hover */
 `;
+
+const MenuItem = styled(MenuItemMUI)``;
 
 export const GlobalStyle = {
     FlexCenterSB,
@@ -232,4 +231,5 @@ export const GlobalStyle = {
     PreviewListItem,
     PreviewListItemCaption,
     PreviewListTitle,
+    MenuItem,
 };

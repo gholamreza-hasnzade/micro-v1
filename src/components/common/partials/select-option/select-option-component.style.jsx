@@ -21,7 +21,6 @@ const Select = styled(SelectMUI)`
     }
 `;
 const MenuItem = styled(MenuItemMUI)`
-    //background: red;
 `;
 const FormControl = styled(FormControlMUI)``;
 
