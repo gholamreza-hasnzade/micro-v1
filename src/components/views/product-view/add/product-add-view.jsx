@@ -124,6 +124,16 @@ export const ProductAddView = ({ id, productInfo, editMode, loading }) => {
             }
         } catch (error) {}
     };
+     // ** set data by id
+
+     useEffect(() => {
+        if (editMode && productInfo) {
+            setForm((prevState) => ({
+                ...prevState,
+                ...productInfo,
+            }));
+        }
+    }, [editMode, productInfo]);
     return (
         <GS.FlexGap10>
             <Formik

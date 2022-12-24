@@ -1,5 +1,10 @@
 // * Import components
-import { ProductView, ProductAddView, PreviewProductView } from "@components/views";
+import {
+    ProductView,
+    ProductAddView,
+    PreviewProductView,
+    ProductEditView,
+} from "@components/views";
 
 const ProductRoute = [
     {
@@ -15,6 +20,11 @@ const ProductRoute = [
     {
         path: "/product/preview/:id",
         element: <PreviewProductView />,
+        exact: true,
+    },
+    {
+        path: "/product/edit/:id",
+        element: <ProductEditView />,
         exact: true,
     },
 ];
