@@ -25,7 +25,7 @@ import { notificationTypes, requestMethodes } from "@constants/content";
 // * Import Store
 import { toastContainer } from "@helpers";
 
-export const ClientAddView = ({ id, clientInfo, editMode, loading }) => {
+const ClientAddView = ({ id, clientInfo, editMode, loading }) => {
     const { t } = useTranslation();
     const navigate = useNavigate();
     const [form, setForm] = useState({
@@ -36,7 +36,7 @@ export const ClientAddView = ({ id, clientInfo, editMode, loading }) => {
         phone: "",
         formErrors: {},
     });
-   /*  const handleClientChange = (e) => {
+    /*  const handleClientChange = (e) => {
         const { name, value } = e.target;
         console.log(formErrors, "handleClientChange");
 
@@ -160,7 +160,9 @@ export const ClientAddView = ({ id, clientInfo, editMode, loading }) => {
                 onSubmit={(e) => handleSubmit(e)}
             >
                 {(formik) => (
-                    <GS.SubmitForm id="myform" /* onChange={handleClientChange} */>
+                    <GS.SubmitForm
+                        id="myform" /* onChange={handleClientChange} */
+                    >
                         <GS.FlexBoxCenter>
                             <GS.FormControlInput>
                                 {loading ? (
@@ -257,3 +259,5 @@ export const ClientAddView = ({ id, clientInfo, editMode, loading }) => {
         </GS.FlexGap10>
     );
 };
+
+export default ClientAddView;

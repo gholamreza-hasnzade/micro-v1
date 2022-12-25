@@ -1,5 +1,5 @@
 // * import tools
-import React from "react";
+import React, { Suspense } from "react";
 import { ToastContainer } from "react-toastify";
 
 // * import components
@@ -11,10 +11,12 @@ import "react-toastify/dist/ReactToastify.css";
 const App = () => {
     document.title = "فروشگاه آنلاین هلو ";
     return (
-        <AppConfigurations>
-            <AppRouter />
-            <ToastContainer />
-        </AppConfigurations>
+        <Suspense fallback={<div>loading...</div>}>
+            <AppConfigurations>
+                <AppRouter />
+                <ToastContainer />
+            </AppConfigurations>
+        </Suspense>
     );
 };
 

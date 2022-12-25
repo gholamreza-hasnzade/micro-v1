@@ -9,7 +9,7 @@ import {
     Skeleton,
     Tooltip,
 } from "@components/common/partials";
-import { ClientPartView } from "@components/views/client-view/part/client-part-view";
+import  ClientPartView  from "@components/views/client-view/part/client-part-view";
 import { Pagination } from "@components/common/partials";
 
 // * import style
@@ -20,9 +20,9 @@ import { GlobalStyle as GS } from "@global/emotion/global-style";
 import { getUsers } from "@redux/slices/client/client-redux-action";
 import { useAppDispatch, useAppSelector } from "@redux/base/hook-redux";
 
-export const ClientView = () => {
+const ClientView = () => {
     const [currentPage, setCurrentPage] = useState(1);
-    
+
     const datas = useAppSelector((stata) => stata?.client);
     const dispatch = useAppDispatch();
     const { t } = useTranslation();
@@ -124,3 +124,5 @@ export const ClientView = () => {
         </S.Client>
     );
 };
+
+export default ClientView;
