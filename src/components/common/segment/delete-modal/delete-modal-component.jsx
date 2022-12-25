@@ -11,7 +11,7 @@ import { useAppDispatch } from "@redux/base/hook-redux";
 
 export const DeleteModalComponent = ({
     isOpen,
-    onClick,
+    handleClose,
     setIsOpen,
     onDelete,
 }) => {
@@ -23,8 +23,8 @@ export const DeleteModalComponent = ({
     };
     return (
         <>
-            <S.Overly /* isopen={isOpen}  */ className={`${isOpen ? "isOpen" : ""}`} />
-            <S.RowDeleteModal /* isopen={isOpen} */ className={`${isOpen ? "isOpen" : ""}`}>
+            <S.Overly className={`${isOpen ? "isOpen" : ""}`} />
+            <S.RowDeleteModal className={`${isOpen ? "isOpen" : ""}`}>
                 <S.RowImage>
                     <I.AlertTriangle />
                 </S.RowImage>
@@ -36,7 +36,7 @@ export const DeleteModalComponent = ({
                         </SubmitButton>
                     </S.RowButton>
                     <S.RowButton>
-                        <OutlineButton onClick={onClick}>
+                        <OutlineButton onClick={handleClose}>
                             {t("cansel")}
                         </OutlineButton>
                     </S.RowButton>

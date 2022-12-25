@@ -27,7 +27,7 @@ export const ProductPartView = ({ data, index }) => {
         <>
             <DeleteModal
                 isOpen={isOpen}
-                onClick={handleIsOpenModal}
+                handleClose={handleIsOpenModal}
                 onDelete={() => deleteProduct(data?.id)}
                 setIsOpen={setIsOpen}
             />

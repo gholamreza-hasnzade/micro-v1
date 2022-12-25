@@ -28,7 +28,7 @@ export const ClientPartView = ({ data, index }) => {
         <>
             <DeleteModal
                 isOpen={isOpen}
-                onClick={handleIsOpenModal}
+                handleClose={handleIsOpenModal}
                 onDelete={() => deleteUser(data?.id)}
                 setIsOpen={setIsOpen}
             />
