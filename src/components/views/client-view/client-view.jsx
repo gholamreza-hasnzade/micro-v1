@@ -22,6 +22,7 @@ import { useAppDispatch, useAppSelector } from "@redux/base/hook-redux";
 
 export const ClientView = () => {
     const [currentPage, setCurrentPage] = useState(1);
+    
     const datas = useAppSelector((stata) => stata?.client);
     const dispatch = useAppDispatch();
     const { t } = useTranslation();

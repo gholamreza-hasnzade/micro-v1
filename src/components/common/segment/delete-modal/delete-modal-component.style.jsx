@@ -13,7 +13,11 @@ const RowDeleteModal = styled(Box)`
     padding: 25px;
     z-index: 105;
     transform: translate(-50%, -50%);
-    display: ${({ isopen }) => (isopen ? "flex" : "none")};
+    display:  none;
+    &.isOpen {
+        display: flex;
+    }
+    //display: ${({ isopen }) => (isopen ? "flex" : "none")};
     border: 1px solid #ffb800;
     border-radius: 6px;
     flex-direction: column;
@@ -52,6 +56,10 @@ const RowButton = styled(Box)`
 const Overly = styled(GlobalStyle?.Overlay)`
     z-index: 104; /* Specify a stack order in case you're using a different order for other elements */
     display: ${({ isopen }) => (isopen ? "block" : "none")};
+    display:  none;
+    &.isOpen {
+        display: block;
+    }
 `;
 
 export const DeleteModalComponentStyle = {

@@ -39,7 +39,6 @@ export const ClientPartView = ({ data, index }) => {
                 <GS.TableCellBody> {data?.phone} </GS.TableCellBody>
                 <GS.TableCellBody> {data?.email}</GS.TableCellBody>
                 <GS.TableCellBody> {data?.address} </GS.TableCellBody>
-
                 <GS.TableCellBody>
                     <GS.TableCellAction>
                         <Tooltip title={t("details")}>

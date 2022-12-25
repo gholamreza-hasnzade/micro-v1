@@ -23,8 +23,8 @@ export const DeleteModalComponent = ({
     };
     return (
         <>
-            <S.Overly isopen={isOpen} />
-            <S.RowDeleteModal isopen={isOpen}>
+            <S.Overly /* isopen={isOpen}  */ className={`${isOpen ? "isOpen" : ""}`} />
+            <S.RowDeleteModal /* isopen={isOpen} */ className={`${isOpen ? "isOpen" : ""}`}>
                 <S.RowImage>
                     <I.AlertTriangle />
                 </S.RowImage>
