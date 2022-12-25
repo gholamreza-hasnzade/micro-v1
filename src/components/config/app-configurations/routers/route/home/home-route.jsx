@@ -7,12 +7,13 @@ import { HomeView } from "@components/views";
 const HomeRoute = [
     {
         path: "/",
-        element: <Navigate to={"/home"} />,
+        element: HomeView,
         exact: true,
     },
     {
-        path: "/home",
-        element: <HomeView />,
+        path: "/Home",
+        element: HomeView,
+        name: "Dashboard",
         exact: true,
     },
 ];

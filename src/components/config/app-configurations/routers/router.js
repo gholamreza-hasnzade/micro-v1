@@ -11,12 +11,16 @@ const AppRouter = () => {
     return (
         <BrowserRouter>
             <Routes>
-                {RoutesPage?.map((itm, index) => (
+                {RoutesPage?.map((route, index) => (
                     <Route
                         key={index}
-                        exact={itm.exact}
-                        path={itm.path}
-                        element={<MainLayout>{itm.element}</MainLayout>}
+                        exact={route.exact}
+                        path={route.path}
+                        element={
+                            <MainLayout>
+                                <route.element />
+                            </MainLayout>
+                        }
                     />
                 ))}
             </Routes>

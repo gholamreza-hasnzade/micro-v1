@@ -8,23 +8,26 @@ import {
 const ClientRoute = [
     {
         path: "/client",
-        element: <ClientView />,
+        element: ClientView,
         exact: true,
+        permissions: ["admin"],
     },
     {
         path: "/client/add",
-        element: <ClientAddView />,
+        element: ClientAddView,
         exact: true,
+        permissions: ["admin"],
     },
     {
         path: "/client/edit/:id",
-        element: <ClientEditView />,
+        element: ClientEditView,
         exact: true,
     },
     {
         path: "/client/preview/:id",
-        element: <PreviewClienView />,
+        element: PreviewClienView,
         exact: true,
+        permissions: ["admin"],
     },
 ];
 

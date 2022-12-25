@@ -9,22 +9,22 @@ import {
 const ProductRoute = [
     {
         path: "/product",
-        element: <ProductView />,
+        element: ProductView,
         exact: true,
     },
     {
         path: "/product/add",
-        element: <ProductAddView />,
+        element: ProductAddView,
         exact: true,
     },
     {
         path: "/product/preview/:id",
-        element: <PreviewProductView />,
+        element: PreviewProductView,
         exact: true,
     },
     {
         path: "/product/edit/:id",
-        element: <ProductEditView />,
+        element: ProductEditView,
         exact: true,
     },
 ];

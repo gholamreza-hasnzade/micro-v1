@@ -36,7 +36,7 @@ export const ClientAddView = ({ id, clientInfo, editMode, loading }) => {
         phone: "",
         formErrors: {},
     });
-    const handleClientChange = (e) => {
+   /*  const handleClientChange = (e) => {
         const { name, value } = e.target;
         console.log(formErrors, "handleClientChange");
 
@@ -46,7 +46,7 @@ export const ClientAddView = ({ id, clientInfo, editMode, loading }) => {
             ...prevState.formErrors,
             [name]: value,
         }));
-    };
+    }; */
     const { first_name, last_name, email, address, phone, formErrors } = form;
 
     const clientValidation = Yup.object({
