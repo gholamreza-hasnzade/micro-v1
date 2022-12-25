@@ -4,7 +4,8 @@ import { Box } from "@mui/system";
 import { Link, NavLink as NavLinkRRD } from "react-router-dom";
 
 const Drawer = styled(Box)`
-    width: ${({ isopen }) => (isopen ? "280px" : "75px")};
+    width: 280px;
+    // width: ${({ isopen }) => (isopen ? "280px" : "75px")};
     background-color: ${({ theme }) => theme.SURFACE};
     display: flex;
     flex-direction: column;
@@ -15,11 +16,17 @@ const Drawer = styled(Box)`
     background: ${({ theme }) => theme.SURFACE};
     padding-top: 35px;
     z-index: 100;
+    &.isOpen {
+        width: 75px;
+    }
     @media (max-width: 880px) {
-        width: ${({ isopen }) => (isopen ? "280px" : "0")};
+      //  width: ${({ isopen }) => (isopen ? "280px" : "0")};
         position: absolute;
         padding-top: 50px;
         left: 0;
+        &.isOpen {
+            width: 0;
+        }
     }
 
     @media (max-width: 360px) {
@@ -28,6 +35,9 @@ const Drawer = styled(Box)`
         padding-top: 10px;
         z-index: 10;
         right: 0;
+        &.isOpen {
+            width: "0";
+        }
     }
 `;
 
@@ -48,7 +58,6 @@ const Logo = styled(Box)`
     width: 100px;
     img {
         width: 100%;
-        
     }
 `;
 
@@ -96,7 +105,7 @@ const RowIsOpen = styled(Link)`
 const RowIcon = styled(Box)`
     display: flex;
     color: ${({ theme }) => theme.PRIMARY};
-   /*  @media (max-width: 880px) {
+    /*  @media (max-width: 880px) {
         display: none;
     } */
 `;

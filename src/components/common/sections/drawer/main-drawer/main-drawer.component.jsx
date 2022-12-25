@@ -32,8 +32,9 @@ export const MainDrawerComponent = () => {
     );
     return (
         <S.Drawer
-            isopen={isOpenDrawer}
-            isopendrawerinmobile={isOpenDrawerInMobile}
+            className={`${isOpenDrawer ? "" : "isOpen"}`}
+            //  isopen={isOpenDrawer}
+            //isopendrawerinmobile={isOpenDrawerInMobile}
         >
             <GS.FlexBoxDirColumn>
                 <S.RowLogo>
