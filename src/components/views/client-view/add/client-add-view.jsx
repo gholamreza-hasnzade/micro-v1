@@ -38,8 +38,14 @@ export const ClientAddView = ({ id, clientInfo, editMode, loading }) => {
     });
     const handleClientChange = (e) => {
         const { name, value } = e.target;
-        delete formErrors[name];
-        setForm({ ...form, [name]: value });
+        console.log(formErrors, "handleClientChange");
+
+       // delete formErrors[name];
+        setForm((prevState) => ({
+            ...prevState,
+            ...prevState.formErrors,
+            [name]: value,
+        }));
     };
     const { first_name, last_name, email, address, phone, formErrors } = form;
 
@@ -124,7 +130,9 @@ export const ClientAddView = ({ id, clientInfo, editMode, loading }) => {
                     }));
                 }
             }
-        } catch (error) {}
+        } catch (error) {
+            console.log(error);
+        }
     };
     // ** set data by id
 
@@ -147,11 +155,12 @@ export const ClientAddView = ({ id, clientInfo, editMode, loading }) => {
                     address,
                     phone,
                 }}
+                //  setErrors={formErrors}
                 validationSchema={clientValidation}
                 onSubmit={(e) => handleSubmit(e)}
             >
                 {(formik) => (
-                    <GS.SubmitForm id="myform">
+                    <GS.SubmitForm id="myform" /* onChange={handleClientChange} */>
                         <GS.FlexBoxCenter>
                             <GS.FormControlInput>
                                 {loading ? (
@@ -160,9 +169,8 @@ export const ClientAddView = ({ id, clientInfo, editMode, loading }) => {
                                     <TextFildOutlinedInput
                                         type={"text"}
                                         name={"first_name"}
-                                        // error={formErrors?.first_name[0]}
+                                        error={formErrors?.first_name || ""}
                                         label={t("name client")}
-                                        onChange={handleClientChange}
                                     />
                                 )}
                             </GS.FormControlInput>
@@ -173,9 +181,8 @@ export const ClientAddView = ({ id, clientInfo, editMode, loading }) => {
                                     <TextFildOutlinedInput
                                         type={"text"}
                                         name={"last_name"}
-                                        // error={formErrors?.last_name[0]}
+                                        error={formErrors?.last_name || ""}
                                         label={t("family name client")}
-                                        onChange={handleClientChange}
                                     />
                                 )}
                             </GS.FormControlInput>
@@ -189,9 +196,8 @@ export const ClientAddView = ({ id, clientInfo, editMode, loading }) => {
                                     <TextFildOutlinedInput
                                         type={"text"}
                                         name={"phone"}
-                                        // error={formErrors?.phone[0]}
+                                        error={formErrors?.phone || ""}
                                         label={t("phone")}
-                                        onChange={handleClientChange}
                                     />
                                 )}
                             </GS.FormControlInput>
@@ -201,10 +207,9 @@ export const ClientAddView = ({ id, clientInfo, editMode, loading }) => {
                                 ) : (
                                     <TextFildOutlinedInput
                                         type={"email"}
-                                        //  error={formErrors?.email[0]}
+                                        error={formErrors?.email || ""}
                                         name={"email"}
                                         label={t("email")}
-                                        onChange={handleClientChange}
                                     />
                                 )}
                             </GS.FormControlInput>
@@ -218,9 +223,8 @@ export const ClientAddView = ({ id, clientInfo, editMode, loading }) => {
                                     <TextFildOutlinedInput
                                         type={"text"}
                                         name={"address"}
-                                        //error={formErrors?.address[0]}
+                                        error={formErrors?.address || ""}
                                         label={t("addres")}
-                                        onChange={handleClientChange}
                                         multiline
                                     />
                                 )}

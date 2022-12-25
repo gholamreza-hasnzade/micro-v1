@@ -54,7 +54,7 @@ export const ProductPartView = ({ data, index }) => {
                             </GS.TableCellEdit>
                         </Tooltip>
 
-                        <Tooltip title={t("حذف")}>
+                        <Tooltip title={t("delete")}>
                             <GS.TableCellEdit onClick={handleIsOpenModal}>
                                 <I.Trash />
                             </GS.TableCellEdit>

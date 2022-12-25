@@ -5,7 +5,6 @@ import React from "react";
 import { GlobalStyle as GS } from "@global/emotion/global-style";
 
 export const HomePartView = ({ item }) => {
-    console.log(item?.user_id);
     return (
         <GS.TableRowBody>
             <GS.TableCellBody>{item?.user_id}</GS.TableCellBody>

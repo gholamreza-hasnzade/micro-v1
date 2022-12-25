@@ -37,6 +37,7 @@
     "must not be greater than 120 characters": "نباید بیشتر از 120 کاراکتر باشد",
     "must not be greater than 4 characters": "نباید بیشتر از 4 کاراکتر باشد",
     "The email has already been taken." : "ایمیل قبلا گرفته شده است",
+    "The phone has already been taken.": "شماره موبایل قبلا گرفته شده است",
     "Added Successfully": "با موفقیت ایجاد شد",
     "Edited Successfully": "ویرایش با موفقیت انجام شد",
     "No Insert Info": "اطلاعاتی ثبت نشده است"
