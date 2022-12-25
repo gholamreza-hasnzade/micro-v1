@@ -23,12 +23,10 @@ import {
 // * import constants
 import { notificationTypes, requestMethodes } from "@constants/content";
 // * Import Store
-import { notification } from "@redux/slices/notification/notification-redux-slice";
-import { useAppDispatch } from "@redux/base/hook-redux";
+import { toastContainer } from "@helpers";
 
 export const ClientAddView = ({ id, clientInfo, editMode, loading }) => {
     const { t } = useTranslation();
-    const dispatch = useAppDispatch();
     const navigate = useNavigate();
     const [form, setForm] = useState({
         first_name: "",
@@ -89,6 +87,10 @@ export const ClientAddView = ({ id, clientInfo, editMode, loading }) => {
                 });
                 if (result?.status) {
                     navigate("/client");
+                    toastContainer(
+                        notificationTypes.info,
+                        t("Edited Successfully")
+                    );
                 } else {
                     setForm((prevState) => ({
                         ...prevState,
@@ -105,14 +107,12 @@ export const ClientAddView = ({ id, clientInfo, editMode, loading }) => {
                     method: requestMethodes.post,
                     body: bodyForm,
                 });
+
                 if (result?.status === true) {
                     navigate("/client");
-                    dispatch(
-                        notification({
-                            showNotification: true,
-                            type: notificationTypes.success,
-                            content: "Added Successfully",
-                        })
+                    toastContainer(
+                        notificationTypes.success,
+                        t("Added Successfully")
                     );
                 } else {
                     setForm((prevState) => ({
