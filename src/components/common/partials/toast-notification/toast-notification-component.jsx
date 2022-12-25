@@ -22,7 +22,7 @@ export const ToastNotificationComponent = () => {
                 })
             );
         }
-    }, [showNotification]);
+    }, [showNotification, dispatch]);
 
     if (showNotification) {
         switch (type) {
