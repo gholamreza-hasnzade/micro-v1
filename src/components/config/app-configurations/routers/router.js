@@ -11,18 +11,23 @@ const AppRouter = () => {
     return (
         <BrowserRouter>
             <Routes>
-                {RoutesPage?.map((route, index) => (
-                    <Route
-                        key={index}
-                        exact={route.exact}
-                        path={route.path}
-                        element={
-                            <MainLayout>
-                                <route.element />
-                            </MainLayout>
-                        }
-                    />
-                ))}
+                {RoutesPage?.map((route, idx) => {
+                    return (
+                        route.element && (
+                            <Route
+                                key={idx}
+                                path={route.path}
+                                exact={route.exact}
+                                name={route.name}
+                                element={
+                                    <MainLayout>
+                                        <route.element />
+                                    </MainLayout>
+                                }
+                            />
+                        )
+                    );
+                })}
             </Routes>
         </BrowserRouter>
     );
