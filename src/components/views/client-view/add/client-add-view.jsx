@@ -36,17 +36,6 @@ const ClientAddView = ({ id, clientInfo, editMode, loading }) => {
         phone: "",
         formErrors: {},
     });
-    /*  const handleClientChange = (e) => {
-        const { name, value } = e.target;
-        console.log(formErrors, "handleClientChange");
-
-       // delete formErrors[name];
-        setForm((prevState) => ({
-            ...prevState,
-            ...prevState.formErrors,
-            [name]: value,
-        }));
-    }; */
     const { first_name, last_name, email, address, phone, formErrors } = form;
 
     const clientValidation = Yup.object({
@@ -131,7 +120,7 @@ const ClientAddView = ({ id, clientInfo, editMode, loading }) => {
                 }
             }
         } catch (error) {
-            console.log(error);
+            toastContainer(notificationTypes.error, t("error in sever"));
         }
     };
     // ** set data by id

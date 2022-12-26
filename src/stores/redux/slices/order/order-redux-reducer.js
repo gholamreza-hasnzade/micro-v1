@@ -30,9 +30,7 @@ export const deletePendingReduxReducer = (state, action) => {
 export const deleteFulfilledReduxReducer = (state, action) => {
     state.loading = false;
     const lists = action?.payload?.datas;
-    state.datas = lists?.filter(
-        (item) => item.id !== action?.payload?.order_id
-    );
+    state.datas = lists?.filter((item) => item.id !== action?.payload?.order_id);
     state.total = state.total - 1;
 };
 

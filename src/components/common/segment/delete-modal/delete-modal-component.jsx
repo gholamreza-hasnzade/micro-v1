@@ -19,9 +19,8 @@ export const DeleteModalComponent = ({
     const { t } = useTranslation();
     const handleOnDelete = () => {
         dispatch(onDelete());
-        setTimeout(() => {
-        }, 500);
         setIsOpen(!isOpen);
+        setTimeout(window.location.reload.bind(window.location), 500);
     };
     return (
         <>

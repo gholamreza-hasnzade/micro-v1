@@ -1,3 +1,7 @@
+// * Import tools
+import axios from "axios";
+import { useTranslation } from "react-i18next";
+
 // * import callApi
 import { requestMethodes } from "@constants/content";
 import {
@@ -7,6 +11,9 @@ import {
 
 // * import redux
 import { createAsyncThunk } from "@reduxjs/toolkit";
+
+import { toastContainer } from "@helpers";
+import { notificationTypes } from "@constants/content";
 
 // * get all products
 export const getProducts = createAsyncThunk("getProducts", async (page) => {
@@ -67,3 +74,19 @@ export const deleteProduct = createAsyncThunk(
         }
     }
 );
+
+// * add to card
+export const addToBasket = createAsyncThunk("addToBasket", async (bodyForm) => {
+    try {
+        const { baseURL9000, v1 } = endpoints;
+        const { status } = await axios.post(
+            `${baseURL9000}/${v1}/product/add-to-basket`,
+            bodyForm
+        );
+        if (status === 200) {
+            toastContainer(notificationTypes.success, "به صفحه اضافه گردید");
+        }
+    } catch (error) {
+        toastContainer(notificationTypes.error, "error in sever");
+    }
+});
