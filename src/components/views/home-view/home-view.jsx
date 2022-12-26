@@ -62,9 +62,10 @@ const HomeView = () => {
                                 </GS.TableRow>
                             </GS.TableHead>
                             <GS.TableBody>
-                                {data?.datas?.map((data, index) => (
-                                    <HomePartView key={index} item={data} />
-                                ))}
+                                {data?.datas &&
+                                    data?.datas?.map((data, index) => (
+                                        <HomePartView key={index} item={data} />
+                                    ))}
                             </GS.TableBody>
                         </GS.Table>
                     </GS.TableContainer>

@@ -36,6 +36,7 @@ export const deleteOrder = createAsyncThunk(
     "deleteOrder",
     async (id, { rejectWithValue, getState, dispatch }) => {
         const data = getState()?.order.datas;
+        console.log(getState()?.order?.datas);
         const { baseURL, v1 } = endpoints;
         const response = await callApi({
             baseURL: baseURL,

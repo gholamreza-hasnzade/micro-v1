@@ -19,6 +19,8 @@ export const DeleteModalComponent = ({
     const { t } = useTranslation();
     const handleOnDelete = () => {
         dispatch(onDelete());
+        setTimeout(() => {
+        }, 500);
         setIsOpen(!isOpen);
     };
     return (

@@ -13,7 +13,6 @@ import { DeleteModal } from "@components/common/segment";
 import { deleteOrder } from "@redux/slices/order/order-redux-action";
 
 const HomePartView = ({ item }) => {
-    console.log(item);
     const [isOpen, setIsOpen] = useState(false);
     const { t } = useTranslation();
     const handleIsOpenModal = () => {

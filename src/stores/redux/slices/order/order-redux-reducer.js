@@ -29,7 +29,6 @@ export const deletePendingReduxReducer = (state, action) => {
 };
 export const deleteFulfilledReduxReducer = (state, action) => {
     state.loading = false;
-    console.log(action?.payload?.order_id);
     const lists = action?.payload?.datas;
     state.datas = lists?.filter(
         (item) => item.id !== action?.payload?.order_id
