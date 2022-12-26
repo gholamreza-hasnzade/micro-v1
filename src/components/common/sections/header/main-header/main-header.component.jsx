@@ -2,6 +2,7 @@
 import React, { useRef, useState } from "react";
 import * as I from "react-feather";
 import { useTranslation } from "react-i18next";
+import { NavLink } from "react-router-dom";
 
 // * import style
 import { MainHeaderComponentStyle as S } from "@components/common/sections/header/main-header/main-header.component.style";
@@ -9,6 +10,7 @@ import { MainHeaderComponentStyle as S } from "@components/common/sections/heade
 import { GlobalStyle as GS } from "@global/emotion/global-style";
 // * import components
 import { Basket } from "@components/common/segment";
+import { Tooltip } from "@components/common/partials";
 
 // * import hoooks
 import { useClickOutSide } from "@hooks";
@@ -17,7 +19,6 @@ import { useClickOutSide } from "@hooks";
 import { useAppDispatch, useAppSelector } from "@redux/base/hook-redux";
 import { drawerReduxSelector } from "@redux/slices/drawer/drawer-redux-selector";
 import { openDrawerToggle } from "@redux/slices/drawer/drawer-redux-slice";
-import { Tooltip } from "@components/common/partials";
 
 export const MainHeaderComponent = () => {
     const isOpenDrawer = useAppSelector(drawerReduxSelector.isOpen);
@@ -39,13 +40,15 @@ export const MainHeaderComponent = () => {
                     </S.Icon>
 
                     <S.RowShoppingBag>
-                        <Tooltip title={t("basket buy")}>
-                            <S.ShoppingBag
-                                onClick={() => {
+                        <NavLink to={"/"}>
+                            <Tooltip title={t("basket buy")}>
+                                <S.ShoppingBag
+                                /*  onClick={() => {
                                     setIsOpenBasek((prev) => !prev);
-                                }}
-                            />
-                        </Tooltip>
+                                }} */
+                                />
+                            </Tooltip>
+                        </NavLink>
 
                         <div ref={isOpen_basket}>
                             {isOpenBasek && <Basket />}
