@@ -12,7 +12,6 @@ import {
     EmptyComponent,
     Pagination,
 } from "@components/common/partials";
-import { HomePartView } from "@components/views";
 
 // * Import Store
 import { useAppDispatch, useAppSelector } from "@redux/base/hook-redux";
@@ -71,7 +70,7 @@ const HomeView = () => {
                                         </GS.TableCell>
                                     </GS.TableRow>
                                 </GS.TableHead>
-                                <GS.TableBody>
+                               {/*  <GS.TableBody>
                                     {data?.datas &&
                                         data?.datas?.map((data, index) => (
                                             <HomePartView
@@ -79,7 +78,7 @@ const HomeView = () => {
                                                 item={data}
                                             />
                                         ))}
-                                </GS.TableBody>
+                                </GS.TableBody> */}
                             </GS.Table>
                         </GS.TableContainer>
 

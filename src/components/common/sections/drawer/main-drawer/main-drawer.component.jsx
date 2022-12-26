@@ -27,19 +27,13 @@ export const MainDrawerComponent = () => {
     const { t } = useTranslation();
     const dispatch = useAppDispatch();
     const isOpenDrawer = useAppSelector(drawerReduxSelector.isOpen);
-    const isOpenDrawerInMobile = useAppSelector(
-        drawerReduxSelector.isOpenInMobile
-    );
+
     return (
-        <S.Drawer
-            className={`${isOpenDrawer ? "" : "isOpen"}`}
-            //  isopen={isOpenDrawer}
-            //isopendrawerinmobile={isOpenDrawerInMobile}
-        >
+        <S.Drawer isopen={isOpenDrawer}>
             <GS.FlexBoxDirColumn>
                 <S.RowLogo>
                     <S.RowIsOpen to={"/"}>
-                        {(isOpenDrawer || isOpenDrawerInMobile) && (
+                        {isOpenDrawer && (
                             <S.Logo>
                                 <img
                                     alt={t("compony software holoo")}

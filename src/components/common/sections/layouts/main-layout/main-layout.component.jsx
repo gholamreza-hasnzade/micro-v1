@@ -18,10 +18,10 @@ export const MainLayoutComponent = ({ children }) => {
     return (
         <S.Container>
             <MainDrawer />
-            <MainOverlay
+           {/*  <MainOverlay
                 onClick={() => dispatch(openDrawerToggle())}
                 isOpenDrawer={isOpenDrawer}
-            />
+            /> */}
             <S.MainLayout>
                 <S.Content>
                     <MainHeader />

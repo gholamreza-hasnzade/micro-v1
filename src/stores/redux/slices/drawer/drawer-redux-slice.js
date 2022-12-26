@@ -1,20 +1,17 @@
 // * Import Tools
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
-
-// * Import Redux 
-import { drawerReduxInitialState } from './drawer-redux-initial-state';
-import { drawerMobileReduxReducer, drawerReduxReducer } from './drawer-redux-reducer';
+// * Import Redux
+import { drawerReduxInitialState } from "./drawer-redux-initial-state";
+import { drawerReduxReducer } from "./drawer-redux-reducer";
 
 const drawerSlice = createSlice({
-    name: 'drawer',
+    name: "drawer",
     initialState: drawerReduxInitialState,
     reducers: {
         openDrawerToggle: drawerReduxReducer,
-        openDrawerToggleInMobile: drawerMobileReduxReducer
-    }
+    },
 });
 
-
-export const { openDrawerToggle, openDrawerToggleInMobile } = drawerSlice.actions;
-export const  drawerReduxSlice = drawerSlice.reducer;
+export const { openDrawerToggle } = drawerSlice.actions;
+export const drawerReduxSlice = drawerSlice.reducer;
