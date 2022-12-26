@@ -3,25 +3,43 @@ import React, { useState } from "react";
 import * as I from "react-feather";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 // * Import components
 import { Tooltip } from "@components/common/partials";
 import { DeleteModal } from "@components/common/segment";
+import { endpoints } from "@components/config/app-configurations/callApi";
 
 // * import style
 import { GlobalStyle as GS } from "@global/emotion/global-style";
 import { deleteProduct } from "@redux/slices/product/product-redux-action";
+import { toastContainer } from "@helpers";
+import { notificationTypes } from "@constants/content";
 
 const ProductPartView = ({ data, index }) => {
     const [isOpen, setIsOpen] = useState(false);
     const { t } = useTranslation();
     const navigate = useNavigate();
-    
+
     const handleIsOpenModal = () => {
         setIsOpen(!isOpen);
     };
     const handleEditClick = () => {
         navigate(`/product/edit/${data?.id}`);
+    };
+    const handleAddToBasket = async (bodyForm) => {
+        try {
+            const { baseURL9000, v1 } = endpoints;
+            const { status } = await axios.post(
+                `${baseURL9000}/${v1}/product/add-to-basket`,
+                bodyForm
+            );
+            if (status == 200) {
+                toastContainer(notificationTypes.success, t("Add To Basket"));
+            }
+        } catch (error) {
+            toastContainer(notificationTypes.error, t("error in sever"));
+        }
     };
     return (
         <>
@@ -40,6 +58,29 @@ const ProductPartView = ({ data, index }) => {
 
                 <GS.TableCellBody>
                     <GS.TableCellAction>
+                        <Tooltip
+                            title="افزودن به سبد خرید"
+                            /*  onClick={() =>
+                                dispatch(
+                                    addToBasket({
+                                        user_id: data?.user_id,
+                                        product_id: data?.id,
+                                        quantity: 1,
+                                    })
+                                )
+                            } */
+                            onClick={() =>
+                                handleAddToBasket({
+                                    user_id: data?.user_id,
+                                    product_id: data?.id,
+                                    quantity: 1,
+                                })
+                            }
+                        >
+                            <GS.TableCellEdit>
+                                <I.PlayCircle />
+                            </GS.TableCellEdit>
+                        </Tooltip>
                         <Tooltip title={t("details")}>
                             <GS.TableCellLink
                                 to={`/product/preview/${data?.id}`}
@@ -65,4 +106,4 @@ const ProductPartView = ({ data, index }) => {
         </>
     );
 };
-export default ProductPartView
+export default ProductPartView;

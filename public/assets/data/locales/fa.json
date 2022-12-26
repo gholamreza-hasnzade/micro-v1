@@ -41,7 +41,8 @@
     "Added Successfully": "با موفقیت ایجاد شد",
     "Edited Successfully": "ویرایش با موفقیت انجام شد",
     "No Insert Info": "اطلاعاتی ثبت نشده است",
-    "Number Basket": "تعداد مصحول"
-
+    "Number Basket": "تعداد مصحول",
+    "Add To Basket": "   به سبد خرید اضافه گردید  ",
+    "error in sever" :"مشکلی پیش امد است"
 
 }

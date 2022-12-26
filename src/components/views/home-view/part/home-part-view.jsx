@@ -32,7 +32,7 @@ const HomePartView = ({ item }) => {
                 <GS.TableCellBody>حسن زاده</GS.TableCellBody>
                 <GS.TableCellBody> 09369780985</GS.TableCellBody>
                 <GS.TableCellBody> index@gmail.com</GS.TableCellBody>
-                <GS.TableCellBody> تهرون</GS.TableCellBody>
+                <GS.TableCellBody> {item?.quantity}</GS.TableCellBody>
                 <GS.TableCellBody>
                     <GS.TableCellAction>
                         <Tooltip title={t("delete")}>

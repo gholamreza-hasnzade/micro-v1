@@ -30,7 +30,7 @@ const HomeView = () => {
                 <S.RowBasket>
                     <Caption> {t("shopping cart list")} </Caption>
                     <S.LengthBasket>
-                        {data?.datas?.length} {/* {t("Number Basket")} */}
+                        {data?.datas?.length} {t("Number Basket")}
                     </S.LengthBasket>
                 </S.RowBasket>
                 <GS.RowMain>
@@ -54,7 +54,7 @@ const HomeView = () => {
                                     </GS.TableCell>
                                     <GS.TableCell align="left">
                                         {" "}
-                                        {t("addres")}{" "}
+                                        {t("quntity")}{" "}
                                     </GS.TableCell>
                                     <GS.TableCell align="left">
                                         {t("operation")}
