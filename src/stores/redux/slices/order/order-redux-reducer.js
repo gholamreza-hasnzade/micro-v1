@@ -33,7 +33,6 @@ export const deleteFulfilledReduxReducer = (state, action) => {
     state.datas = lists?.filter(
         (item) => item.id !== action?.payload?.order_id
     );
-    console.log(state.datas);
     state.total = state.total - 1;
 };
 
