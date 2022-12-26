@@ -61,7 +61,7 @@ const ProductPartView = ({ data, index }) => {
                 <GS.TableCellBody>
                     <GS.TableCellAction>
                         <Tooltip
-                            title="افزودن به سبد خرید"
+                            title={t("Add To Basket Cart")}
                             onClick={handleAddToClick}
                         >
                             <GS.TableCellEdit>

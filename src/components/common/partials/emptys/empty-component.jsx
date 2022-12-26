@@ -8,9 +8,12 @@ import { LinkButton } from "@components/common/partials";
 export const EmptyComponent = ({ title, href, caption }) => {
     return (
         <S.ContainerEmpty>
-            <S.ButtonWrapper>
-                <LinkButton href={href}>{title}</LinkButton>
-            </S.ButtonWrapper>
+            {title && (
+                <S.ButtonWrapper>
+                    <LinkButton href={href}>{title}</LinkButton>
+                </S.ButtonWrapper>
+            )}
+
             <S.BgWrapper>
                 <I.Package />
                 <S.Typography>{caption}</S.Typography>
