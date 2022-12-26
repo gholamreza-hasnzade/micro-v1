@@ -12,7 +12,7 @@ import { DeleteModal } from "@components/common/segment";
 import { GlobalStyle as GS } from "@global/emotion/global-style";
 import { deleteProduct } from "@redux/slices/product/product-redux-action";
 
-export const ProductPartView = ({ data, index }) => {
+const ProductPartView = ({ data, index }) => {
     const [isOpen, setIsOpen] = useState(false);
     const { t } = useTranslation();
     const navigate = useNavigate();
@@ -65,3 +65,4 @@ export const ProductPartView = ({ data, index }) => {
         </>
     );
 };
+export default ProductPartView

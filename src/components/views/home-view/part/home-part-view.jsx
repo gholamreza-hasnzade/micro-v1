@@ -4,7 +4,7 @@ import React from "react";
 // * Import style
 import { GlobalStyle as GS } from "@global/emotion/global-style";
 
-export const HomePartView = ({ item }) => {
+const HomePartView = ({ item }) => {
     return (
         <GS.TableRowBody>
             <GS.TableCellBody>{item?.user_id}</GS.TableCellBody>
@@ -15,3 +15,5 @@ export const HomePartView = ({ item }) => {
         </GS.TableRowBody>
     );
 };
+
+export default HomePartView;

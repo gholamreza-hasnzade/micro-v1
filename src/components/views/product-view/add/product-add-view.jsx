@@ -16,6 +16,7 @@ import {
     Tooltip,
     Skeleton,
 } from "@components/common/partials";
+// * Import Store
 import { useAppDispatch, useAppSelector } from "@redux/base/hook-redux";
 import { getUsers } from "@redux/slices/client/client-redux-action";
 
@@ -28,7 +29,7 @@ import {
 // * import constants
 import { requestMethodes } from "@constants/content";
 
-export const ProductAddView = ({ id, productInfo, editMode, loading }) => {
+const ProductAddView = ({ id, productInfo, editMode, loading }) => {
     const datas = useAppSelector((stata) => stata?.client);
     const dispatch = useAppDispatch();
 
@@ -252,3 +253,5 @@ export const ProductAddView = ({ id, productInfo, editMode, loading }) => {
         </GS.FlexGap10>
     );
 };
+
+export default ProductAddView;

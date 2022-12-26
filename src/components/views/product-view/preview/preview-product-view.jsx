@@ -16,7 +16,7 @@ import {
 import { useAppDispatch, useAppSelector } from "@redux/base/hook-redux";
 import { getByIdProduct } from "@redux/slices/product/product-redux-action";
 
-export const PreviewProductView = () => {
+const PreviewProductView = () => {
     const { item, loading } = useAppSelector((state) => state.product);
     console.log(item?.user);
     const dispatch = useAppDispatch();
@@ -153,3 +153,4 @@ export const PreviewProductView = () => {
         </S.Product>
     );
 };
+export default PreviewProductView

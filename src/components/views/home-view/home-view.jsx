@@ -11,7 +11,7 @@ import { Caption, Pagination } from "@components/common/partials";
 import { HomePartView } from "@components/views";
 import { useAppDispatch, useAppSelector } from "@redux/base/hook-redux";
 import { getOrders } from "@redux/slices/order/order-redux-action";
-export const HomeView = () => {
+const HomeView = () => {
     const [currentPage, setCurrentPage] = useState(1);
 
     const { t } = useTranslation();
@@ -71,3 +71,4 @@ export const HomeView = () => {
         </S.Home>
     );
 };
+export default HomeView

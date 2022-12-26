@@ -10,12 +10,11 @@ const HomeRoute = [
         element: HomeView,
         exact: true,
     },
-    {
+  /*   {
         path: "/Home",
         element: HomeView,
-        name: "Dashboard",
         exact: true,
-    },
+    }, */
 ];
 
 export default HomeRoute;

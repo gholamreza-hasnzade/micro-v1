@@ -4,10 +4,12 @@ import { useParams } from "react-router-dom";
 
 // * Import Comonents
 import { ProductAddView } from "@components/views";
+
+// * Import Store
 import { useAppDispatch, useAppSelector } from "@redux/base/hook-redux";
 import { getByIdProduct } from "@redux/slices/product/product-redux-action";
 
-export const ProductEditView = () => {
+ const ProductEditView = () => {
     const data = useAppSelector((state) => state?.product);
     const dispatch = useAppDispatch();
     const { id } = useParams();
@@ -27,3 +29,5 @@ export const ProductEditView = () => {
         />
     );
 };
+
+export default ProductEditView
