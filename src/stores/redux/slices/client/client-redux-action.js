@@ -53,18 +53,18 @@ export const getByIdUser = createAsyncThunk("getByIdUser", async (id) => {
 /* delete User By id */
 export const deleteUser = createAsyncThunk(
     "deleteUser",
-    async (params, { rejectWithValue, getState, dispatch }) => {
+    async (id, { rejectWithValue, getState, dispatch }) => {
         const data = getState()?.client.datas;
         const { baseURL9000, v1 } = endpoints;
         const response = await callApi({
             baseURL: baseURL9000,
-            url: `${v1}/user/${params}`,
+            url: `${v1}/user/${id}`,
             method: requestMethodes.delete,
         });
         if (response?.status) {
             return {
                 datas: data,
-                user_id: params,
+                user_id: id,
             };
         }
     }

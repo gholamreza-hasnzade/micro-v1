@@ -31,3 +31,22 @@ export const getOrders = createAsyncThunk("getOrders", async (page) => {
         };
     }
 });
+
+export const deleteOrder = createAsyncThunk(
+    "deleteOrder",
+    async (id, { rejectWithValue, getState, dispatch }) => {
+        const data = getState()?.order.datas;
+        const { baseURL, v1 } = endpoints;
+        const response = await callApi({
+            baseURL: baseURL,
+            url: `${v1}/order/${id}`,
+            method: requestMethodes.delete,
+        });
+        if (response?.status) {
+            return {
+                datas: data,
+                order_id: id,
+            };
+        }
+    }
+);
