@@ -8,6 +8,7 @@ const HomeRoute = [
     {
         path: "/",
         element: HomeView,
+        name: "home",
         exact: true,
     },
   /*   {

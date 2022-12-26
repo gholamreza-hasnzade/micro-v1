@@ -1,6 +1,6 @@
 // * import tools
 import React from "react";
-import { Routes, BrowserRouter, Route } from "react-router-dom";
+import {Navigate, Routes, BrowserRouter, Route } from "react-router-dom";
 
 // * import components/routes
 import { RoutesPage } from "@components/config/app-configurations/routers/route/routes";
@@ -28,6 +28,7 @@ const AppRouter = () => {
                         )
                     );
                 })}
+                <Route path="/" element={<Navigate to="home" replace />} />
             </Routes>
         </BrowserRouter>
     );
