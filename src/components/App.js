@@ -7,11 +7,11 @@ import AppRouter from "@components/config/app-configurations/routers/router";
 import { AppConfigurations } from "./config/app-configurations/app.configurations";
 // ** React Toastify
 import "react-toastify/dist/ReactToastify.css";
-
+import { Loader } from "@components/common/partials";
 const App = () => {
     document.title = "فروشگاه آنلاین هلو ";
     return (
-        <Suspense fallback={<div>loading...</div>}>
+        <Suspense fallback={<Loader />}>
             <AppConfigurations>
                 <AppRouter />
                 <ToastContainer />

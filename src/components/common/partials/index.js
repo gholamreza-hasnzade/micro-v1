@@ -1,3 +1,5 @@
+import { lazy } from "react";
+
 // * export components partials
 export { SelectOptionComponent as SelectOption } from "@components/common/partials/select-option/select-option-component";
 export { LinkButtonComponent as LinkButton } from "@components/common/partials/buttons/link-button/link-button.component";
@@ -11,4 +13,10 @@ export { TooltipComponent as Tooltip } from "@components/common/partials/tooltip
 export { SkeletonComponent as Skeleton } from "@components/common/partials/loadings/skeleton/skeleton-component";
 export { ErrorMessageComponent as ErrorMessage } from "@components/common/partials/typographys/error-message/error-message-component";
 export { ToastNotificationComponent as ToastNotification } from "@components/common/partials/toast-notification/toast-notification-component";
-export { EmptyComponent} from "@components/common/partials/emptys/empty-component";
+export { EmptyComponent } from "@components/common/partials/emptys/empty-component";
+
+const LoaderComponent = lazy(() =>
+    import("@components/common/partials/loadings/loader/loader-component")
+);
+
+export { LoaderComponent as Loader };
