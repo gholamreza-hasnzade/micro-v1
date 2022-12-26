@@ -10,6 +10,19 @@ const Home = styled(Box)`
     background: ${({ theme }) => theme.SURFACE};
 `;
 
+const RowBasket = styled(Box)`
+    padding: 25px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+`;
+const LengthBasket = styled(Box)`
+    color: ${({ theme }) => theme.PRIMARY};
+    font-size: 13px;
+`;
 export const HomeViewStyle = {
     Home,
+    RowBasket,
+    LengthBasket,
 };

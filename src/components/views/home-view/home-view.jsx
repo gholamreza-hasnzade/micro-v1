@@ -27,7 +27,12 @@ const HomeView = () => {
     return (
         <S.Home>
             <GS.FlexBoxDirColumn>
-                <Caption> {t("shopping cart list")} </Caption>
+                <S.RowBasket>
+                    <Caption> {t("shopping cart list")} </Caption>
+                    <S.LengthBasket>
+                        {data?.datas?.length} {/* {t("Number Basket")} */}
+                    </S.LengthBasket>
+                </S.RowBasket>
                 <GS.RowMain>
                     <GS.TableContainer>
                         <GS.Table>
@@ -51,6 +56,9 @@ const HomeView = () => {
                                         {" "}
                                         {t("addres")}{" "}
                                     </GS.TableCell>
+                                    <GS.TableCell align="left">
+                                        {t("operation")}
+                                    </GS.TableCell>
                                 </GS.TableRow>
                             </GS.TableHead>
                             <GS.TableBody>
@@ -71,4 +79,4 @@ const HomeView = () => {
         </S.Home>
     );
 };
-export default HomeView
+export default HomeView;
