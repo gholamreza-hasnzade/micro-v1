@@ -23,7 +23,7 @@ import { IMAGES } from "@constants/content";
 import navigation from "@components/config/app-configurations/routers/navigation";
 import { Tooltip } from "@components/common/partials";
 
- const MainDrawerComponent = () => {
+export const MainDrawerComponent = () => {
     const { t } = useTranslation();
     const dispatch = useAppDispatch();
     const isOpenDrawer = useAppSelector(drawerReduxSelector.isOpen);
@@ -72,4 +72,3 @@ import { Tooltip } from "@components/common/partials";
         </S.Drawer>
     );
 };
-export default MainDrawerComponent

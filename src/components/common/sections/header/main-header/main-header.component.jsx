@@ -20,7 +20,7 @@ import { useAppDispatch, useAppSelector } from "@redux/base/hook-redux";
 import { drawerReduxSelector } from "@redux/slices/drawer/drawer-redux-selector";
 import { openDrawerToggle } from "@redux/slices/drawer/drawer-redux-slice";
 
- const MainHeaderComponent = () => {
+export const MainHeaderComponent = () => {
     const isOpenDrawer = useAppSelector(drawerReduxSelector.isOpen);
     const dispatch = useAppDispatch();
     const [isOpenBasek, setIsOpenBasek] = useState(false);
@@ -59,4 +59,3 @@ import { openDrawerToggle } from "@redux/slices/drawer/drawer-redux-slice";
         </S.Header>
     );
 };
-export default MainHeaderComponent

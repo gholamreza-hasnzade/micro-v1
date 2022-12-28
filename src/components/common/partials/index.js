@@ -14,11 +14,4 @@ export { SkeletonComponent as Skeleton } from "@components/common/partials/loadi
 export { ErrorMessageComponent as ErrorMessage } from "@components/common/partials/typographys/error-message/error-message-component";
 export { ToastNotificationComponent as ToastNotification } from "@components/common/partials/toast-notification/toast-notification-component";
 export { EmptyComponent } from "@components/common/partials/emptys/empty-component";
-
-/* const LoaderComponent = lazy(() =>
-    import("@components/common/partials/loadings/loader/loader-component")
-);
-
-export { LoaderComponent as Loader }; */
-
 export { LoaderComponent as Loader } from "@components/common/partials/loadings/loader/loader-component";

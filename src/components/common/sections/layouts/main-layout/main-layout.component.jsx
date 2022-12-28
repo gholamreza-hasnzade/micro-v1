@@ -16,7 +16,7 @@ import { useAppDispatch, useAppSelector } from "@redux/base/hook-redux";
 import { openDrawerToggle } from "@redux/slices/drawer/drawer-redux-slice";
 import { drawerReduxSelector } from "@redux/slices/drawer/drawer-redux-selector";
 
-const MainLayoutComponent = ({ children }) => {
+export const MainLayoutComponent = ({ children }) => {
     const isOpenDrawer = useAppSelector(drawerReduxSelector.isOpen);
     const dispatch = useAppDispatch();
     return (
@@ -36,5 +36,3 @@ const MainLayoutComponent = ({ children }) => {
         </S.Container>
     );
 };
-
-export default MainLayoutComponent;
