@@ -17,7 +17,7 @@ const AppRouter = () => {
         if (loading) {
             setTimeout(() => {
                 setLoading(false);
-            }, 1000);
+            }, 2000);
         }
     }, [loading]);
 

@@ -15,6 +15,7 @@ const Conatiner = styled(Box)`
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 `;
 
 const Loader = styled(Box)`
@@ -22,11 +23,11 @@ const Loader = styled(Box)`
     border-radius: 50%;
     border-top: 5px solid ${({ theme }) => theme.PRIMARY};
     border-bottom: 5px solid ${({ theme }) => theme.PRIMARY};
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     -webkit-animation: spin 3s linear infinite; /* Safari */
     animation: spin 3s linear infinite;
-
+    margin-bottom: 10px;
     @-webkit-keyframes spin {
         0% {
             -webkit-transform: rotate(0deg);
