@@ -1,4 +1,4 @@
-import { lazy } from "react";
+//import { lazy } from "react";
 
 // *  export sections
 export { MainDrawerComponent as MainDrawer } from "@components/common/sections/drawer/main-drawer/main-drawer.component";
