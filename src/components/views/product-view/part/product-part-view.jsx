@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import * as I from "react-feather";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
 
 // * Import components
 import { Tooltip } from "@components/common/partials";

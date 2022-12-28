@@ -1,6 +1,5 @@
 // * Import tools
 import axios from "axios";
-import { useTranslation } from "react-i18next";
 
 // * import callApi
 import { requestMethodes } from "@constants/content";
