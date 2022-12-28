@@ -27,6 +27,10 @@ const ShoppingBag = styled(ShoppingBagRF)`
 
 const RowShoppingBag = styled(Box)`
     position: relative;
+    display: flex;
+    aligin-item: center;
+    gap: 15px;
+    flex-direction: row-reverse;
 `;
 
 const HeaderRowIcon = styled(Box)`
@@ -44,6 +48,15 @@ const Icon = styled(Box)`
     }
 `;
 
+const RowActionHeader = styled(Box)`
+    display: flex;
+    aligin-item: center;
+    gap: 5px;
+`;
+
+const ActionFlag = styled(Box)`
+    cursor: pointer;
+`;
 export const MainHeaderComponentStyle = {
     Header,
     HeaderTitle,
@@ -51,4 +64,6 @@ export const MainHeaderComponentStyle = {
     RowShoppingBag,
     HeaderRowIcon,
     Icon,
+    RowActionHeader,
+    ActionFlag,
 };

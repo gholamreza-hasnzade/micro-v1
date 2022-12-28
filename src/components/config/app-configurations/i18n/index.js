@@ -3,7 +3,7 @@ import i18n from "i18next";
 import Backend from "i18next-xhr-backend";
 import { initReactI18next } from "react-i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
-
+const i18nextLng = localStorage.getItem("i18nextLng")
 i18n
 
     // Enables the i18next backend
@@ -15,12 +15,12 @@ i18n
     // Enables the hook initialization module
     .use(initReactI18next)
     .init({
-        lng: "fa",
+        lng: i18nextLng ?? "fa",
         backend: {
             /* translation file path */
             loadPath: "/assets/data/locales/{{lng}}.json",
         },
-        fallbackLng: "fa",
+        fallbackLng: i18nextLng ?? "fa",
         debug: false,
         keySeparator: false,
         react: {
