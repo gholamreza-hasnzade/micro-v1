@@ -12,12 +12,13 @@ import {
     EmptyComponent,
     Pagination,
 } from "@components/common/partials";
+import { HomePartView } from "@components/views";
 
 // * Import Store
 import { useAppDispatch, useAppSelector } from "@redux/base/hook-redux";
 import { getOrders } from "@redux/slices/order/order-redux-action";
-import { HomePartView } from "@components/views";
-const HomeView = () => {
+
+export const HomeView = () => {
     const [currentPage, setCurrentPage] = useState(1);
 
     const { t } = useTranslation();
@@ -30,7 +31,6 @@ const HomeView = () => {
     const setCurrentPageNo = (event, pageNumber) => {
         setCurrentPage(Number(pageNumber));
     };
-    console.log(data?.datas);
     return (
         <S.Home>
             {data?.datas?.length === 0 ? (
@@ -94,4 +94,3 @@ const HomeView = () => {
         </S.Home>
     );
 };
-export default HomeView;

@@ -12,7 +12,7 @@ import { LinkButton, Skeleton, Tooltip } from "@components/common/partials";
 import { useAppDispatch, useAppSelector } from "@redux/base/hook-redux";
 import { getByIdUser } from "@redux/slices/client/client-redux-action";
 
-const PreviewClienView = () => {
+export const PreviewClienView = () => {
     const data = useAppSelector((stata) => stata?.client);
     const { id } = useParams();
     const dispatch = useAppDispatch();
@@ -125,5 +125,3 @@ const PreviewClienView = () => {
         </S.Client>
     );
 };
-
-export default PreviewClienView

@@ -29,7 +29,7 @@ import {
 // * import constants
 import { requestMethodes } from "@constants/content";
 
-const ProductAddView = ({ id, productInfo, editMode, loading }) => {
+export const ProductAddView = ({ id, productInfo, editMode, loading }) => {
     const datas = useAppSelector((stata) => stata?.client);
     const dispatch = useAppDispatch();
 
@@ -253,5 +253,3 @@ const ProductAddView = ({ id, productInfo, editMode, loading }) => {
         </GS.FlexGap10>
     );
 };
-
-export default ProductAddView;

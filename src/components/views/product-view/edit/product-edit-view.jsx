@@ -9,7 +9,7 @@ import { ProductAddView } from "@components/views";
 import { useAppDispatch, useAppSelector } from "@redux/base/hook-redux";
 import { getByIdProduct } from "@redux/slices/product/product-redux-action";
 
- const ProductEditView = () => {
+export const ProductEditView = () => {
     const data = useAppSelector((state) => state?.product);
     const dispatch = useAppDispatch();
     const { id } = useParams();
@@ -29,5 +29,3 @@ import { getByIdProduct } from "@redux/slices/product/product-redux-action";
         />
     );
 };
-
-export default ProductEditView

@@ -19,7 +19,7 @@ import {
 } from "@redux/slices/product/product-redux-action";
 import { useDebounce } from "@hooks";
 
-const ProductPartView = ({ data, index }) => {
+export const ProductPartView = ({ data, index }) => {
     const [isOpen, setIsOpen] = useState(false);
     const dispatch = useAppDispatch();
     const { t } = useTranslation();
@@ -93,4 +93,3 @@ const ProductPartView = ({ data, index }) => {
         </>
     );
 };
-export default ProductPartView;

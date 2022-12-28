@@ -14,7 +14,7 @@ import { DeleteModal } from "@components/common/segment";
 // * import store
 import { deleteUser } from "@redux/slices/client/client-redux-action";
 
-const ClientPartView = ({ data, index }) => {
+export const ClientPartView = ({ data, index }) => {
     const [isOpen, setIsOpen] = useState(false);
     const { t } = useTranslation();
     const navigate = useNavigate();
@@ -65,5 +65,3 @@ const ClientPartView = ({ data, index }) => {
         </>
     );
 };
-
-export default ClientPartView;

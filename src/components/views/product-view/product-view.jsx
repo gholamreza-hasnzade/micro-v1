@@ -14,12 +14,12 @@ import {
     Skeleton,
     Tooltip,
 } from "@components/common/partials";
-import ProductPartView from "@components/views/product-view/part/product-part-view";
+import {ProductPartView} from "@components/views/product-view/part/product-part-view";
 // * import store
 import { getProducts } from "@redux/slices/product/product-redux-action";
 import { useAppDispatch, useAppSelector } from "@redux/base/hook-redux";
 
-const ProductView = () => {
+export const ProductView = () => {
     const [currentPage, setCurrentPage] = useState(1);
 
     const datas = useAppSelector((state) => state?.product);
@@ -117,5 +117,3 @@ const ProductView = () => {
         </S.Product>
     );
 };
-
-export default ProductView;

@@ -25,7 +25,7 @@ import { notificationTypes, requestMethodes } from "@constants/content";
 // * Import Store
 import { toastContainer } from "@helpers";
 
-const ClientAddView = ({ id, clientInfo, editMode, loading }) => {
+export const ClientAddView = ({ id, clientInfo, editMode, loading }) => {
     const { t } = useTranslation();
     const navigate = useNavigate();
     const [form, setForm] = useState({
@@ -248,5 +248,3 @@ const ClientAddView = ({ id, clientInfo, editMode, loading }) => {
         </GS.FlexGap10>
     );
 };
-
-export default ClientAddView;

@@ -7,7 +7,7 @@ import { ClientAddView } from "@components/views";
 // * import store
 import { useAppDispatch, useAppSelector } from "@redux/base/hook-redux";
 import { getByIdUser } from "@redux/slices/client/client-redux-action";
-const ClientEditView = () => {
+export const ClientEditView = () => {
     const data = useAppSelector((stata) => stata?.client);
     const { id } = useParams();
     const dispatch = useAppDispatch();
@@ -26,4 +26,3 @@ const ClientEditView = () => {
         />
     );
 };
-export default ClientEditView;
