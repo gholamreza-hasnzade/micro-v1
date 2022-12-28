@@ -16,7 +16,7 @@ import {
 // * Import Store
 import { useAppDispatch, useAppSelector } from "@redux/base/hook-redux";
 import { getOrders } from "@redux/slices/order/order-redux-action";
-
+import { HomePartView } from "@components/views";
 const HomeView = () => {
     const [currentPage, setCurrentPage] = useState(1);
 
@@ -30,6 +30,7 @@ const HomeView = () => {
     const setCurrentPageNo = (event, pageNumber) => {
         setCurrentPage(Number(pageNumber));
     };
+    console.log(data?.datas);
     return (
         <S.Home>
             {data?.datas?.length === 0 ? (
@@ -39,7 +40,7 @@ const HomeView = () => {
                     <S.RowBasket>
                         <Caption> {t("shopping cart list")} </Caption>
                         <S.LengthBasket>
-                            {data?.datas?.length} {t("Number Basket")}
+                            {data?.datas?.length} : {t("Number Basket")}
                         </S.LengthBasket>
                     </S.RowBasket>
                     <GS.RowMain>
@@ -70,7 +71,7 @@ const HomeView = () => {
                                         </GS.TableCell>
                                     </GS.TableRow>
                                 </GS.TableHead>
-                               {/*  <GS.TableBody>
+                                <GS.TableBody>
                                     {data?.datas &&
                                         data?.datas?.map((data, index) => (
                                             <HomePartView
@@ -78,7 +79,7 @@ const HomeView = () => {
                                                 item={data}
                                             />
                                         ))}
-                                </GS.TableBody> */}
+                                </GS.TableBody>
                             </GS.Table>
                         </GS.TableContainer>
 

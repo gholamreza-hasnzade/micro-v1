@@ -15,8 +15,10 @@ export { ErrorMessageComponent as ErrorMessage } from "@components/common/partia
 export { ToastNotificationComponent as ToastNotification } from "@components/common/partials/toast-notification/toast-notification-component";
 export { EmptyComponent } from "@components/common/partials/emptys/empty-component";
 
-const LoaderComponent = lazy(() =>
+/* const LoaderComponent = lazy(() =>
     import("@components/common/partials/loadings/loader/loader-component")
 );
 
-export { LoaderComponent as Loader };
+export { LoaderComponent as Loader }; */
+
+export { LoaderComponent as Loader } from "@components/common/partials/loadings/loader/loader-component";
