@@ -10,7 +10,7 @@ import { bodyTypes, notificationTypes } from "@constants/content";
 //import { endpoints } from "./config";
 
 // ** Notification
-import { notification } from "@redux/slices/notification/notification-redux-slice";
+//import { notification } from "@redux/slices/notification/notification-redux-slice";
 
 let dispatch = null;
 export const setDispatch = (d) => {
@@ -52,46 +52,51 @@ export const callApi = async (requestData) => {
             params: params,
         });
         if (response?.status === 500) {
-            dispatch(
+            console.log(response);
+          /*   dispatch(
                 notification({
                     showNotification: true,
                     type: notificationTypes.error,
                     content: "Server Error",
                 })
-            );
+            ); */
         } else if (response?.status === "warning") {
             const message = Object.values(response?.data?.status?.message)[0];
-            dispatch(
+            console.log(message);
+            /* dispatch(
                 notification({
                     showNotification: true,
                     type: notificationTypes.warning,
                     content: message,
                 })
-            );
+            ); */
         } else return response?.data;
     } catch (error) {
         // Error 😨
+        console.log(error);
         if (error.response?.data?.status?.type === "warning") {
             const message = Object.values(
                 error.response?.data?.status?.message
             )[0];
-            dispatch(
+           
+          /*   dispatch(
                 notification({
                     showNotification: true,
                     type: notificationTypes.warning,
                     content: message,
                 })
-            );
+            ); */
         }
 
         if (error.response?.status === 500) {
-            dispatch(
+            console.log(error);
+           /*  dispatch(
                 notification({
                     showNotification: true,
                     type: notificationTypes.error,
                     content: "Server Error",
                 })
-            );
+            ); */
         }
 
         /*
