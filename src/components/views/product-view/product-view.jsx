@@ -1,5 +1,5 @@
 // * import tools
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
 // * import style
@@ -18,10 +18,9 @@ import {ProductPartView} from "@components/views/product-view/part/product-part-
 // * import store
 import { getProducts } from "@redux/slices/product/product-redux-action";
 import { useAppDispatch, useAppSelector } from "@redux/base/hook-redux";
+import paginationHOC from "@components/common/segment/hoc/pagination-hoc";
 
-export const ProductView = () => {
-    const [currentPage, setCurrentPage] = useState(1);
-
+const ProductView = ({setCurrentPageNo, currentPage}) => {
     const datas = useAppSelector((state) => state?.product);
     const dispatch = useAppDispatch();
     const { t } = useTranslation();
@@ -29,9 +28,7 @@ export const ProductView = () => {
         dispatch(getProducts(currentPage));
     }, [dispatch, currentPage]);
 
-    const setCurrentPageNo = (event, pageNumber) => {
-        setCurrentPage(Number(pageNumber));
-    };
+
     return (
         <S.Product>
             {datas?.datas?.length === 0 ? (
@@ -117,3 +114,5 @@ export const ProductView = () => {
         </S.Product>
     );
 };
+
+export default paginationHOC(ProductView)

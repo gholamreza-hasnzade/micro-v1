@@ -1,5 +1,5 @@
 // * import tools
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
 // * import components
@@ -9,9 +9,8 @@ import {
     Skeleton,
     Tooltip,
 } from "@components/common/partials";
-import  {ClientPartView}  from "@components/views/client-view/part/client-part-view";
+import { ClientPartView } from "@components/views/client-view/part/client-part-view";
 import { Pagination } from "@components/common/partials";
-
 // * import style
 import { ClientViewStyle as S } from "@components/views/client-view/client-view.style";
 import { GlobalStyle as GS } from "@global/emotion/global-style";
@@ -19,9 +18,9 @@ import { GlobalStyle as GS } from "@global/emotion/global-style";
 // * import store
 import { getUsers } from "@redux/slices/client/client-redux-action";
 import { useAppDispatch, useAppSelector } from "@redux/base/hook-redux";
+import paginationHOC from "@components/common/segment/hoc/pagination-hoc";
 
-export const ClientView = () => {
-    const [currentPage, setCurrentPage] = useState(1);
+const ClientView = ({ setCurrentPageNo, currentPage }) => {
 
     const datas = useAppSelector((stata) => stata?.client);
     const dispatch = useAppDispatch();
@@ -30,9 +29,7 @@ export const ClientView = () => {
         dispatch(getUsers(currentPage));
     }, [dispatch, currentPage]);
 
-    const setCurrentPageNo = (event, pageNumber) => {
-        setCurrentPage(Number(pageNumber));
-    };
+   
     return (
         <S.Client>
             {datas?.datas.length === 0 ? (
@@ -124,3 +121,4 @@ export const ClientView = () => {
         </S.Client>
     );
 };
+export default paginationHOC(ClientView);
