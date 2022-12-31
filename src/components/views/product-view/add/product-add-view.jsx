@@ -27,7 +27,10 @@ import {
 } from "@components/config/app-configurations/callApi";
 
 // * import constants
-import { requestMethodes } from "@constants/content";
+import { notificationTypes, requestMethodes } from "@constants/content";
+
+// * Import Store
+import { toastContainer } from "@helpers";
 
 export const ProductAddView = ({ id, productInfo, editMode, loading }) => {
     const datas = useAppSelector((stata) => stata?.client);
@@ -95,6 +98,10 @@ export const ProductAddView = ({ id, productInfo, editMode, loading }) => {
 
                 if (result?.status) {
                     navigate("/product");
+                    toastContainer(
+                        notificationTypes.info,
+                        t("Edited Successfully")
+                    );
                 } else {
                     setForm((prevState) => ({
                         ...prevState,
@@ -114,6 +121,10 @@ export const ProductAddView = ({ id, productInfo, editMode, loading }) => {
 
                 if (result?.status) {
                     navigate("/product");
+                    toastContainer(
+                        notificationTypes.success,
+                        t("Added Successfully")
+                    );
                 } else {
                     setForm((prevState) => ({
                         ...prevState,
