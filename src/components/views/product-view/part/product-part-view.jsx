@@ -27,7 +27,7 @@ export const ProductPartView = ({ data, index }) => {
     const handleIsOpenModal = () => {
         setIsOpen(!isOpen);
     };
-    const handleEditClick = () => {
+    const handleEditClick = () => { 
         navigate(`/product/edit/${data?.id}`);
     };
     const handleAddToClick = useDebounce(
