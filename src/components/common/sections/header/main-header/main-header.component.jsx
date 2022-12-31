@@ -1,5 +1,5 @@
 // * import tools
-import React, { useRef, useState } from "react";
+import React from "react";
 import * as I from "react-feather";
 import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
@@ -10,11 +10,9 @@ import { MainHeaderComponentStyle as S } from "@components/common/sections/heade
 // * import global style
 import { GlobalStyle as GS } from "@global/emotion/global-style";
 // * import components
-//import { Basket } from "@components/common/segment";
 import { Tooltip } from "@components/common/partials";
 
 // * import hoooks
-//import { useClickOutSide } from "@hooks";
 
 // * import store
 import { useAppDispatch, useAppSelector } from "@redux/base/hook-redux";
@@ -24,13 +22,10 @@ import { openDrawerToggle } from "@redux/slices/drawer/drawer-redux-slice";
 export const MainHeaderComponent = () => {
     const isOpenDrawer = useAppSelector(drawerReduxSelector.isOpen);
     const dispatch = useAppDispatch();
-    // const [isOpenBasek, setIsOpenBasek] = useState(false);
-    //  const isOpen_basket = useRef(null);
+    
     const { t, i18n } = useTranslation();
 
-    /*     useClickOutSide(isOpen_basket, () => {
-        setIsOpenBasek(false);
-    }); */
+   
     const handleLangUpdate = (e, lang) => {
         e.preventDefault();
         i18n.changeLanguage(lang);
