@@ -13,7 +13,7 @@
     "phone": "شماره موبایل",
     "email": "ایمیل",
     "addres": "آدرس",
-    "total" : "تعداد",
+    "total": "تعداد",
     "operation": "عملیان",
     "shopping cart list": "لیست سبد خرید",
     "basket buy": "سبد خرید",
@@ -36,18 +36,17 @@
     "must not be greater than 11 characters": "نباید بیشتر از 11 کاراکتر باشد",
     "must not be greater than 120 characters": "نباید بیشتر از 120 کاراکتر باشد",
     "must not be greater than 4 characters": "نباید بیشتر از 4 کاراکتر باشد",
-    "The email has already been taken." : "ایمیل قبلا گرفته شده است",
+    "The email has already been taken.": "ایمیل قبلا گرفته شده است",
     "The phone has already been taken.": "شماره موبایل قبلا گرفته شده است",
     "Added Successfully": "با موفقیت ایجاد شد",
     "Edited Successfully": "ویرایش با موفقیت انجام شد",
     "No Insert Info": "اطلاعاتی ثبت نشده است",
     "Number Basket": "تعداد محصول",
     "Add To Basket": "   به سبد خرید اضافه گردید  ",
-    "Add To Basket Cart" : "افزودن به سبد خرید",
-    "error in sever" :"مشکلی پیش امد است",
+    "Add To Basket Cart": "افزودن به سبد خرید",
+    "error in sever": "مشکلی پیش امد است",
     "please wait...": "لطفا صبر کنید...",
     "not found page 404": "همچین صفحه ای یافت نشد",
-    "main page" :"صفحه اصلی"
-
-
+    "main page": "صفحه اصلی",
+    "change language": "تغییر زبان  "
 }

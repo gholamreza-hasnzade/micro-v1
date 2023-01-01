@@ -9,41 +9,46 @@ import { LanguageComponentStyle as S } from "@components/common/segment/language
 import { Tooltip } from "@components/common/partials";
 
 export const LanguageComponent = () => {
-    const { i18n } = useTranslation();
+    const { i18n, t } = useTranslation();
 
     const handleLangUpdate = (e, lang) => {
         e.preventDefault();
         i18n.changeLanguage(lang);
     };
     return (
-        <S.RowActionHeader>
-            <S.ActionFlag onClick={(e) => handleLangUpdate(e, "en")}>
-                <Tooltip title="USA">
-                    <ReactCountryFlag
-                        countryCode="US"
-                        svg
-                        style={{
-                            width: "1.5em",
-                            height: "1.5em",
-                        }}
-                    />
-                </Tooltip>
-            </S.ActionFlag>
-            <S.ActionFlag>
-                <Tooltip
-                    title="Persian"
-                    onClick={(e) => handleLangUpdate(e, "fa")}
-                >
-                    <ReactCountryFlag
-                        countryCode="IR"
-                        svg
-                        style={{
-                            width: "1.5em",
-                            height: "1.5em",
-                        }}
-                    />
-                </Tooltip>
-            </S.ActionFlag>
-        </S.RowActionHeader>
+        <S.Container>
+            <S.Row>
+                <S.Typography>{t("change language")}</S.Typography>
+                <S.RowAction>
+                    <S.ActionFlag onClick={(e) => handleLangUpdate(e, "en")}>
+                        <Tooltip title="USA">
+                            <ReactCountryFlag
+                                countryCode="US"
+                                svg
+                                style={{
+                                    width: "1.5em",
+                                    height: "1.5em",
+                                }}
+                            />
+                        </Tooltip>
+                    </S.ActionFlag>
+                    <S.ActionFlag>
+                        <Tooltip
+                            title="Persian"
+                            onClick={(e) => handleLangUpdate(e, "fa")}
+                        >
+                            <ReactCountryFlag
+                                countryCode="IR"
+                                svg
+                                style={{
+                                    width: "1.5em",
+                                    height: "1.5em",
+                                }}
+                            />
+                        </Tooltip>
+                    </S.ActionFlag>
+                </S.RowAction>
+            </S.Row>
+        </S.Container>
     );
 };
