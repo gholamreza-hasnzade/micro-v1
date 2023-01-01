@@ -3,7 +3,6 @@ import React from "react";
 import * as I from "react-feather";
 import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
-import ReactCountryFlag from "react-country-flag";
 
 // * import style
 import { MainHeaderComponentStyle as S } from "@components/common/sections/header/main-header/main-header.component.style";
@@ -23,14 +22,9 @@ export const MainHeaderComponent = () => {
     const isOpenDrawer = useAppSelector(drawerReduxSelector.isOpen);
     const dispatch = useAppDispatch();
     
-    const { t, i18n } = useTranslation();
+    const { t } = useTranslation();
 
    
-    const handleLangUpdate = (e, lang) => {
-        e.preventDefault();
-        i18n.changeLanguage(lang);
-      };
-    
     return (
         <S.Header component={"header"}>
             <GS.FlexCenterSB>
