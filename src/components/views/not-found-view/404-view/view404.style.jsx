@@ -18,22 +18,27 @@ const Row = styled(Box)`
     border: 3px solid ${({ theme }) => theme.PRIMARY};
     overflow: hidden;
     border-radius: 50%;
+    margin-bottom: 25px;
 `;
 const Wapper = styled(Box)`
     width: 100%;
     height: 100%;
     padding: 30px;
     position: relative;
-    & img {
+    & .page404 {
         position: absolute;
         right: 25px;
-        top: 0;
-        bottom: 0;
         width: 400px;
         height: 400px;
-        transform: translateY(420px);
-        &.active {
-            transform: translateY(0);
+        animation: MoveUpDown 3s linear;
+    }
+
+    @keyframes MoveUpDown {
+        50% {
+            top: 420px;
+        }
+        100% {
+            top: 0;
         }
     }
 `;

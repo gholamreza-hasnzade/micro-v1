@@ -11,6 +11,7 @@ import { LinkButton } from "@components/common/partials";
 export const View404 = () => {
     const { t } = useTranslation();
 
+   
     return (
         <S.Container>
             <S.Row>
@@ -18,11 +19,10 @@ export const View404 = () => {
                     <img
                         alt={t("not found page 404")}
                         src={IMAGES.Page404}
-                        className="active"
+                        className="page404"
                     />
                 </S.Wapper>
             </S.Row>
-            <S.Typography>{t("not found page 404")}</S.Typography>
             <LinkButton href="/">{t("main page")} </LinkButton>
         </S.Container>
     );
