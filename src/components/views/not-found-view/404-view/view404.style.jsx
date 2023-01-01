@@ -1,6 +1,6 @@
 // * Import Tools
 import styled from "@emotion/styled/macro";
-import { Box } from "@mui/system";
+import { Box, Typography as TypographyMUI } from "@mui/material";
 
 const Container = styled(Box)`
     width: 100%;
@@ -9,6 +9,7 @@ const Container = styled(Box)`
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 `;
 
 const Row = styled(Box)`
@@ -36,9 +37,16 @@ const Wapper = styled(Box)`
         }
     }
 `;
+const Typography = styled(TypographyMUI)`
+    color: ${({ theme }) => theme.PRIMARY};
+    font-size: 18px;
+    margin: 15px;
+    font-weight: 700;
+`;
 
 export const View404Style = {
     Container,
     Row,
     Wapper,
+    Typography,
 };
