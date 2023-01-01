@@ -33,7 +33,7 @@ const Box = styled(BoxMUI)`
     display: flex;
     flex-direction: column;
     height: 100%;
-    width: ${({ isopen }) => (isopen ? "250px" : "0")};
+    width: ${({ isopen }) => (isopen ? "280px" : "0")};
 `;
 export const MainSettingComponentStyle = {
     Container,
