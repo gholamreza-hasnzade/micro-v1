@@ -1,6 +1,6 @@
 // * Import tools
 import React, { useState } from "react";
-
+import * as I from "react-feather";
 // * Import Style
 import { MainSettingComponentStyle as S } from "@components/common/sections/setting/main-setting/main-setting-component.style";
 
@@ -24,7 +24,9 @@ export const MainSettingComponent = () => {
                 <S.Action
                     onClick={() => setIsOpen(!isOpen)}
                     style={{ bottom: position.x, top: position.y }}
-                ></S.Action>
+                >
+                  {isOpen ? <I.ArrowLeft />: <I.ArrowRight /> }  
+                </S.Action>
             </S.WapperAction>
             <S.Box isopen={isOpen}>
                 <Language />

@@ -25,11 +25,19 @@ const Action = styled(BoxMUI)`
     height: 45px;
     z-index: 98;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    & svg {
+        color: #fff;
+        width: 20px;
+        height: 20px;
+    }
 `;
 const Box = styled(BoxMUI)`
     background-color: ${({ theme }) => theme.SURFACE};
-    border-left:  1px solid ${({ isopen , theme }) => (isopen ? theme.PRIMARY : theme.SURFACE )} ;   
-    padding: ${({isopen}) => (isopen? "15px" : 0)};
+    border-left: 1px solid
+        ${({ isopen, theme }) => (isopen ? theme.PRIMARY : theme.SURFACE)};
+    padding: ${({ isopen }) => (isopen ? "15px" : 0)};
     display: flex;
     flex-direction: column;
     height: 100%;
