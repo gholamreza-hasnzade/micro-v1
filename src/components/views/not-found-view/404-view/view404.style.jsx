@@ -34,7 +34,7 @@ const Wapper = styled(Box)`
     }
 
     @keyframes MoveUpDown {
-        50% {
+        0%,50% {
             top: 420px;
         }
         100% {
