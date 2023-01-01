@@ -3,6 +3,8 @@ import React, { useState } from "react";
 
 // * Import Style
 import { MainSettingComponentStyle as S } from "@components/common/sections/setting/main-setting/main-setting-component.style";
+
+import { Language } from "@components/common/segment";
 export const MainSettingComponent = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [position, setPosition] = useState({
@@ -25,7 +27,7 @@ export const MainSettingComponent = () => {
                 ></S.Action>
             </S.WapperAction>
             <S.Box isopen={isOpen}>
-                sdsdfsdfsdf
+                <Language />
             </S.Box>
         </S.Container>
     );

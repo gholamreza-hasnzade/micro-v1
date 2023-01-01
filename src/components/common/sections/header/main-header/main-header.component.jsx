@@ -44,39 +44,9 @@ export const MainHeaderComponent = () => {
                         <NavLink to={"/"}>
                             <Tooltip title={t("basket buy")}>
                                 <S.ShoppingBag
-                                /*  onClick={() => {
-                                    setIsOpenBasek((prev) => !prev);
-                                }} */
                                 />
                             </Tooltip>
                         </NavLink>
-                        <S.RowActionHeader /* ref={isOpen_basket} */>
-                            {/* {isOpenBasek && <Basket />} */}
-                            <S.ActionFlag  onClick={(e) => handleLangUpdate(e, "en")}>
-                                <Tooltip title="USA">
-                                    <ReactCountryFlag
-                                        countryCode="US"
-                                        svg
-                                        style={{
-                                            width: "1.5em",
-                                            height: "1.5em",
-                                        }}
-                                    />
-                                </Tooltip>
-                            </S.ActionFlag>
-                            <S.ActionFlag>
-                                <Tooltip title="Persian"  onClick={(e) => handleLangUpdate(e, "fa")}>
-                                    <ReactCountryFlag
-                                        countryCode="IR"
-                                        svg
-                                        style={{
-                                            width: "1.5em",
-                                            height: "1.5em",
-                                        }}
-                                    />
-                                </Tooltip>
-                            </S.ActionFlag>
-                        </S.RowActionHeader>
                     </S.RowShoppingBag>
                 </S.HeaderRowIcon>
             </GS.FlexCenterSB>
