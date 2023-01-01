@@ -7,6 +7,7 @@ import {
     MainHeader,
     MainFooter,
     MainDrawer,
+    MainSetting,
 } from "@components/common/sections";
 // * import  style
 import { MainLayoutStyle as S } from "@components/common/sections/layouts/main-layout/main-layout.component.style";
@@ -18,9 +19,11 @@ import { drawerReduxSelector } from "@redux/slices/drawer/drawer-redux-selector"
 
 export const MainLayoutComponent = ({ children }) => {
     const isOpenDrawer = useAppSelector(drawerReduxSelector.isOpen);
+
     const dispatch = useAppDispatch();
     return (
         <S.Container>
+            <MainSetting />
             <MainDrawer />
             <MainOverlay
                 onClick={() => dispatch(openDrawerToggle())}
