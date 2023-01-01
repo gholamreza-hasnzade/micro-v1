@@ -10,6 +10,7 @@ import { MainLayout } from "@components/common/sections";
 
 // * Import components
 import { Loader } from "@components/common/partials";
+import { View404 } from "@components/views";
 
 const AppRouter = () => {
     const [loading, setLoading] = useState(true);
@@ -44,7 +45,7 @@ const AppRouter = () => {
                             )
                         );
                     })}
-                    {/*   <Route path="/" element={<Navigate to="home" replace />} /> */}
+                      <Route path="*" element={<View404 />} />
                 </Routes>
             </BrowserRouter>
         );

@@ -6,13 +6,9 @@ const HomeRoute = [
     {
         path: "/",
         element: HomeView,
+        name: "home",
         exact: true,
     },
-  /*   {
-        path: "/Home",
-        element: HomeView,
-        exact: true,
-    }, */
 ];
 
 export default HomeRoute;
