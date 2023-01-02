@@ -6,7 +6,10 @@ import { useTranslation } from "react-i18next";
 // * import style
 import { DeleteModalComponentStyle as S } from "@components/common/segment/delete-modal/delete-modal-component.style";
 import { GlobalStyle as GS } from "@global/emotion/global-style";
+
+// * Import components
 import { SubmitButton, OutlineButton } from "@components/common/partials";
+// * Import Store
 import { useAppDispatch } from "@redux/base/hook-redux";
 
 export const DeleteModalComponent = ({
