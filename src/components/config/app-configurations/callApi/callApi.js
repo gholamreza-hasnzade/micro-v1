@@ -5,13 +5,8 @@
 import axios from "axios";
 
 // * import constants
-import { bodyTypes, notificationTypes } from "@constants/content";
+import { bodyTypes } from "@constants/content";
 // * import endpoints
-//import { endpoints } from "./config";
-
-// ** Notification
-//import { notification } from "@redux/slices/notification/notification-redux-slice";
-
 let dispatch = null;
 export const setDispatch = (d) => {
     dispatch = d;
