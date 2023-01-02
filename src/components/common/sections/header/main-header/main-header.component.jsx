@@ -11,8 +11,6 @@ import { GlobalStyle as GS } from "@global/emotion/global-style";
 // * import components
 import { Tooltip } from "@components/common/partials";
 
-// * import hoooks
-
 // * import store
 import { useAppDispatch, useAppSelector } from "@redux/base/hook-redux";
 import { drawerReduxSelector } from "@redux/slices/drawer/drawer-redux-selector";

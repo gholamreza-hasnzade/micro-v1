@@ -1,5 +1,3 @@
-//import { lazy } from "react";
-
 // * export components partials
 export { SelectOptionComponent as SelectOption } from "@components/common/partials/select-option/select-option-component";
 export { LinkButtonComponent as LinkButton } from "@components/common/partials/buttons/link-button/link-button.component";

@@ -1,5 +1,6 @@
-import { Tooltip } from "@mui/material";
+// * Import tools
 import React from "react";
+import { Tooltip } from "@mui/material";
 
 export const TooltipComponent = React.forwardRef(function MyComponent(
     props,
