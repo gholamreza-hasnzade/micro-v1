@@ -31,8 +31,11 @@ export const MainLayoutComponent = ({ children }) => {
             />
             <S.MainLayout>
                 <S.Content>
-                    <MainHeader />
-                    <S.Main>{children}</S.Main>
+                    <div>
+                        <MainHeader />
+                        <S.Main>{children}</S.Main>
+                    </div>
+
                     <MainFooter />
                 </S.Content>
             </S.MainLayout>
