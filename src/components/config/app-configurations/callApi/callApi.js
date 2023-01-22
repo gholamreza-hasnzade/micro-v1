@@ -48,50 +48,19 @@ export const callApi = async (requestData) => {
         });
         if (response?.status === 500) {
             console.log(response);
-          /*   dispatch(
-                notification({
-                    showNotification: true,
-                    type: notificationTypes.error,
-                    content: "Server Error",
-                })
-            ); */
+          
         } else if (response?.status === "warning") {
             const message = Object.values(response?.data?.status?.message)[0];
-            console.log(message);
-            /* dispatch(
-                notification({
-                    showNotification: true,
-                    type: notificationTypes.warning,
-                    content: message,
-                })
-            ); */
+           
         } else return response?.data;
     } catch (error) {
         // Error 😨
         console.log(error);
         if (error.response?.data?.status?.type === "warning") {
-            const message = Object.values(
-                error.response?.data?.status?.message
-            )[0];
-           
-          /*   dispatch(
-                notification({
-                    showNotification: true,
-                    type: notificationTypes.warning,
-                    content: message,
-                })
-            ); */
         }
 
         if (error.response?.status === 500) {
             console.log(error);
-           /*  dispatch(
-                notification({
-                    showNotification: true,
-                    type: notificationTypes.error,
-                    content: "Server Error",
-                })
-            ); */
         }
 
         /*
